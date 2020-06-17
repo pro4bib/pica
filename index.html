@@ -7,15 +7,18 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="docsify/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
+    var num = 0
     window.$docsify = {
       name: 'PICA',
       repo: 'pro4bib/pica',
       auto2top: true,
       loadSidebar: 'SUMMARY.md',
+      subMaxLevel: 3,
       search: 'auto',
       pagination: {
         previousText: 'ZURÜCK',
@@ -27,11 +30,24 @@
         errorText  : 'Fehler',
         successText: 'Kopiert!'
       },
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              )
+            }
+            return this.origin.code.apply(this, arguments)
+          }
+        }
+      }
     }
   </script>
   <script src="docsify/docsify.min.js"></script>
   <script src="docsify/search.js"></script>
   <script src="docsify/docsify-pagination.min.js"></script>
   <script src="docsify/docsify-copy-code.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </body>
 </html>
