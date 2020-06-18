@@ -4,7 +4,7 @@ Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zent
 
 ## Hintergrund
 
-Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützen Katalogisierung zurück (PICA = Project for Integrated Catalogue Automation). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützen Katalogisierung zurück (PICA = Project for Integrated Catalogue Automation). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
 
 Das PICA-Format ist an das noch ältere MARC-Format (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: es musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, die Daten wurden nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und nicht zuletzt lag der Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten! Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, die Formate durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
 
@@ -12,12 +12,9 @@ Das PICA-Format ist an das noch ältere MARC-Format (1966) angelehnt. Viele Eige
 [Bericht zum PICA-System]: https://doi.org/10.1515/bfup.1992.16.3.307
 [OCLC PICA]: https://de.wikipedia.org/wiki/OCLC_PICA
 
-~~~
-3101 Karl@Gabriel
-3102 Paul Ludwig@Sauer
-4000 @Sinnfragen sozialer Arbeit : Erfahrungen und Entwürfe /Hrsg. von $3101, $3102 und Willi Vieth
-~~~
-*Beispiel für einen PICA2-Datensatz (aus Becker et al. 1992)*
+![Hardware-Infrastruktur des ersten PICA Systems (1979)](img/pica1979.png)
+
+*Hardware-Infrastruktur des ersten PICA Systems (1979)*
 
 ## Datenformate
 
@@ -44,7 +41,9 @@ Auch das PICA-Format ist ein Datenstrukturierungsformat. Das heißt konkrete Bed
 
 ### Anwendungsformate
 
-In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich meist auf Objekte und Eigenschaften wie zum Beispiel Personen, Namen, Publikationen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem bibliographische Datenformate und Normdatenformate von relevant; für beide fälle gibt es Anwendungsformate auf Basis des PICA-Format.
+In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf Objekte und Eigenschaften wie zum Beispiel Personen, Namen, Publikationen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem bibliographische Datenformate und Normdatenformate relevant; für beide gibt es Anwendungsformate auf Basis des PICA-Format.
+
+
 
 Da die Anwendung nicht Teil der Daten ist: weichen Theorie und Praxis hier voneinander
 
