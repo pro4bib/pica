@@ -4,7 +4,9 @@ Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zent
 
 ## Hintergrund
 
-Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützen Katalogisierung zurück (PICA = Project for Integrated Catalogue Automation). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick gibt der [Bericht zum PICA-System] aus dem Jahr 1990, auf dessen Grundlage CBS und LBS in Deutschland eingeführt wurden. Die PICA-Katalogdaten wurde nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) sondern in dem eigens entwickelten Datenbankformat **PICA+** verwaltet. Das Format ist an das noch ältere MARC-Format (1966) angelehnt. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützen Katalogisierung zurück (PICA = Project for Integrated Catalogue Automation). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+
+Das PICA-Format ist an das noch ältere MARC-Format (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: es musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, die Daten wurden nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und nicht zuletzt lag der Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten! Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, die Formate durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
 
 [PDP 11]: https://de.wikipedia.org/wiki/PDP-11
 [Bericht zum PICA-System]: https://doi.org/10.1515/bfup.1992.16.3.307
@@ -40,7 +42,7 @@ Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ei
 
 Auch das PICA-Format ist ein Datenstrukturierungsformat. Das heißt konkrete Bedeutungen wie "Vorname" und "Erscheinungsjahr" kennt das PICA-Format in seiner allgemeinen Form nicht!
 
-### Anwendungsformate 
+### Anwendungsformate
 
 In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich meist auf Objekte und Eigenschaften wie zum Beispiel Personen, Namen, Publikationen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem bibliographische Datenformate und Normdatenformate von relevant; für beide fälle gibt es Anwendungsformate auf Basis des PICA-Format.
 
@@ -72,7 +74,7 @@ graph LR
   PICA -- PICA/XML --> XML -- XML-Syntax --> Unicode -- UTF-8 --> Bytes
 ```
 
-?> Unter <https://format.gbv.de/code> gibt es eine Liste von Kodierungen.
+?> Weitere [Kodierungen in der GBV-Formatdatenbank](https://format.gbv.de/code)
 
 ### Datenmodelle
 
@@ -90,13 +92,48 @@ Datenformate lassen sich auch nach anderen Kriterien unterteilen, unter Anderem:
 
 !> ...
 
+Die PICA-Katalogdaten wurde nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) sondern in dem eigens entwickelten Datenbankformat **PICA+** verwaltet.
+
 * Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format (früher: PICA2) übersetzt.
+
+Selbst Mitarbeiter*innen der meisten Bibliotheken bekommen daher das PICA+ Format selten zu Gesicht.
+
+Im Gegensatz zu PICA+ ist Pica3 jedoch kein formal standardisiertes Format
+
+PicaPlus, "diagnostisches Format"
+
 * Struktur aus Feldern und Unterfeldern
 * Drei Ebenen sowie PPN
 * Eher eine Datenstrukturierungssprache, da Semantik Anwendungsspezifisch
 
-Weitere Informationen:
 
-* [PICA in der GBV-Formatdatenbank](https://format.gbv.de/pica)
+Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0), Lokaldaten (Level 1) und Exemplardaten (Level 2).
+
+Das Datenmodell von PICA+ lässt sich daher auf zwei Arten angeben:
+
+~~~mermaid
+classDiagram
+
+Datensatz *-- "0..n" Titel
+Titel *-- "0..n" Exemplar
+
+Datensatz o-- "1..n" Feld : Level 0
+Titel o-- "1..n" Feld : Level 1
+Exemplar o-- "1..n" Feld : Level 2
+
+Feld *-- "1..n" Unterfeld
+
+class Feld {
+  Nummer: [0-9][0-9][0-9][A-Z@]
+  Occurrence: 0...999
+}
+
+class Unterfeld {
+  Code: [a-zA-Z0-9]
+  Inhalt: String
+}
+~~~
+
+?> Weitere Informationen zu [PICA in der GBV-Formatdatenbank](https://format.gbv.de/pica)
 
 
