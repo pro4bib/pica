@@ -10,17 +10,15 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 
 ## Inhalt
 
-- [Grundlagen](01_grundlagen.md)
+- [Grundlagen](grundlagen)
    - Geschichtlicher Hintergrund
    - Arten von Datenformaten
+- [PICA-Formate](pica-formate)
    - Aufbau des PICA-Formats
-- Format-Details
    - Serialisierungen
-   - Verwandte Datenformate
-   - Konvertierung
-   - Katalogisierungsrichtlinien
-- Auswertung
-   - PICA Path
+   - Abfragesprachen
+   - Anwendungsprofile und Schemas
+- Verarbeitung
    - Catmandu
    - ...
 - Schnittstellen

@@ -1,3 +1,4 @@
 * [Einleitung](README.md)
-* [1. Grundlagen](01_grundlagen.md)
+* [Grundlagen](grundlagen.md)
+* [PICA-Formate](pica-formate.md)
 * [Über dieses Skript](CONTRIBUTING.md)
