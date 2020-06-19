@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="docsify/vue.css">
   <link rel="stylesheet" href="mermaid/mermaid.min.css">
+  <link rel="stylesheet" href="docsify/gbv.css">
 </head>
 <body>
   <div id="app"></div>
@@ -20,6 +21,7 @@
       loadSidebar: 'SUMMARY.md',
       subMaxLevel: 3,
       search: 'auto',
+      logo: 'img/gbv-vzg-logo.png',
       pagination: {
         previousText: 'ZURÜCK',
         nextText: 'VOR',
@@ -48,6 +50,8 @@
   <script src="docsify/search.js"></script>
   <script src="docsify/docsify-pagination.min.js"></script>
   <script src="docsify/docsify-copy-code.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="mermaid/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:false})</script>
 </body>
 </html>

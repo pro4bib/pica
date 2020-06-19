@@ -4,9 +4,11 @@
 
 Der Quelltext dieses Skript wird in Markdown-Syntax geschrieben und in einem git-Repository verwaltet. Kommentare, Korrekturen und Änderungen können [direkt bei GitHub](https://github.com/pro4bib/pica) angemeldet werden. Zur lokalen Entwicklung wird [docsify](https://docsify.js.org/) benötigt:
 
-    $ git clone git@github.com:pro4bib/pica.git && cd pica
-    $ npm i docsify-cli -g
-    $ docsify serve
+~~~bash
+git clone git@github.com:pro4bib/pica.git && cd pica
+npm i
+npm run serve
+~~~
 
 Die jeweils aktuelle HTML-Version steht unter <https://pro4bib.github.io/pica/> zur Verfügung. Eine Druckversion ist angedacht.
 
