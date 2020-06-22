@@ -16,16 +16,17 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 - [PICA-Formate](pica-formate)
    - Aufbau des PICA-Formats
    - Serialisierungen
-   - Abfragesprachen
+   - Abfragesprache
    - Anwendungsprofile und Schemas
 - Verarbeitung
-   - Catmandu
-   - ...
-- Schnittstellen
+   - Konvertierung
+   - Auswertung
+   - Tools (PICA::Data, Catmandu...)
+- [Schnittstellen](schnittstellen)
    - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
-- Alternativen
-   - MARC, RDF, JSON, entityfacts...
-   - Ausblick (BIBFRAME...)
+- Ausblick und Alternativen
+   - MARC, RDF, JSON...
+   - BIBFRAME, Folio...
 
 ## Literatur
 
