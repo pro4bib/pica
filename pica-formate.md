@@ -1,30 +1,34 @@
 # PICA-Formate
 
-Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Skript das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen. Im Folgenden werden zunächst der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) und mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
+Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Skript das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen:
 
-...
+* Zunächst werden der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) und mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
+
+* Zum Zugriff auf einzelne Elemente von PICA-Datensätze gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen das [Patch-Format REVD](#patch-format).
+
+* Konkrete Anwendungsformate von PICA werden als [Anwendungsprofilen](#anwendungsprofilen) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
 
 
 ## Grundsätzlicher Aufbau
 
 !> Hier bisher nur Notizen!
 
-Die PICA-Basierten Bibliotheksysteme PICA-Daten werden nicht direkt in einem Datenbankmanagementsystem (DBMS) sondern in dem eigens entwickelten Datenbankformat **PICA+** ("PicaPlus") verwaltet.
+Die PICA-basierten Bibliotheksysteme verwalten ihre Daten in PICA+ ("PicaPlus").
 
-* Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format (früher: PICA2) übersetzt (auch: "diagnostisches Format")
+ PICA-Daten werden nicht direkt in einem Datenbankmanagementsystem (DBMS) sondern in dem eigens entwickelten Datenbankformat **PICA+** ("PicaPlus") verwaltet.
+
+* Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format übersetzt (auch: "diagnostisches Format")
 
 Selbst Mitarbeiter*innen der meisten Bibliotheken bekommen daher das PICA+ Format selten zu Gesicht.
 
 Im Gegensatz zu PICA+ ist Pica3 jedoch kein formal standardisiertes Format
-
-PicaPlus, "diagnostisches Format"
 
 * Struktur aus Feldern und Unterfeldern
 * Drei Ebenen sowie PPN, ILN und EPN
 * Eher eine Datenstrukturierungssprache, da Semantik Anwendungsspezifisch
 
 
-Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0), Lokaldaten (Level 1) und Exemplardaten (Level 2).
+Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0), Lokaldaten (Level 1) und Exemplardaten (Level 2). 
 
 Das Datenmodell von PICA+ lässt sich daher auf zwei Arten angeben:
 
@@ -62,6 +66,8 @@ class Unterfeld {
   Inhalt: String
 }
 ~~~
+
+*Datenmodell von PICA+*
 
 ?> ⮕  Weitere Informationen zu [PICA in der GBV-Formatdatenbank](https://format.gbv.de/pica)
 
@@ -130,16 +136,24 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 
 ## Abfragesprache
 
-**PICA Path Expressions** ist eine Abfragesprache um in formaler Syntax auf Elemente eines PICA-Datensatz zu verweisen. Eine offizielle Spezifikation existiert noch nicht. Ein Ausdruck der Abfragesprache besteht aus folgenden Teilen:
+**PICA Path Expressions** ist eine Abfragesprache um in formaler Syntax auf Elemente eines PICA-Datensatz zu verweisen. Eine offizielle Spezifikation existiert noch nicht. Eine Abfrage besteht aus folgenden Teilen:
 
 !> Hier fehlen noch die Übersetzung und vor allem Beispiele
 
 * A tag, consisting of three digits, the first `0` to `2`, followed by a digit or `@`. The character `.` can be used as wildcard.
 * An optional occurrence, given by two or three digits (or . as wildcard) in brackets, e.g. `[12]`, `[0.]` or `[102]`.
-* An optional list of subfields. Allowed subfield codes include `_A-Za-z0-9`.
+* An optional list of subfields. Allowed subfield codes include `_A-Za-z0-9`. The list of subfields is preceded by `$`
 * An optional position, preceded by `/`. Both single characters (e.g. `/0` for the first), and character ranges (such as `2-4`, `-3`, `2-`...) are supported.
 
+Die Syntax der Abfragesprache ist eine Teilmenge von [MARCspec](http://marcspec.github.io/MARCspec/marc-spec.html), einer umfrangreicheren Sprache zur Referenzierung von Teilen aus MARC-Datensätzen.
+
 Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels [SRU](schnittstellen?id=sru) relevant. Mit CQL wird allerdings nicht direkt auf das PICA-Format sondern auf einen Suchindex verwiesen.
+
+## Änderungsformat
+
+Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Änderungen an Datensätzen lassen sich durch Vergleich von Versionen im **title-revision format** anzeigen. Das Format entspricht im Wesentlichen der PICA Plain [Serialisierung](#serialisierungen) mit dem Unterschied dass einzelne Felder durch vorangestelltes `+` oder `-` als hinzugefügt oder entfernt markiert werden.
+
+...
 
 ## Anwendungsprofile
 
@@ -147,5 +161,13 @@ Katalogisierungsrichtlinien...
 
 ## Avram-Schemas
 
-...
+Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen, ob sie wiederholbar sind etc.
+
+?> ⮕  [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
+
+~~~json
+
+~~~
+
+*Beispiel für ein einfaches Avram-Schema*
 
