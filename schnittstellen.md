@@ -1,16 +1,6 @@
 # Schnittstellen
 
-!> Diese Seite wird noch ausgebaut!
-
-## OPAC
-
-In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` aktiviert werden.
-
-![](img/opac-hidden-link.png)
-
-*Versteckter Link zum PICA-Datensatz (roter Pfeil)*
-
-Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Datensatz angezeigt.
+Für den lesenden Zugriff auf PICA-Daten gibt es [unAPI](#unapi) für einzelne Datensätze und [SRU](#sru) zur Abfrage von Suchergebnissen. Darüber hinaus können PICA-Daten manuell über die [OPAC-Oberfläche](#opac) und mit [WinIBW](#winibw) heruntergeladen werden.
 
 ## unAPI
 
@@ -30,9 +20,17 @@ Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Da
 
 ?> ⮕  [Wikipedia-Artikel zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 
-## OAI-PMH
+## OPAC
 
-?> ⮕  [OAI bei der DNB](http://www.dnb.de/oai)
+In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` aktiviert werden.
+
+![](img/opac-hidden-link.png)
+
+*Versteckter Link zum PICA-Datensatz (roter Pfeil)*
+
+Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Datensatz angezeigt.
 
 ## WinIBW
+
+?> ⮕  [Download von Datensätzen in WinIBW](https://wiki.k10plus.de/display/K10PLUS/WinIBW-Handbuch)
 
