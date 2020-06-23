@@ -10,10 +10,10 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 
 ## Inhalt
 
-- [Grundlagen](grundlagen)
+- [Grundlagen](grundlagen.md)
    - Geschichtlicher Hintergrund
    - Arten von Datenformaten
-- [PICA-Formate](pica-formate)
+- [PICA-Formate](formate.md)
    - Aufbau des PICA-Formats
    - Serialisierungen
    - Abfragesprache
@@ -22,7 +22,7 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
    - Konvertierung
    - Auswertung
    - Tools (PICA::Data, Catmandu...)
-- [Schnittstellen](schnittstellen)
+- [Schnittstellen](schnittstellen.md)
    - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
 - Ausblick und Alternativen
    - MARC, RDF, JSON...

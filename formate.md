@@ -4,10 +4,9 @@ Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbaue
 
 * Zunächst werden der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) und mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
 
-* Zum Zugriff auf einzelne Elemente von PICA-Datensätze gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen das [Patch-Format REVD](#patch-format).
+* Zum Zugriff auf einzelne Elemente von PICA-Datensätze gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen ein [Änderungsformat](#Änderungsformat).
 
 * Konkrete Anwendungsformate von PICA werden als [Anwendungsprofilen](#anwendungsprofilen) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
-
 
 ## Grundsätzlicher Aufbau
 
@@ -153,11 +152,17 @@ Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage 
 
 Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Änderungen an Datensätzen lassen sich durch Vergleich von Versionen im **title-revision format** anzeigen. Das Format entspricht im Wesentlichen der PICA Plain [Serialisierung](#serialisierungen) mit dem Unterschied dass einzelne Felder durch vorangestelltes `+` oder `-` als hinzugefügt oder entfernt markiert werden.
 
-...
+~~~pica
+- 021A $aEin Buch$hzum Lesen
++ 021A $aEin gutes Buch$hzum Lesen
+~~~
 
 ## Anwendungsprofile
 
-Katalogisierungsrichtlinien...
+Welche PICA-Felder in einer Datenbank welche Bedeutung haben, wird durch **Katalogisierungsrichtlinien** festgelegt.
+
+...
+
 
 ## Avram-Schemas
 
@@ -166,8 +171,37 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 ?> ⮕  [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
 
 ~~~json
-
+{
+  "fields": {
+    "004A": {
+      "tag": "004A",
+      "pica3": "2000",
+      "label": "ISBN",
+      "url": "https://swbtools.bsz-bw.de/cgi-bin/k10plushelp.pl?cmd=kat&val=2000&katalog=Standard",
+      "repeatable": true,
+      "modified": "2019-12-18 09:53:31",
+      "subfields": {
+        "0": {
+          "code": "0",
+          "pica3": "",
+          "label": "ISBN",
+          "repeatable": false,
+          "modified": "2019-11-28 14:27:12",
+          "position": 1
+        },
+        "f": {
+          "code": "f",
+          "pica3": "$f",
+          "label": "Kommentar zur ISBN, Einbandart, Lieferbedingungen und/oder Preis",
+          "repeatable": false,
+          "modified": "2019-12-17 15:03:31",
+          "position": 2
+        }
+      }
+    }
+  }
+}
 ~~~
 
-*Beispiel für ein einfaches Avram-Schema*
+*Beispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN*
 
