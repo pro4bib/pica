@@ -1,0 +1,11 @@
+:root {
+  --theme-color: #577FBB;
+}
+
+/* override vue.css for propery syntax highlighting with prism.js */
+.token.deleted {
+  text-decoration: none !important;
+}
+.token.inserted {
+  border-bottom: none;
+}

@@ -6,9 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="docsify/vue.css">
-  <link rel="stylesheet" href="mermaid/mermaid.min.css">
-  <link rel="stylesheet" href="docsify/gbv.css">
+  <link rel="stylesheet" href="css/vue.css">
+  <link rel="stylesheet" href="css/prism.min.css">
+  <link rel="stylesheet" href="css/mermaid.min.css">
+  <link rel="stylesheet" href="css/gbv.css">
 </head>
 <body>
   <div id="app"></div>
@@ -28,9 +29,13 @@
         crossChapter: true
       },
       copyCode: {
-        buttonText : 'In die Zwischenablage',
+        buttonText : 'kopieren',
         errorText  : 'Fehler',
         successText: 'Kopiert!'
+      },
+      search: {
+        placeholder: 'hier suchen',
+        noData: 'Keine Suchergebnisse!',
       },
       markdown: {
         renderer: {
@@ -46,14 +51,15 @@
       }
     }
   </script>
-  <script src="docsify/docsify.min.js"></script>
-  <script src="docsify/search.js"></script>
-  <script src="docsify/docsify-pagination.min.js"></script>
-  <script src="docsify/docsify-copy-code.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-xml.min.js"></script>
-  <script src="mermaid/mermaid.min.js"></script>
+  <script src="js/docsify.min.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/docsify-pagination.min.js"></script>
+  <script src="js/docsify-copy-code.js"></script>
+  <script src="js/prism-bash.min.js"></script>
+  <script src="js/prism-json.min.js"></script>
+  <script src="js/prism-ini.min.js"></script>
+  <script src="js/prism-marc.js"></script>
+  <script src="js/mermaid.min.js"></script>
   <script>mermaid.initialize({startOnLoad:false})</script>
 </body>
 </html>
