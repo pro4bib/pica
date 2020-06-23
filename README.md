@@ -6,7 +6,7 @@ Dieses Skript bietet eine kurze Einführung in die Verarbeitung von Daten im und
 
 > During a relatively long period of research, an advanced format was developed for the storage of bibliographic information; the PICA format. — Look Costers (1979)
 
-Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht durch modernere Techniken wie relationale Datenbanksysteme oder Wissensgraphen ersetzt werden. PICA ist einerseits zentral für die Datenhaltung in dein meisten Bibliotheken in Deutschland, andererseits wird das Format nicht außerhalb des Bibliothekswesens benutzt. Um sich mit der Verarbeitung von PICA-Daten vertraut zu machen, ist daher Dokumentation notwendig, wozu das vorliegende Skript beitragen soll. Schwerpunkt ist die Verarbeitung von PICA-Daten außerhalb der nicht-offenen PICA-Systeme wie CBS, LBS und WinIBW.
+Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht durch modernere Techniken wie relationale Datenbanksysteme oder Wissensgraphen ersetzt werden. PICA ist einerseits zentral für die Datenhaltung in den meisten Bibliotheken in Deutschland, andererseits wird das Format nicht außerhalb des Bibliothekswesens benutzt. Um sich mit der Verarbeitung von PICA-Daten vertraut zu machen, ist daher Dokumentation notwendig, wozu das vorliegende Skript beitragen soll. Schwerpunkt ist die Verarbeitung von PICA-Daten außerhalb der nicht-offenen PICA-Systeme wie CBS, LBS und WinIBW.
 
 ## Inhalt
 
@@ -18,10 +18,10 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
    - Serialisierungen
    - Abfragesprache
    - Anwendungsprofile und Schemas
-- Verarbeitung
+- [Verarbeitung](verarbeitung.md)
    - Konvertierung
    - Auswertung
-   - Tools (PICA::Data, Catmandu...)
+   - Werkzeuge
 - [Schnittstellen](schnittstellen.md)
    - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
 - Ausblick und Alternativen
@@ -36,3 +36,4 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 * Klute (2018): *ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV.* <https://doi.org/10.15771/MA_2018_3>
 * Schneiders (1997): *Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek*. NBLC Uitg.
 * Tennant (2002): *MARC Must Die.* In: Library Journal.
+* Voß (2009): *Verarbeitung von PICA+ Daten mit PICA::Record*. <https://www.gbv.de/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf>

@@ -1,6 +1,6 @@
 # PICA-Formate
 
-Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Skript das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen:
+Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Skript das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
 
 * Zunächst werden der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) und mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
 
@@ -10,24 +10,44 @@ Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbaue
 
 ## Grundsätzlicher Aufbau
 
-!> Hier bisher nur Notizen!
+Das interne Datenformat der CBS- und LBS-Software ist **PICA+** (auch "PicaPlus"). Ein PICA-Datensatz besteht aus einer Liste von **Feldern** (auch "Kategorien"), die jeweils eine Liste von **Unterfeldern** enthalten. Unterfelder werden durch ein alphanumerisches Zeichen identifiziert während Feldnummern mindestens aus drei Ziffern und einem Zeichen (`A-Z` oder `@`) bestehen. Die erste Ziffer des Feldes ist 0, 1 oder 2 und gibt die **Ebene** des Feldes an. Zusätzlich können Felder eine numerische **Occurrence** zwischen 0 und 99 haben (für Felder der Ebene 2 bis 999). Sowohl Felder als auch Unterfelder sind wiederholbar und die Reihenfolge von Unterfeldern und Feldern ist relevant!
 
-Die PICA-basierten Bibliotheksysteme verwalten ihre Daten in PICA+ ("PicaPlus").
+Das PICA-Format ist an das noch ältere MARC-Format angelehnt (weitere verwandte Formate sind MAB und allegro). Als [Datenstrukturierungssprachen](grundlagen?id=strukturierungsformate) lässt sich PICA+ unter den auch außerhalb des Bibliothekswesens relevanten Formaten am ehesten mit dem ebenfalls feldbasierten [INI-Format](http://format.gbv.de/ini) vergleichen. Zur Illustration ein Beispiel: folgender Datensatz enthält zweimal das Feld `012A` mit jeweils unterschiedlichen Unterfeldern.
 
- PICA-Daten werden nicht direkt in einem Datenbankmanagementsystem (DBMS) sondern in dem eigens entwickelten Datenbankformat **PICA+** ("PicaPlus") verwaltet.
+~~~pica
+012A $xHallo$yWelt
+012A $yWelt$xHallo
+~~~
 
-* Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format übersetzt (auch: "diagnostisches Format")
+~~~ini
+[012A]
+x = Hallo
+y = Welt
 
-Selbst Mitarbeiter*innen der meisten Bibliotheken bekommen daher das PICA+ Format selten zu Gesicht.
+[012A]
+y = Welt
+x = Hallo
+~~~
 
-Im Gegensatz zu PICA+ ist Pica3 jedoch kein formal standardisiertes Format
+*Fiktiver PICA-Datensatz in PICA Plain und als INI-Datei*
 
-* Struktur aus Feldern und Unterfeldern
-* Drei Ebenen sowie PPN, ILN und EPN
-* Eher eine Datenstrukturierungssprache, da Semantik Anwendungsspezifisch
+### Pica3
+
+!> Hier fehlt noch ein Beispiel
+
+Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format übersetzt (auch: "diagnostisches Format").
+
+Im Gegensatz zu PICA+ ist Pica3 jedoch kein formal standardisiertes Format sondern hängt von der jeweiligen Anwendung ab.
 
 
-Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0), Lokaldaten (Level 1) und Exemplardaten (Level 2). 
+Die Bedeutung der Felder und Unterfelder von PICA-Daten ist in den jeweiligen Katalogisierungsregeln festgelegt. 
+
+### Datensatz-Ebenen und Identifikatoren
+
+Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0, auch Titel-Ebene oder Titeldatensatz), Lokaldaten (Level 1) und Exemplardaten (Level 2). Dem Titeldatensatz können mehrere Lokaldatensätze untergeordnet sein, welchen wiederum einzelne Exemplardatensätze untergeordnet sind. Die Felder auf Ebene 2 haben immer eine Occurrence, die pro Exemplardatensatz gleich ist. Für die hierarchische Gruppierung eines PICA-Datensatzes in Teildatensätze ist die Reihenfolge der Felder relevant. Abgesehen davon lassen sich die Felder eines Datensatzes (abgesehen von wiederholten Feldern gleicher Feldnummer und Occurrence) automatisch sortieren.
+
+Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (ILN) einzelnen Bibliotheken zugeordnet.
+
 
 Das Datenmodell von PICA+ lässt sich daher auf zwei Arten angeben:
 
@@ -68,6 +88,8 @@ class Unterfeld {
 
 *Datenmodell von PICA+*
 
+!> PICA-Unterfelder bilden keine einfache [Zuordnungstabelle](https://de.wikipedia.org/wiki/Zuordnungstabelle_(Datenstruktur)) sondern haben eine in der Regel relevante Reihenfolge.
+
 ?> ⮕  Weitere Informationen zu [PICA in der GBV-Formatdatenbank](https://format.gbv.de/pica)
 
 ## Serialisierungen
@@ -88,6 +110,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 ~~~pica
 003@ $012345X
 021A $aEin Buch$hzum Lesen
+045B/02 $aSpo 1025$aBID 200
 ~~~
 
 *Beispiel für PICA Plain*
@@ -95,7 +118,8 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 ~~~json
 [
   [ "003@", null, "0", "12345X" ],
-  [ "021A", null, "a", "Ein Buch", "h", "zum Lesen" ]
+  [ "021A", null, "a", "Ein Buch", "h", "zum Lesen" ],
+  [ "045B", "02", "a", "Spo 1025", "a", "BID 200" ]
 ]
 ~~~
 
@@ -109,6 +133,10 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
   <datafield tag="021A">
     <subfield code="a">Ein Buch</subfield>
     <subfield code="h">zum Lesen</subfield>
+  </datafield>
+  <datafield tag="045B" occurrence="02">
+    <subfield code="a">Spo 1025</subfield>
+    <subfield code="a">BID 200</subfield>
   </datafield>
 </record>
 ~~~
@@ -124,6 +152,10 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
     <tag id="021A" occ="">
       <subf id="a">Ein Buch</ppxml:subf>
       <subf id="h">zum Lesen</ppxml:subf>
+    </tag>
+    <tag id="045B" occ="2">
+      <subf id="a">Spo 1025</subf>
+      <subf id="a">BID 200</subf>
     </tag>
   </global>
 </record>
@@ -156,6 +188,8 @@ Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Än
 - 021A $aEin Buch$hzum Lesen
 + 021A $aEin gutes Buch$hzum Lesen
 ~~~
+
+*Beispiel einer Änderung an Feld `021A`, Unterfeld `$a`*
 
 ## Anwendungsprofile
 
@@ -204,4 +238,10 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 ~~~
 
 *Beispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN*
+
+## Zusammenfassung
+
+Das PICA-Format ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab.
+
+...
 
