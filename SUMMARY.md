@@ -1,5 +1,6 @@
 * [Einleitung](README.md)
 * [Grundlagen](grundlagen.md)
 * [PICA-Formate](formate.md)
+* [Verarbeitung](verarbeitung.md)
 * [Schnittstellen](schnittstellen.md)
 * [Über dieses Skript](CONTRIBUTING.md)
