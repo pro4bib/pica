@@ -2,6 +2,14 @@
   --theme-color: #577FBB;
 }
 
+.warn:before {
+  content: "⮕ "
+}
+
+.markdown-section h3 {
+  font-size: 1.3rem;
+}
+
 /* override vue.css for propery syntax highlighting with prism.js */
 .token.deleted {
   text-decoration: none !important;
