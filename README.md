@@ -24,9 +24,9 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
    - Werkzeuge
 - [Schnittstellen](schnittstellen.md)
    - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
-- Ausblick und Alternativen
-   - MARC, RDF, JSON...
-   - BIBFRAME, Folio...
+- [Ausblick](ausblick.md)
+   - Verwandte Formate (MARC, RDF, JSON...)
+   - Zukünftige Alternativen (BIBFRAME, Folio...)
 
 ## Literatur
 

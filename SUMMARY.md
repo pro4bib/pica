@@ -3,4 +3,5 @@
 * [PICA-Formate](formate.md)
 * [Verarbeitung](verarbeitung.md)
 * [Schnittstellen](schnittstellen.md)
+* [Ausblick](ausblick.md)
 * [Über dieses Skript](CONTRIBUTING.md)
