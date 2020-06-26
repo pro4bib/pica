@@ -50,6 +50,12 @@ Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mitt
 
 ?> [Wikipedia-Artikel zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 
+Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit [Catmandu](verarbeitung?id=catmandu) (und der im entsprechenden Kapitel angegebenen [Konfiguration](catmandu.yaml)) ein einzelner Datensatz per PPN abgerufen werden:
+
+~~~bash
+catmandu convert kxp --query "pica.ppn=161165839X" to pp
+~~~
+
 ## OPAC
 
 In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` (alle Ebenen) aktiviert werden. Der Datensatz in PICA Plain Serialisierung kann anschließend per Copy & Paste in eine Datei kopiert werden.

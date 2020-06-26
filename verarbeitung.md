@@ -41,7 +41,7 @@ sudo cpanm Catmandu::PICA
 
 ### Konfiguration
 
-In der Konfigurationsdatei `catmandu.yaml` lassen sich häufig benötigte Einstellungen angeben, so dass sie nicht bei jedem Aufruf von catmandu mit angegeben werden müssen. Für die Verarbeitung von PICA-Daten, insbesondere aus dem K10plus-Katalog empfiehlt sich folgende YAML-Datei, die in den folgenden Beispielen vorausgesetzt wird:
+In der Konfigurationsdatei `catmandu.yaml` lassen sich häufig benötigte Einstellungen angeben, so dass sie nicht bei jedem Aufruf von catmandu mit angegeben werden müssen. Für die Verarbeitung von PICA-Daten, insbesondere aus dem K10plus-Katalog empfiehlt sich [folgende YAML-Datei](catmandu.yaml), die in den folgenden Beispielen vorausgesetzt wird:
 
 ~~~yaml
 importer:
@@ -73,13 +73,11 @@ exporter:
 Die folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich:
 
 ~~~bash
-catmandu convert PICA --type XML to PICA --type plain
-catmandu convert picaxml to pp
+catmandu convert PICA --type XML to PICA --type plain example.pica
+catmandu convert picaxml to pp example.pica
 ~~~
 
-### Beispiel
-
-!> [Weiteres Beispiel](https://github.com/gbv/Catmandu-PICA/wiki/Anleitung) (wird noch hierher übertragen)
+Ein ausführlicheres Beispiel für die PICA-Datenverarbeitung mit Catmandu wird [im Kapitel zur SRU-Schnittstelle](schnittstellen?id=SRU) vorgestellt.
 
 ## Syntaxhervorherbung
 
