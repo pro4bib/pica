@@ -1,6 +1,6 @@
 # Verarbeitung von PICA-Daten
 
-Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Daten, beschränkt auf frei zugängliche Open Source Anwendungen. Im Wesentlichen sind dies die Kommandozeileprogramme [picadata] und [catmandu] mit den ihnen zugrunde liegenden Perl-Programmbibliotheken. Zur Anzeige von PICA-Daten gibt es außerdem verschiedene Methoden der [Syntaxhervorhebung](#syntaxhervorhebung).
+Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Daten, beschränkt auf frei zugängliche Open Source Anwendungen. Im Wesentlichen sind dies die Kommandozeileprogramme [picadata] und [catmandu] mit den ihnen zugrunde liegenden Perl-Programmbibliotheken.
 
 [picadata]: #picadata
 [catmandu]: #catmandu
@@ -78,42 +78,3 @@ catmandu convert picaxml to pp example.pica
 ~~~
 
 Ein ausführlicheres Beispiel für die PICA-Datenverarbeitung mit Catmandu wird [im Kapitel zur SRU-Schnittstelle](schnittstellen?id=SRU) vorgestellt.
-
-## Syntaxhervorherbung
-
-Durch farbliche Hervorhebung von Feldern und Unterfeldern lassen sich PICA-Daten leichter lesen. Unter <https://gbv.github.io/lipstick/> werden Funktionen zum **Syntax-Highlighting von PICA+** und verwandten Formaten gesammelt:
-
-### vim
-
-Der Texteditor vim gehört praktisch zur Standardausstattung für jedes Unix-System.
-
-  ![Screenshot PICA Syntax-Highlighting unter vim](img/screenshot-vim.png)
-
-?> [Anleitung der Einrichtung unter vim](https://gbv.github.io/lipstick/vim/)
-
-### Prism
-
-[Prism](https://prismjs.com) ist eine Highlighting-Engine für Code auf HTML-Seiten, beispielsweise die Webseiten dieses Skriptes. Die Unterstützung für PICA beinhaltet PICA Plain, PICA Path Expressions und das Title-Revision Format:
-
-~~~pica
-003@ $012345X
-021A $aEin Buch$hzum Lesen
-045B/02 $aSpo 1025$aBID 200
-
-003@$0
-
-- 021A $aEin Buch$hzum Lesen
-+ 021A $aEin gutes Buch$hzum Lesen
-~~~
-
-?> [Anleitung der Nutzung von Prism für PICA](https://gbv.github.io/lipstick/prism/)
-
-### CodeMirror
-
-* [CodeMirror](https://gbv.github.io/lipstick/codemirror/) (HTML-Textformular)
-
-### picadata
-
-* [`picadata`](#picadata) (Kommandozeilenprogramm)
-
-  ![Screenshot PICA Syntax-Highlighting mit picadata](img/screenshot-picadata.png)

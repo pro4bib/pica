@@ -18,6 +18,9 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
   - Serialisierungen
   - Abfragesprache
   - Anwendungsprofile und Schemas
+- [Darstellung](darstellung.md)
+  - Anzeige von PICA-Daten mit Syntaxhervorhebung
+  - Hilfe zur einzelnen PICA-Feldern
 - [Verarbeitung](verarbeitung.md)
   - Konvertierung
   - Auswertung

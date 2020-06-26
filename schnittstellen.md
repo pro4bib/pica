@@ -10,7 +10,7 @@ Die unAPI-Schnittstelle ermöglicht den Abruf einzelner PICA-Datensätze mittels
 
 ?> [unAPI im GBV-Verbundwiki](https://verbundwiki.gbv.de/display/VZG/unAPI)
 
-### Beispiel
+### Beispiel auf der Kommandozeile
 
 Der Datensatz mit der [PPN 161165839X](https://opac.k10plus.de/DB=2.299/PPNSET?PPN=161165839X) aus dem K10plus-Verbundkatalog (`opac-de-627`) lässt sich im PICA Plain Format (`pp`) unter der URL <http://unapi.k10plus.de/?id=opac-de-627:ppn:161165839X&format=pp> abrufen. Auf der Unix-Kommandozeile ist dies beispielsweise mit `curl` möglich so dass und anschließend mit [`picadata`](verarbeitung?id=picadata) weiterverarbeitet werden:
 
@@ -33,6 +33,30 @@ curl "http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:\$1"
 EOF
 chmod +x kxp
 ~~~
+
+### Beispiel im Browser
+
+In die folgende [CodeMirror-Instanz](darstellung?id=codemirror) können PICA-Datenätze per unAPI aus dem K10plus-Katalog geladen werden:
+
+<div>
+<textarea id="pica-editor"></textarea>
+<label for="ppn">PPN:</label> <input type="text" id="ppn" value="161165839X" />
+<button id="loadViaPPN">Datensatz aus K10Plus laden</button>
+</div>
+
+<script>
+var editor = document.getElementById('pica-editor')
+editor = CodeMirror.fromTextArea(editor, { lineNumbers: true });
+document.getElementById('loadViaPPN').addEventListener("click", function () {
+  var ppn = document.getElementById("ppn").value
+  var url = "http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:" + ppn
+  fetch(url).then(function(res) {
+    res.text().then(function(pica) {
+      editor.setValue(pica)
+    })
+  })
+})
+</script>
 
 ## SRU
 

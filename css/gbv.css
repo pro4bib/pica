@@ -10,6 +10,17 @@
   font-size: 1.3rem;
 }
 
+.CodeMirror {
+  border: 2px solid #eee;
+  border-radius: 4px;
+  font-size: .8rem;  
+  line-height: 1.2rem;
+}
+
+.markdown-section pre {
+  line-height: 1.2rem;
+}
+
 /* override vue.css for propery syntax highlighting with prism.js */
 .token.deleted {
   text-decoration: none !important;
