@@ -7,7 +7,7 @@ Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Dat
 
 ## picadata
 
-Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate?id=serialisierungen), einfache Analyseund Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate?id=avram-schemas). 
+Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate?id=serialisierungen), einfache Analyseund Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate?id=avram-schemas).
 
 ### Installation
 
@@ -89,7 +89,7 @@ Durch farbliche Hervorhebung von Feldern und Unterfeldern lassen sich PICA-Daten
 
 Der Texteditor vim gehört praktisch zur Standardausstattung für jedes Unix-System.
 
-  ![](img/screenshot-vim.png)
+  ![Screenshot PICA Syntax-Highlighting unter vim](img/screenshot-vim.png)
 
 ?> [Anleitung der Einrichtung unter vim](https://gbv.github.io/lipstick/vim/)
 
@@ -118,5 +118,4 @@ Der Texteditor vim gehört praktisch zur Standardausstattung für jedes Unix-Sys
 
 * [`picadata`](#picadata) (Kommandozeilenprogramm)
 
-  ![](img/screenshot-picadata.png)
-
+  ![Screenshot PICA Syntax-Highlighting mit picadata](img/screenshot-picadata.png)

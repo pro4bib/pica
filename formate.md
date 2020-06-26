@@ -39,15 +39,13 @@ Zur Ein- und Ausgabe wird PICA+ in das bzw. aus dem PICA3-Format übersetzt (auc
 
 Im Gegensatz zu PICA+ ist Pica3 jedoch kein formal standardisiertes Format sondern hängt von der jeweiligen Anwendung ab.
 
-
-Die Bedeutung der Felder und Unterfelder von PICA-Daten ist in den jeweiligen Katalogisierungsregeln festgelegt. 
+Die Bedeutung der Felder und Unterfelder von PICA-Daten ist in den jeweiligen Katalogisierungsregeln festgelegt.
 
 ### Datensatz-Ebenen und Identifikatoren
 
 Das PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0, auch Titel-Ebene oder Titeldatensatz), Lokaldaten (Level 1) und Exemplardaten (Level 2). Dem Titeldatensatz können mehrere Lokaldatensätze untergeordnet sein, welchen wiederum einzelne Exemplardatensätze untergeordnet sind. Die Felder auf Ebene 2 haben immer eine Occurrence, die pro Exemplardatensatz gleich ist. Für die hierarchische Gruppierung eines PICA-Datensatzes in Teildatensätze ist die Reihenfolge der Felder relevant. Abgesehen davon lassen sich die Felder eines Datensatzes (abgesehen von wiederholten Feldern gleicher Feldnummer und Occurrence) automatisch sortieren.
 
 Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (ILN) einzelnen Bibliotheken zugeordnet.
-
 
 Das Datenmodell von PICA+ lässt folgendermaßen angeben:
 
@@ -98,7 +96,7 @@ Zur Speicherung und Übertragung können PICA-Daten in verschiedener Form [kodie
 
 [Schnittstellen]: schnittstellen
 
-Neben den Binärformaten **Binäres PICA** und **Normalisiertes PICA**, die direkt in CBS- und LBS-Software verwendet werden, gibt es: 
+Neben den Binärformaten **Binäres PICA** und **Normalisiertes PICA**, die direkt in CBS- und LBS-Software verwendet werden, gibt es:
 
 * **PICA Plain**, die lesbare Darstellung von PICA+
 * **PICA/JSON**, eine kompakte Kodierung in JSON
@@ -197,7 +195,6 @@ Welche PICA-Felder in einer Datenbank welche Bedeutung haben, wird durch **Katal
 
 ...
 
-
 ## Avram-Schemas
 
 Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen, ob sie wiederholbar sind etc.
@@ -244,4 +241,3 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 Das PICA-Format ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab.
 
 ...
-

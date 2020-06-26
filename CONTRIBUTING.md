@@ -8,6 +8,12 @@ npm i
 npm run serve
 ~~~
 
+Der Markdown-Quelltext lässt sich mit [markdownlint](https://www.npmjs.com/package/markdownlint) auf ein einheitliches Format überprüfen:
+
+~~~bash
+npm run lint
+~~~
+
 Die jeweils aktuelle HTML-Version steht unter <https://pro4bib.github.io/pica/> zur Verfügung. Eine Druckversion [ist angedacht](https://github.com/pro4bib/pica/issues/1).
 
 ## Danksagung

@@ -11,29 +11,29 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 ## Inhalt
 
 - [Grundlagen](grundlagen.md)
-   - Geschichtlicher Hintergrund
-   - Arten von Datenformaten
+  - Geschichtlicher Hintergrund
+  - Arten von Datenformaten
 - [PICA-Formate](formate.md)
-   - Aufbau des PICA-Formats
-   - Serialisierungen
-   - Abfragesprache
-   - Anwendungsprofile und Schemas
+  - Aufbau des PICA-Formats
+  - Serialisierungen
+  - Abfragesprache
+  - Anwendungsprofile und Schemas
 - [Verarbeitung](verarbeitung.md)
-   - Konvertierung
-   - Auswertung
-   - Werkzeuge
+  - Konvertierung
+  - Auswertung
+  - Werkzeuge
 - [Schnittstellen](schnittstellen.md)
-   - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
+  - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
 - [Ausblick](ausblick.md)
-   - Verwandte Formate (MARC, RDF, JSON...)
-   - Zukünftige Alternativen (BIBFRAME, Folio...)
+  - Verwandte Formate (MARC, RDF, JSON...)
+  - Zukünftige Alternativen (BIBFRAME, Folio...)
 
 ## Literatur
 
-* Becker et. al (1992): *Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990).* In: Bibliothek Forschung und Praxis, Band 16, Heft 3. <https://doi.org/10.1515/bfup.1992.16.3.307>
-* Costers (1979): *The PICA Catalogue System.* In: Proceedings of the IATUL Conferences. Paper 26. <https://docs.lib.purdue.edu/iatul/1979/papers/26>
-* Eversberg (1999): *Was sind und was sollen Bibliothekarische Datenformate* <http://www.allegro-c.de/formate/formate.htm>
-* Klute (2018): *ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV.* <https://doi.org/10.15771/MA_2018_3>
-* Schneiders (1997): *Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek*. NBLC Uitg.
-* Tennant (2002): *MARC Must Die.* In: Library Journal.
-* Voß (2009): *Verarbeitung von PICA+ Daten mit PICA::Record*. <https://www.gbv.de/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf>
+- Becker et. al (1992): *Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990).* In: Bibliothek Forschung und Praxis, Band 16, Heft 3. <https://doi.org/10.1515/bfup.1992.16.3.307>
+- Costers (1979): *The PICA Catalogue System.* In: Proceedings of the IATUL Conferences. Paper 26. <https://docs.lib.purdue.edu/iatul/1979/papers/26>
+- Eversberg (1999): *Was sind und was sollen Bibliothekarische Datenformate* <http://www.allegro-c.de/formate/formate.htm>
+- Klute (2018): *ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV.* <https://doi.org/10.15771/MA_2018_3>
+- Schneiders (1997): *Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek*. NBLC Uitg.
+- Tennant (2002): *MARC Must Die.* In: Library Journal.
+- Voß (2009): *Verarbeitung von PICA+ Daten mit PICA::Record*. <https://www.gbv.de/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf>

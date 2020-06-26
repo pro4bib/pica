@@ -39,7 +39,6 @@ Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ei
 | Hierachie/Dokument | JSON, XML |
 | Graph/Netzwerk | RDF |
 
-
 !> Auch das PICA-Format ist ein Datenstrukturierungsformat. Das heißt konkrete Bedeutungen wie "Vorname" und "Erscheinungsjahr" kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie "Feld" und "Unterfeld"!
 
 ### Anwendungsformate
@@ -98,10 +97,9 @@ graph LR
 
 Ein grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarten während Daten letzendlich immer nur als Folge von Nullen und Einsen vorliegen. Zur Abbildung abstrakter Vorstellungen auf konkrete Datenformate im Zuge der **Datenmodellierung** dienen **Datenmodelle**. Ein Datenmodell ist gewissermaßen die Vorstufe oder Abstraktion eines Datenformates. Die Bandbreite an Methoden zur Formulierung von Datenmodellen reicht von groben Skizzen auf Papier bis zu komplexen Datenmodellierungssprachen aus denen automatisch Schemas erzeugt werden können. Die Grenze zwischen Datenmodellen und Schemas ist daher unscharf. Als Faustregel kann gelten, dass Datenmodelle eher der Kommunikation mit Menschen und Schemas eher der Kommunikation mit Computern dienen. Grundsätzlich haben alle Datenformate zumindest implizit zugrunde liegende Modelle.
 
-![](img/data-modeling-simplified.png)
+![Ebenen der Datenmodellierung](img/data-modeling-simplified.png)
 
 Ein weiteres Hilfsmittel zum Verständnis von Datenformaten sind **Beispiele**. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.
-
 
 ## Zusammenfassung
 
@@ -112,4 +110,3 @@ Darüber hinaus lassen sich Datenformate nach unterschiedlichen Kriterien untert
 * **Prorietäre Formate** und **Offene Formate** (die meisten PICA-Anwendungsformate sind offen)
 * **Internformate** und **Austauschformate** (PICA dient primär als Internformat verwendet)
 * **Metadatenformate** und **Dokumentformate** (PICA gehört zu den Metadatenformaten)
-

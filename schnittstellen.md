@@ -17,6 +17,7 @@ Der Datensatz mit der [PPN 161165839X](https://opac.k10plus.de/DB=2.299/PPNSET?P
 ~~~bash
 curl 'http://unapi.k10plus.de/?id=opac-de-627:ppn:161165839X&format=pp' | picadata '028A|028C'
 ~~~
+
 ~~~pica
 028A $9079339735$VTpv1$7gnd/118540475$3161149200$wpiz$AGoldman$DEmma$E1869$M1940
 028C $9549565094$VTpv3$7gnd/133610519$3299969355$wpiz$APetersen$DTina$E1973$BBearb.
@@ -53,7 +54,7 @@ Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mitt
 
 In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` (alle Ebenen) aktiviert werden. Der Datensatz in PICA Plain Serialisierung kann anschließend per Copy & Paste in eine Datei kopiert werden.
 
-![](img/opac-hidden-link.png)
+![Versteckter Link im OPAC](img/opac-hidden-link.png)
 
 *Versteckter Link zum PICA-Datensatz (roter Pfeil)*
 
@@ -64,4 +65,3 @@ Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Da
 WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verbreitete Programm zur Verarbeitung von PICA-Daten. Nicht zuletzt werden PICA-Daten bei der Katalogisierung in der Regel mittels WinIBW in PICA-Datenbanken eingetragen.
 
 ?> [Download von Datensätzen in WinIBW](https://wiki.k10plus.de/pages/viewpage.action?pageId=64225417)
-
