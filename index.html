@@ -41,6 +41,7 @@
         noData: 'Keine Suchergebnisse!',
       },
       markdown: {
+        smartypants: true,
         renderer: {
           code: function(code, lang) {
             if (lang === "mermaid") {
@@ -49,6 +50,10 @@
               )
             }
             return this.origin.code.apply(this, arguments)
+          },
+          text: function(text) {
+            // Ersetze Englische durch Deutsche Anführungszeichen
+            return text.split("“").join("„").split("”").join("“")
           }
         }
       }
