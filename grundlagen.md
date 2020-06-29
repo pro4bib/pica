@@ -1,6 +1,6 @@
 # Grundlagen
 
-Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [geschichtlichen Hintergrund](#hintergrund) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf das PICA-Format im Speziellen wird [folgenden Kapitel](pica-formate) eingegangen.
+Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [geschichtlichen Hintergrund](#hintergrund) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf das PICA-Format im Speziellen wird [folgenden Kapitel](formate) eingegangen.
 
 ## Hintergrund
 
@@ -75,8 +75,8 @@ Da das PICA-Format eng mit der PICA-Software verbunden ist wurden die Abfragespr
 
 ?> ⮕  [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
 
-[PICA Path Expression]: pica-formate?id=abfragesprachen
-[Avram]: pica-formate?id=schemas
+[PICA Path Expression]: formate?id=abfragesprachen
+[Avram]: formate?id=schemas
 
 ### Kodierungen
 
