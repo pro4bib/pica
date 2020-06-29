@@ -49,7 +49,7 @@ var editor = document.getElementById('pica-editor')
 editor = CodeMirror.fromTextArea(editor, { lineNumbers: true });
 document.getElementById('loadViaPPN').addEventListener("click", function () {
   var ppn = document.getElementById("ppn").value
-  var url = "http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:" + ppn
+  var url = "//unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:" + ppn
   fetch(url).then(function(res) {
     res.text().then(function(pica) {
       editor.setValue(pica)
