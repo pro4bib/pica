@@ -45,7 +45,7 @@ Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ei
 
 In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf reale eher Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem **bibliographische Datenformate** und **Normdatenformate** relevant, deren Inhalte auch als **Metadaten** bezeichnet werden.
 
-?> ⮕  [Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
+?> [Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
 
 ### Standards und Profile
 
@@ -73,7 +73,7 @@ Der Vorteil von Abfrage- und Schemaformaten besteht darin dass mit ihnen Datenfo
 
 Da das PICA-Format eng mit der PICA-Software verbunden ist wurden die Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und werden nicht direkt durch PICA-Software unterstützt.
 
-?> ⮕  [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
+?> [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
 
 [PICA Path Expression]: formate?id=abfragesprachen
 [Avram]: formate?id=schemas
@@ -91,7 +91,7 @@ graph LR
 
 *Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*
 
-?> ⮕  [Kodierungen](https://format.gbv.de/code) in der GBV-Formatdatenbank
+?> [Kodierungen](https://format.gbv.de/code) in der GBV-Formatdatenbank
 
 ### Datenmodelle
 
