@@ -93,7 +93,6 @@ Bei der formalen Beschreibung von Katalogisierungsregeln mittels [Avram] können
 }
 ~~~
 
-
 ## Serialisierungen
 
 Zur Speicherung und Übertragung können PICA-Daten in verschiedener Form [kodiert bzw. serialisiert](grundlagen?id=kodierungen) werden. Alle PICA-Kodierungen lassen sich verlustfrei ineinander umwandeln, so dass jeweils die für eine Anwendung am einfachsten zu verarbeitende Serialisierung genutzt werden kann. Bei den [Schnittstellen] unAPI, SRU und OAI-PMH kann mit der Anfrage unter PICA-Kodierungen ausgewählt werden.
@@ -171,16 +170,15 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 
 **PICA Path Expressions** ist eine Abfragesprache um in formaler Syntax auf Elemente eines PICA-Datensatz zu verweisen. Eine offizielle Spezifikation existiert noch nicht. Eine Abfrage besteht aus folgenden Teilen:
 
-!> Hier fehlen noch die Übersetzung und vor allem Beispiele
+* Eine Feldnummer bestehend aus drei Ziffern (die erste `0`, `1` oder `2`), gefolgt von einem Großbuchstaben oder `@`. An jeder der vier Stellen der Feldnummer kann auch ein Punkt `.` als Platzhalter verwenden werden. Beispiele: `003@`, `1..A`, `2...`
 
-* A tag, consisting of three digits, the first `0` to `2`, followed by a digit or `@`. The character `.` can be used as wildcard.
-* An optional occurrence, given by two or three digits (or . as wildcard) in brackets, e.g. `[12]`, `[0.]` or `[102]`.
-* An optional list of subfields. Allowed subfield codes include `_A-Za-z0-9`. The list of subfields is preceded by `$`
-* An optional position, preceded by `/`. Both single characters (e.g. `/0` for the first), and character ranges (such as `2-4`, `-3`, `2-`...) are supported.
+* Optional eine Occurrence bestehend aus zwei oder drei Ziffern in eckigen Klammern. Auch hier ist der Punkt als Platzhalter erlaubt. Beispiele: `[12]`, `[0.]`, `[102]`
+
+* Optional eine Liste von Unterfeld-Codes (`A-Z`, `a-z`, `0-9`). Die Liste wird mit einem Dollar-Zeichen (`$`) eingeleitet. Beispiele: `$0`, `$axy`.
 
 Die Syntax der Abfragesprache ist eine Teilmenge von [MARCspec](http://marcspec.github.io/MARCspec/marc-spec.html), einer umfrangreicheren Sprache zur Referenzierung von Teilen aus MARC-Datensätzen.
 
-Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels [SRU](schnittstellen?id=sru) relevant. Mit CQL wird allerdings nicht direkt auf das PICA-Format sondern auf einen Suchindex verwiesen.
+Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels [SRU](schnittstellen?id=sru) relevant. CQL referenziert allerdings nicht Elemente des PICA-Format sondern basiert auf einem Suchindex, der aus unterschiedlichen Inhalten aufgebaut sein kann.
 
 ## Änderungsformat
 
@@ -201,8 +199,7 @@ Welche PICA-Felder in einer Datenbank welche Bedeutung haben, wird durch **Katal
 
 Beispiel: [K10plus Format-Dokumentation](https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation)
 
-Innerhalb einer Datenbank kann es jedoch vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst werden.
-
+!> Innerhalb einer Datenbank kann es vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst werden.
 
 ## Avram-Schemas
 
