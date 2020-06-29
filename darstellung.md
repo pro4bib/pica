@@ -1,4 +1,4 @@
-# Anzeige
+# Darstellung von PICA-Daten
 
 Der erste Schritte bei jeder Analyse und Verarbeitung von PICA-Daten besteht darin, sich die Daten anzusehen. Dazu ist am besten die [PICA Plain Serialisierung](formate?id=serialisierungen) geeingnet. Werkzeuge zur Konvertierung in dieses Format werden [im folgenden Kapitel](verarbeitung) vorgestellt. Zur übersichtlicheren Anzeige von PICA Plain gibt es verschiedene Methoden der [Syntaxhervorhebung](#syntaxhervorhebung).
 
