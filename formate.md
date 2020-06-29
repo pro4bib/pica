@@ -49,40 +49,7 @@ Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-P
 
 Das Datenmodell von PICA+ lässt folgendermaßen angeben:
 
-~~~mermaid
-classDiagram
-
-Datensatz *-- "0..n" Lokalsatz
-Lokalsatz *-- "0..n" Exemplarsatz
-
-Datensatz o-- "1..n" Feld : Level 0
-Lokalsatz o-- "1..n" Feld : Level 1
-Exemplarsatz o-- "1..n" Feld : Level 2
-
-class Datensatz {
-  PPN
-}
-
-class Lokalsatz {
-  ILN
-}
-
-class Exemplarsatz {
-  EPN
-}
-
-Feld *-- "1..n" Unterfeld
-
-class Feld {
-  Nummer: [0-9][0-9][0-9][A-Z@]
-  Occurrence: 0...999
-}
-
-class Unterfeld {
-  Code: [a-zA-Z0-9]
-  Inhalt: String
-}
-~~~
+![PICA-Datenmodell](img/datenmodell.svg)
 
 *Datenmodell von PICA+*
 
