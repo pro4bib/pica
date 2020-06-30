@@ -62,8 +62,6 @@ document.getElementById('loadViaPPN').addEventListener("click", function () {
 
 Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen.
 
-!> Hier fehlt noch ein ausführliches Beispiel!
-
 ?> [SRU im K10plus-Wiki](https://wiki.k10plus.de/display/K10PLUS/SRU)
 
 ?> [SRU im GBV-Verbundwiki](https://verbundwiki.gbv.de/display/VZG/SRU)
@@ -74,10 +72,47 @@ Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mitt
 
 ?> [Wikipedia-Artikel zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 
-Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit [Catmandu](verarbeitung?id=catmandu) (und der im entsprechenden Kapitel angegebenen [Konfiguration](catmandu.yaml)) ein einzelner Datensatz per PPN abgerufen werden:
+### Beispiel
+
+Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der [im Catmandu-Kapitel](verarbeitung?id=catmandu) angegebenen [Konfiguration](catmandu.yaml ':ignore')) ein einzelner Datensatz per PPN abgerufen werden:
 
 ~~~bash
 catmandu convert kxp --query "pica.ppn=161165839X" to pp
+~~~
+
+Der Titel ist in Feld `045H` mit der Klasse `335.83092` ("Anarchisten") der Dewey Dezimalklassifikation (DDC) erschlossen:
+
+~~~bash
+$ catmandu convert kxp --query "pica.ppn=161165839X" to pp | picadata 045H\$a
+335.83092
+~~~
+
+Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Zur Auswertung gibt es mindestens zwei Möglichkeiten:
+
+~~~bash
+$ catmandu convert kxp --query "pica.ddc=335.83092" to Count
+$ catmandu convert kxp --query "pica.ddc=335.83092" to pp | picadata --count
+~~~
+
+Mehrere Suchschlüssel können mit `and` oder `or` verknüpft werden. Hier eine Liste der Titel von Publikationen zu Anarchisten die im Jahr 2014 oder 2015 erschienen sind:
+
+~~~bash
+catmandu convert kxp --query "pica.ddc=335.83092 and (pica.jah=2014 or pica.jah=2015)" to pp | picadata 021A
+~~~
+
+Für komplexere Aufgaben empfiehlt es sich das Ergebnis der SRU-Anfrage nur einmal abzufragen und in eine Datei zu schreiben und anschließend mit verschiedenen Werkzeuge zu analysieren:
+
+~~~bash
+catmandu convert kxp --query pica.ddc=335.83092 to pp > ana.pica
+picadata 021A ana.pica      # Titelfelder
+picadata '011@$a' ana.pica  # Jahreszahlen
+catmandu convert pp --fix 'pica_map(011@$a,jahr); remove_field(record)' to CSV
+~~~
+
+Eine Liste aller Suchschlüssel wie `ppn`, `ddc` und `jah` ist über die Basis-URL des SRU-Endpunktes unter <http://sru.k10plus.de/opac-de-627> aufrufbar:
+
+~~~bash
+curl http://sru.k10plus.de/opac-de-627 | catmandu convert XML --path //index to XML | egrep -o '\[[^<]+'
 ~~~
 
 ## OPAC
