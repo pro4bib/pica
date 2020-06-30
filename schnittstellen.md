@@ -24,14 +24,14 @@ curl 'http://unapi.k10plus.de/?id=opac-de-627:ppn:161165839X&format=pp' | picada
 028C $9634784293$VTpv4$7gnd/142220213$3329568302$wpiz$ABreitinger$DMarlen$BÜbers.
 ~~~
 
-Für wiederkehrende Abrufe mit unterschiedlicher PPN lohnt es sich ein Shell-Skript anzulegen, das dann beispielsweise als `./kxp 161165839X` aufgerufen werden kann:
+Für wiederkehrende Abrufe mit unterschiedlicher PPN lohnt es sich ein Shell-Skript anzulegen, das dann beispielsweise als `./kxpp 161165839X` aufgerufen werden kann:
 
 ~~~bash
-cat <<EOF > kxp
+cat <<EOF > kxpp
 #!/bin/bash
 curl "http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:\$1"
 EOF
-chmod +x kxp
+chmod +x kxpp
 ~~~
 
 ### Beispiel im Browser
