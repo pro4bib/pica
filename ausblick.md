@@ -2,8 +2,10 @@
 
 !> Dieses Kapitel muss erst noch geschrieben werden!
 
-* Wo anfragen? Wohin mit weiteren Fragen?
+* Wohin mit weiteren Fragen?
+
+* Was gibt es noch zu lernen (Library Carpentry etc.)?
 
 * Was gibt es neben PICA (MARC, RDF, JSON...)?
 
-* Was kommt nach PICA (BIBFRAME, FOLIO...)?
+* Was kommt nach PICA (BIBFRAME, FOLIO, Wikibase...)?

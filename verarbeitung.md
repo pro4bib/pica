@@ -1,9 +1,9 @@
 # Verarbeitung von PICA-Daten
 
-Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Daten, beschränkt auf frei zugängliche Open Source Anwendungen. Im Wesentlichen sind dies die Kommandozeileprogramme [picadata] und [catmandu] mit den ihnen zugrunde liegenden Perl-Programmbibliotheken.
+Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Daten, beschränkt auf frei zugängliche Open Source Anwendungen. Im Wesentlichen sind dies die Kommandozeileprogramme [picadata] und [Catmandu] mit den ihnen zugrunde liegenden Perl-Programmbibliotheken.
 
 [picadata]: #picadata
-[catmandu]: #catmandu
+[Catmandu]: #catmandu
 
 ## picadata
 
@@ -26,7 +26,7 @@ Das Programm setzt voraus, dass PICA-Daten schon in einer Datei vorhanden sind (
 
 ## Catmandu
 
-**Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Da PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf [Schnittstellen](schnittstellen) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
+**Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf [Schnittstellen](schnittstellen) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
 
 ?> [Catmandu-Einführung](https://metacpan.org/pod/Catmandu::Introduction) (in Englisch)
 

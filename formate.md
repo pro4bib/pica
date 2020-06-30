@@ -193,13 +193,9 @@ Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Än
 
 ## Anwendungsprofile
 
-!> Dieser Abschnitt muss noch erweitert werden!
+Die Bedeutung einzelner PICA-Felder und Unterfeld-Strukturen ist nicht universell sondern durch die jeweiligen **Katalogisierungsregeln** einer Datenbank festgelegt. Die Katalogisierungsregeln sind Teil eines [Standard](grundlagen?id=standards-und-profile) welche Felder mit welcher Bedeutung auftreten können oder sollen. Ein Beispiel für einen solchen Standard ist die [K10plus Format-Dokumentation](https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation) für die K10plus-Datenbank. Die Dokumentation enthält als semi-formalen Teil eine Tabelle aller PICA-Felder und Unterfelder mit Angaben über Reihenfolge, Wiederholbarkeit etc. Die Regeln sind allerdings eher als Empfehlungen zu betrachten, da nicht alle ihre Aspekte bei der Eingabe kontrolliert werden. Innerhalb einer Datenbank kann es auch vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst wurden.
 
-Welche PICA-Felder in einer Datenbank welche Bedeutung haben, wird durch **Katalogisierungsrichtlinien** festgelegt.
-
-Beispiel: [K10plus Format-Dokumentation](https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation)
-
-!> Innerhalb einer Datenbank kann es vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst werden.
+Für die Verarbeitung von Informationen aus PICA-Anwendungsprofilen eignen sich Avram-Schemas.
 
 ## Avram-Schemas
 
@@ -244,6 +240,4 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 
 ## Zusammenfassung
 
-Das PICA-Format ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab.
-
-...
+Das PICA-Format in seiner allgemeinen Form PICA+ ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab, die sich in Avram-Schemas als Anwendungsprofile formalisieren lassen. Für die Katalogisierung wird zwischen PICA+ und Pica3 konvertiert. Zur Speicherung und den Austausch von PICA-Daten gibt es verschiedene Serialisierungen (PICA Plain, PICA/XML, PICA/JSON...) und für den Zugriff auf einzelne Elemente die Abfragesprache PICA Path Expressions. Mit dem PICA-Änderungsformat lassen sich Unterschiede zwischen PICA-Datensätzen angeben.

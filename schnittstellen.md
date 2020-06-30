@@ -60,9 +60,20 @@ document.getElementById('loadViaPPN').addEventListener("click", function () {
 
 ## SRU
 
-Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen.
+Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des entsprechenden Katalogs: 
 
-?> [SRU im K10plus-Wiki](https://wiki.k10plus.de/display/K10PLUS/SRU)
+* [https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&**IKT=7&TRM=9783894018108**](https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=7&TRM=9783894018108)
+* [http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=**pica.isb=9783894018108**&maximumRecords=10&recordSchema=picaxml](http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.ppn%3D9783894018108&maximumRecords=5&recordSchema=picaxml)
+
+Eine Liste aller Suchschlüssel einer Datenbank ist über die Basis-URL des SRU-Endpunktes (z.B. <http://sru.k10plus.de/opac-de-627>) abrufbar:
+
+~~~bash
+curl http://sru.k10plus.de/opac-de-627 | catmandu convert XML --path //index to XML | egrep -o '\[[^<]+'
+~~~
+
+In den Katalogisierungsrichtlinien finden sich auch Angaben dazu, welche PICA-(Unter)felder in welchem Suchindex indexiert werden. Die Beziehung zwischen PICA-Feldern und Suchindex ist allerdings komplexer, da die Daten bei der Indexierung aggregiert, gefiltert und verändert werden können.
+
+?> [Weitere Informationen zu SRU im K10plus-Wiki](https://wiki.k10plus.de/display/K10PLUS/SRU)
 
 ?> [SRU im GBV-Verbundwiki](https://verbundwiki.gbv.de/display/VZG/SRU)
 
@@ -87,7 +98,7 @@ $ catmandu convert kxp --query "pica.ppn=161165839X" to pp | picadata 045H\$a
 335.83092
 ~~~
 
-Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Zur Auswertung gibt es mindestens zwei Möglichkeiten:
+Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Hier zwei Möglichkeiten der Auswertung:
 
 ~~~bash
 $ catmandu convert kxp --query "pica.ddc=335.83092" to Count
@@ -109,21 +120,15 @@ picadata '011@$a' ana.pica  # Jahreszahlen
 catmandu convert pp --fix 'pica_map(011@$a,jahr); remove_field(record)' to CSV
 ~~~
 
-Eine Liste aller Suchschlüssel wie `ppn`, `ddc` und `jah` ist über die Basis-URL des SRU-Endpunktes unter <http://sru.k10plus.de/opac-de-627> aufrufbar:
-
-~~~bash
-curl http://sru.k10plus.de/opac-de-627 | catmandu convert XML --path //index to XML | egrep -o '\[[^<]+'
-~~~
-
 ## OPAC
 
-In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` (alle Ebenen) aktiviert werden. Der Datensatz in PICA Plain Serialisierung kann anschließend per Copy & Paste in eine Datei kopiert werden.
+In der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil `/PSR=PP` (nur Titelebene) bzw. `/PRS=PP%7F` (alle Ebenen) aktiviert werden. Der Datensatz in PICA Plain Serialisierung kann anschließend per Copy & Paste beispielsweise in eine Datei kopiert werden.
 
 ![Versteckter Link im OPAC](img/opac-hidden-link.png)
 
 *Versteckter Link zum PICA-Datensatz (roter Pfeil)*
 
-Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Datensatz angezeigt.
+Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Datensatz angezeigt (siehe [Erklärungen zu SRU](#sru)).
 
 ## WinIBW
 

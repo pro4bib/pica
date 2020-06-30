@@ -60,7 +60,7 @@ Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Me
 
 Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eine Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
 
-?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag [https://www.youtube.com/watch?v=o51FOLsh4Ec](Eine Anleitung für schlechte Standards)
+?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag [Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)
 
 ### Abfrage- und Schemaformate
 
