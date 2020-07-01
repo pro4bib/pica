@@ -37,7 +37,7 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 
 - Becker et. al (1992): *Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990).* In: Bibliothek Forschung und Praxis, Band 16, Heft 3. <https://doi.org/10.1515/bfup.1992.16.3.307>
 - Costers (1979): *The PICA Catalogue System.* In: Proceedings of the IATUL Conferences. Paper 26. <https://docs.lib.purdue.edu/iatul/1979/papers/26>
-- Eversberg (1999): *Was sind und was sollen Bibliothekarische Datenformate* <http://www.allegro-c.de/formate/formate.htm>
+- Eversberg (1999): *Was sind und was sollen Bibliothekarische Datenformate* [urn:nbn:de:gbv:084-1103231323](https://nbn-resolving.org/urn:nbn:de:gbv:084-11032313237)
 - Klute (2018): *ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV.* <https://doi.org/10.15771/MA_2018_3>
 - Schneiders (1997): *Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek*. NBLC Uitg.
 - Tennant (2002): *MARC Must Die.* In: Library Journal.
