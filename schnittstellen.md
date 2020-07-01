@@ -60,7 +60,7 @@ document.getElementById('loadViaPPN').addEventListener("click", function () {
 
 ## SRU
 
-Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des entsprechenden Katalogs: 
+Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des entsprechenden Katalogs:
 
 * [https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&**IKT=7&TRM=9783894018108**](https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=7&TRM=9783894018108)
 * [http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=**pica.isb=9783894018108**&maximumRecords=10&recordSchema=picaxml](http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.ppn%3D9783894018108&maximumRecords=5&recordSchema=picaxml)
@@ -101,8 +101,8 @@ $ catmandu convert kxp --query "pica.ppn=161165839X" to pp | picadata 045H\$a
 Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Hier zwei Möglichkeiten der Auswertung:
 
 ~~~bash
-$ catmandu convert kxp --query "pica.ddc=335.83092" to Count
-$ catmandu convert kxp --query "pica.ddc=335.83092" to pp | picadata --count
+catmandu convert kxp --query "pica.ddc=335.83092" to Count
+catmandu convert kxp --query "pica.ddc=335.83092" to pp | picadata --count
 ~~~
 
 Mehrere Suchschlüssel können mit `and` oder `or` verknüpft werden. Hier eine Liste der Titel von Publikationen zu Anarchisten die im Jahr 2014 oder 2015 erschienen sind:

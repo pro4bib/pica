@@ -1,12 +1,12 @@
 # Grundlagen
 
-Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [geschichtlichen Hintergrund](#hintergrund) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf das PICA-Format im Speziellen wird [folgenden Kapitel](formate) eingegangen.
+Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [geschichtlichen Hintergrund](#hintergrund) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf PICA-Formate im Speziellen wird [im nächsten Kapitel](formate) eingegangen.
 
 ## Hintergrund
 
-Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützen Katalogisierung zurück (PICA = Project for Integrated Catalogue Automation). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: "Project for Integrated Catalogue Automation"). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
 
-Das PICA-Format ist an das noch ältere [MARC-Format](http://format.gbv.de/marc) (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten! Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, die Formate durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
+Das PICA-Format ist an das noch ältere [MARC-Format](http://format.gbv.de/marc) (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
 
 [PDP 11]: https://de.wikipedia.org/wiki/PDP-11
 [Bericht zum PICA-System]: https://doi.org/10.1515/bfup.1992.16.3.307
@@ -23,6 +23,7 @@ Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ei
 [Standards und Profile]: #standards-und-profile
 [Abfrage- und Schemaformate]: #abfrage-und-schemaformate
 [Strukturierungsformate]: #strukturierungsformate
+[Datenstrukturierungssprache]: #strukturierungsformate
 [Anwendungsformate]: #anwendungsformate
 [Kodierungen]: #kodierungen
 [Datenmodelle]: #datenmodelle
@@ -39,13 +40,21 @@ Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ei
 | Hierachie/Dokument | JSON, XML |
 | Graph/Netzwerk | RDF |
 
-!> Auch das PICA-Format ist ein Datenstrukturierungsformat. Das heißt konkrete Bedeutungen wie "Vorname" und "Erscheinungsjahr" kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie "Feld" und "Unterfeld"!
+Auch allgemeine Serialisierungsformate wie ASN.1 und Typsysteme von Programmiersprachen gehören zu den Strukturierungssprachen: sie beinhalten verschiedene abstrakte Datentypen wie Zeichenkette, Ganzzahl, Array... aus denen konkrete Datenformate konstriert werden können. Auch das PICA-Format ist ein Datenstrukturierungsformat. Konkrete Bedeutungen wie "Vorname" und "Erscheinungsjahr" kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie "Feld" und "Unterfeld"!
 
 ### Anwendungsformate
 
 In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf reale eher Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem **bibliographische Datenformate** und **Normdatenformate** relevant, deren Inhalte auch als **Metadaten** bezeichnet werden.
 
+Beispiele für Anwendungsformate die Dokumentformate [TEI] und [Markdown], die bibliographischen Datenformate [BibTeX] und [DataCite] und die Normdatenformate [JSKOS] und [GND-Internformat](http://format.gbv.de/pica/gnd) (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) [Datenmodelle] voraus und sind in Strukturierungsformaten [kodiert](#kodierungen).
+
 ?> [Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
+
+[Markdown]: http://format.gbv.de/markdown
+[TEI]: http://format.gbv.de/tei
+[BibTeX]: http://format.gbv.de/bibtex
+[DataCite]: http://format.gbv.de/datacite
+[JSKOS]: http://format.gbv.de/jskos
 
 ### Standards und Profile
 
@@ -56,11 +65,11 @@ Im besten Fall ist ein Datenformat durch einen **Standard** definiert und in ver
 3. Das Format so wie es in einer bestimmten Software **implementiert** ist
 4. Das Format so wie es von einer bestimmten Gruppe von Menschen **interpretiert** wird
 
-Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, wird manchmal in Form von **(Anwendungs)profilen** explizit gemacht.
+Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, lässt sich in Form von **Anwendungsprofilen** ausdrücken.
 
 Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eine Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
 
-?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag [Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)
+?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag *[Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)*
 
 ### Abfrage- und Schemaformate
 
@@ -69,9 +78,9 @@ Prinzipiell können Daten mit jeder beliebigen Programmiersprache analysiert und
 * um sich auf einzelne Elemente und Inhalte von Datensätzen zu beziehen (**Abfrageformate**) und
 * zur Validierung von Datensätzen sowie zur Dokumentation des Formates (**Schemaformate**).
 
-Der Vorteil von Abfrage- und Schemaformaten besteht darin dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als **Query-Engine** und solche die zur Validierung ein Schemaformat unterstützen als **Validatoren** bezeichnet.
+Der Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als **Query-Engine** und solche die zur Validierung ein Schemaformat unterstützen als **Validatoren** bezeichnet.
 
-Da das PICA-Format eng mit der PICA-Software verbunden ist wurden die Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und werden nicht direkt durch PICA-Software unterstützt.
+Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die Anwendungs-unabhängige Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.
 
 ?> [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
 
@@ -99,14 +108,16 @@ Ein grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarte
 
 ![Ebenen der Datenmodellierung](img/data-modeling-simplified.png)
 
+*Ebenen der Datenmodellierung*
+
 Ein weiteres Hilfsmittel zum Verständnis von Datenformaten sind **Beispiele**. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.
 
 ## Zusammenfassung
 
-Das PICA-Format geht auf mehr als 50 Jahre alte Bestrebungen zurück, die Inhalte physischer Bibliothekskataloge in kompater Form mit Daten auszudrücken. In seiner allgemeinen Form ist PICA eine Datenstrukturierungssprache. Erst die Verwendung konkreter Anwendungsformate gibt den Daten Bedeutung. Letzendlich kommt die Bedeutung jedoch aus den Formaten zugrunde liegenden Datenmodellen. Formate können auf verschiedene Weisen (Standards, Schemas, Implementierungen, Annahmen) festgelegt werden. Zur Überprüfung ob ein Datensatz einem Format entspricht dient die Validierung, idealerweise mit einem Schema.
+Das PICA-Format geht auf mehr als 50 Jahre alte Bestrebungen zurück, die Inhalte physischer Bibliothekskataloge in kompater Form mit Daten auszudrücken. In seiner allgemeinen Form ist PICA eine [Datenstrukturierungssprache]. Erst konkrete [Anwendungsformate] und die ihnen zugrunde liegenden [Datenmodelle] geben Daten Bedeutung. Formate können auf verschiedene Weisen (Standards, Schemas, Implementierungen, implizite Annahmen) festgelegt werden. Zur Überprüfung ob ein Datensatz einem Format entspricht dient die Validierung, idealerweise mit einem Schema.
 
 Darüber hinaus lassen sich Datenformate nach unterschiedlichen Kriterien unterteilen:
 
 * **Prorietäre Formate** und **Offene Formate** (die meisten PICA-Anwendungsformate sind offen)
-* **Internformate** und **Austauschformate** (PICA dient primär als Internformat verwendet)
+* **Internformate** und **Austauschformate** (PICA dient primär als Internformat)
 * **Metadatenformate** und **Dokumentformate** (PICA gehört zu den Metadatenformaten)

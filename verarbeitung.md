@@ -43,32 +43,7 @@ sudo cpanm Catmandu::PICA
 
 In der Konfigurationsdatei `catmandu.yaml` lassen sich häufig benötigte Einstellungen angeben, so dass sie nicht bei jedem Aufruf von catmandu mit angegeben werden müssen. Für die Verarbeitung von PICA-Daten, insbesondere aus dem K10plus-Katalog empfiehlt sich [folgende YAML-Datei](catmandu.yaml ':ignore'), die in den folgenden Beispielen vorausgesetzt wird:
 
-~~~yaml
-importer:
-  pp:
-    package: PICA
-    options:
-      type: plain
-  picaxml:
-    package: PICA
-    options:
-      type: XML
-  kxp:
-    package: SRU
-    options:
-      base: http://sru.k10plus.de/opac-de-627
-      recordSchema: picaxml
-      parser: picaxml
-exporter:
-  pp:
-    package: PICA
-    options:
-      type: plain
-  picaxml:
-    package: PICA
-    options:
-      type: XML
-~~~
+[](catmandu.yaml ':include :type=code yaml')
 
 Die folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich:
 

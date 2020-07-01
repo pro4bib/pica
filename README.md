@@ -1,12 +1,14 @@
 # Einführung in die Verarbeitung von PICA-Daten
 
-Dieses Skript bietet eine kurze Einführung in die Verarbeitung von Daten im und aus dem **PICA-Format**.
+Dieses Skript bietet eine Einführung in die Verarbeitung von Daten in, aus und zwischen **PICA-Formaten**.
+
+*Jakob Voß (Verbundzentrale des GBV), [Datum siehe Änderungshistorie](https://github.com/pro4bib/pica/commits/master)*
 
 ## Vorwort
 
 > During a relatively long period of research, an advanced format was developed for the storage of bibliographic information; the PICA format. — Look Costers (1979)
 
-Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht durch modernere Techniken wie relationale Datenbanksysteme oder Wissensgraphen ersetzt werden. PICA ist einerseits zentral für die Datenhaltung in den meisten Bibliotheken in Deutschland, andererseits wird das Format nicht außerhalb des Bibliothekswesens benutzt. Um sich mit der Verarbeitung von PICA-Daten vertraut zu machen, ist daher Dokumentation notwendig, wozu das vorliegende Skript beitragen soll. Schwerpunkt ist die Verarbeitung von PICA-Daten außerhalb der nicht-offenen PICA-Systeme wie CBS, LBS und WinIBW.
+Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht durch modernere Techniken wie relationale Datenbanksysteme oder Wissensgraphen ersetzt werden. PICA ist einerseits zentral für die Datenhaltung in den meisten Bibliotheken in Deutschland, andererseits wird das Format nicht außerhalb des Bibliothekswesens benutzt. Um sich mit der Verarbeitung von PICA-Daten vertraut zu machen, ist daher Dokumentation notwendig, wozu das vorliegende Skript beitragen soll. Schwerpunkt ist die Verarbeitung von PICA-Daten mit frei zugänglichen Werkzeugen.
 
 ## Inhalt
 
