@@ -57,7 +57,7 @@ In PICA-Bibliotheksystemen treten PICA-Formate meist als Paar auf:
 
 Pica3 ist im Gegensatz zu PICA+ kein formal standardisiertes Strukturierungsformat sondern Bestandteil der jeweiligen Katalogisierungsregeln. Im Rahmen eines [Anwendungsprofils](#anwendungsprofile) lassen sich beide Formate verlustfrei ineinander umwandeln. Ähnlich wie PICA+ besteht ein Pica3-Datensatz aus Feldern ("Kategorien") und Unterfeldern. Die Feldnummern sind rein numerisch und werden je nach Anwendungsprofil mit drei oder vier Ziffern angegeben. Die Unterfeld-Struktur von Pica3 hängt vom jeweiligen Feld ab. Zur Kennzeichnung von Unterfeldern sind je nach Feld verschiedene Sonderzeichen ("Steuerzeichen") und Zeichenfolgen festgelegt. Häufig kommt es allerdings vor, dass als Sonderzeichen für ein Unterfeld in Pica3 das Dollarzeichen und der entsprechende Unterfeld-Code aus PICA+ verwendet wird, so dass Pica3 und PICA+ (in PICA Plain [Serialisierung](#serialisierungen)) an dieser Stelle übereinstimmen.
 
-### Beispiel
+### Beispiel {docsify-ignore}
 
 Im K10plus-Katalogisierungsformat entspricht die Pica3-Kategorie [1131](https://swbtools.bsz-bw.de/cgi-bin/k10plushelp.pl?cmd=kat&val=1131&katalog=Standard) dem PICA+-Feld `013D` und enthält die "Art des Inhalts" einer Publikation. Die Angabe erfolgt durch Verweis ("Verknüpfung") auf einen entsprechenden Datensatz in der Gemeinsamen Normdatei (GND). Bei Konferenzschriften können zusätzlich Angaben über Zeit und Ort gemacht werden. Hier ein Beispiel für das Feld einer fiktiven Konferenzschrift in Pica3 und in PICA+
 
@@ -206,38 +206,7 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 
 ?> [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
 
-~~~json
-{
-  "fields": {
-    "004A": {
-      "tag": "004A",
-      "pica3": "2000",
-      "label": "ISBN",
-      "url": "https://swbtools.bsz-bw.de/cgi-bin/k10plushelp.pl?cmd=kat&val=2000&katalog=Standard",
-      "repeatable": true,
-      "modified": "2019-12-18 09:53:31",
-      "subfields": {
-        "0": {
-          "code": "0",
-          "pica3": "",
-          "label": "ISBN",
-          "repeatable": false,
-          "modified": "2019-11-28 14:27:12",
-          "position": 1
-        },
-        "f": {
-          "code": "f",
-          "pica3": "$f",
-          "label": "Kommentar zur ISBN, Einbandart, Lieferbedingungen und/oder Preis",
-          "repeatable": false,
-          "modified": "2019-12-17 15:03:31",
-          "position": 2
-        }
-      }
-    }
-  }
-}
-~~~
+[](avram004A.json ':include :type=code json')
 
 *Beispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN*
 

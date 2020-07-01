@@ -1,0 +1,30 @@
+{
+  "fields": {
+    "004A": {
+      "tag": "004A",
+      "pica3": "2000",
+      "label": "ISBN",
+      "url": "https://swbtools.bsz-bw.de/cgi-bin/k10plushelp.pl?cmd=kat&val=2000&katalog=Standard",
+      "repeatable": true,
+      "modified": "2019-12-18 09:53:31",
+      "subfields": {
+        "0": {
+          "code": "0",
+          "pica3": "",
+          "label": "ISBN",
+          "repeatable": false,
+          "modified": "2019-11-28 14:27:12",
+          "position": 1
+        },
+        "f": {
+          "code": "f",
+          "pica3": "$f",
+          "label": "Kommentar zur ISBN, Einbandart, Lieferbedingungen und/oder Preis",
+          "repeatable": false,
+          "modified": "2019-12-17 15:03:31",
+          "position": 2
+        }
+      }
+    }
+  }
+}

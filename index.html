@@ -14,11 +14,13 @@
 </head>
 <body>
   <div id="app"></div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script>
     var num = 0
+    var repo = 'pro4bib/pica'
     window.$docsify = {
       name: 'PICA',
-      repo: 'pro4bib/pica',
+      repo: repo,
       auto2top: true,
       loadSidebar: 'SUMMARY.md',
       subMaxLevel: 3,
@@ -56,7 +58,10 @@
             return text.split("“").join("„").split("”").join("“")
           }
         }
-      }
+      },
+      plugins: [
+        EditOnGithubPlugin.create("https://github.com/"+repo+"/edit/master/", null, "bearbeiten")
+      ]
     }
   </script>
   <script src="js/codemirror.min.js"></script>
@@ -66,6 +71,7 @@
   <script src="js/docsify-search.js"></script>
   <script src="js/docsify-pagination.min.js"></script>
   <script src="js/docsify-copy-code.js"></script>
+
   <script src="js/prism-bash.min.js"></script>
   <script src="js/prism-json.min.js"></script>
   <script src="js/prism-ini.min.js"></script>
