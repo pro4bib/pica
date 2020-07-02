@@ -45,11 +45,11 @@ In der Konfigurationsdatei `catmandu.yaml` lassen sich häufig benötigte Einste
 
 [](catmandu.yaml ':include :type=code yaml')
 
-Die folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich:
+Die folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich; die Konfiguration ermöglicht eine kürzere Schreibweise:
 
 ~~~bash
 catmandu convert PICA --type XML to PICA --type plain example.pica
 catmandu convert picaxml to pp example.pica
 ~~~
 
-Ein ausführlicheres Beispiel für die PICA-Datenverarbeitung mit Catmandu wird [im Kapitel zur SRU-Schnittstelle](schnittstellen?id=SRU) vorgestellt.
+?> Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu [im Abschnitt zur SRU-Schnittstelle](schnittstellen?id=SRU)

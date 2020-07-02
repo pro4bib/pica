@@ -83,7 +83,7 @@ In den Katalogisierungsrichtlinien finden sich auch Angaben dazu, welche PICA-(U
 
 ?> [Wikipedia-Artikel zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 
-### Beispiel
+### Beispiel: K10plus-Abfrage
 
 Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der [im Catmandu-Kapitel](verarbeitung?id=catmandu) angegebenen [Konfiguration](catmandu.yaml ':ignore')) ein einzelner Datensatz per PPN abgerufen werden:
 
@@ -118,6 +118,34 @@ catmandu convert kxp --query pica.ddc=335.83092 to pp > ana.pica
 picadata 021A ana.pica      # Titelfelder
 picadata '011@$a' ana.pica  # Jahreszahlen
 catmandu convert pp --fix 'pica_map(011@$a,jahr); remove_field(record)' to CSV
+~~~
+
+### Beispiel: GND-Abfrage
+
+Die PICA-Datenbank der Gemeinsamen Normdatei (GND) ist als [Online-GND](https://swb.bsz-bw.de/DB=2.104/) (OGND) per SRU abfragbar. Mit Kenntnis des [GND-Format](https://format.gbv.de/pica/gnd) und der Suchschlüssel lassen sich gezielt GND-Datensätze im Internformat abrufen.
+
+Der Suchschlüssel `KSK` enthält beispielsweise die vollständige Vorzungsbenennung eines Geografikums oder einer Organisation. Die Suche nach "Frankfurt am Main" liefert einen Treffer, die Suche nach "Frankfurt" keine Treffer:
+
+~~~bash
+catmandu convert ognd --query 'pica.ksk="Frankfurt am Main"' to Count
+catmandu convert ognd --query 'pica.ksk=Frankfurt' to Count
+~~~
+
+Im Suchschlüssel `KOR` werden Suchbegriffe auch als einzelne Worte erfasst. Zu Frankfurt gibt es mehr als 15.000 Treffer (mit dem Parameter `--total` lässt sich die Ergebnismenge bei Bedarf beschränken, um nur testweise die erste Datensätze abzurufen). Durch Eingrenzung des Normdatentyps auf Gebietskörperschaften und Verwaltungseinheiten (`gik`) lässt sich die Treffermenge auf etwa 350 verringern, die Abfrage dauert dennoch einige Sekunden:
+
+~~~bash
+catmandu convert ognd --query 'pica.kor=Frankfurt and pica.9001=gik' to pp > frankfurts.pica
+picadata --count frankfurts.pica
+~~~
+
+Die so heruntergeladene Treffermenge lässt sich nun mit der Catmandu-Konvertierungssprache "Fix" weiter bearbeiten. [Hier ein Beispielskript](gnd.fix ':ignore'):
+
+[](gnd.fix ':include :type=code fix')
+
+Das Fix-Skript abgespeichert in der Datei `gnd.fix`, lässt sich folgendermaßen anwenden, um die Namen zu extrahieren:
+
+~~~fix
+catmandu convert pp --fix gnd.fix to YAML < frankfurts.pica
 ~~~
 
 ## OPAC
