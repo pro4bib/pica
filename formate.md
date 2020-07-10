@@ -33,11 +33,19 @@ x = Hallo
 
 Das PICA-Format unterscheidet **drei Ebenen** für bibliographische Daten (Level 0, auch Titel-Ebene oder Titeldatensatz), Lokaldaten (Level 1) und Exemplardaten (Level 2). Dem Titeldatensatz können mehrere Lokaldatensätze untergeordnet sein, welchen wiederum einzelne Exemplardatensätze untergeordnet sind. Die Felder auf Ebene 2 haben immer eine Occurrence, die pro Exemplardatensatz gleich ist. Für die hierarchische Gruppierung eines PICA-Datensatzes in Teildatensätze ist die Reihenfolge der Felder relevant. Abgesehen davon lassen sich die Felder eines Datensatzes (abgesehen von wiederholten Feldern gleicher Feldnummer und Occurrence) automatisch sortieren.
 
-Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet.
-
 !> PICA-Unterfelder bilden keine einfache [Zuordnungstabelle](https://de.wikipedia.org/wiki/Zuordnungstabelle_(Datenstruktur)) sondern haben eine in der Regel relevante Reihenfolge.
 
-Das Datenmodell von PICA+ lässt sich also folgendermaßen angeben:
+Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifiern PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert: 
+
+| |in Datenbank|im Datensatz|im Lokaldatensatz|
+|--|---|---|--|
+|Datensatz-ID|PPN| 
+|Lokaldatensatz-ID| --- |ILN|
+|Exemplardatensatz-ID|EPN| --- |Occurrence|
+
+Die Identifizierung eines Exemplardatensatz ist also zum einen durch seine EPN möglich und zum anderen durch seine Kombination von PPN, ILN und Exemplar-Occurrence.
+
+Das gesamte Datenmodell von PICA+ kann folgendermaßen angegeben werden:
 
 ![PICA-Datenmodell](img/datenmodell.svg)
 
