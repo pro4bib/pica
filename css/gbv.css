@@ -10,6 +10,10 @@
   font-size: 1.3rem;
 }
 
+.markdown-section h4 {
+  font-size: 1rem;
+}
+
 .CodeMirror {
   border: 2px solid #eee;
   border-radius: 4px;

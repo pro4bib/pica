@@ -35,11 +35,11 @@ Das PICA-Format unterscheidet **drei Ebenen** für bibliographische Daten (Level
 
 !> PICA-Unterfelder bilden keine einfache [Zuordnungstabelle](https://de.wikipedia.org/wiki/Zuordnungstabelle_(Datenstruktur)) sondern haben eine in der Regel relevante Reihenfolge.
 
-Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifiern PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert: 
+Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifiern PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert:
 
 | |in Datenbank|im Datensatz|im Lokaldatensatz|
 |--|---|---|--|
-|Datensatz-ID|PPN| 
+|Datensatz-ID|PPN|
 |Lokaldatensatz-ID| --- |ILN|
 |Exemplardatensatz-ID|EPN| --- |Occurrence|
 
@@ -176,6 +176,8 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 *Beispiel für PPXML*
 
 ?> Weitere Informationen zu [PICA-Serialisierungen in der GBV-Formatdatenbank](https://format.gbv.de/pica)
+
+?> Zur [Konvertierung zwischen PICA-Serialisierungen mit `picadata`](verarbeitung?id=konvertierung-zwischen-pica-serialisierungen)
 
 ## Abfragesprache
 
