@@ -45,6 +45,13 @@ picadata example.xml -t json                # PICA/XML nach PICA/JSON
 
 #### Auswahl von Daten
 
+Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n` werden nur eine begrenzte Zahl von Datensatzen verarbeitet, z.B. die ersten 10:
+
+~~~bash
+picadata -n 10 example.pica
+picadata -10 example.pica     # Equivalente Abkürzung der Option
+~~~
+
 Oft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option `-p` lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die [Abfragesprache PICA Path Expression](formate?id=abfragesprache):
 
 ~~~bash
