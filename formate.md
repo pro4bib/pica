@@ -112,10 +112,10 @@ Zur Speicherung und Übertragung können PICA-Daten in verschiedener Form [kodie
 
 Neben den Binärformaten **Binäres PICA** und **Normalisiertes PICA**, die direkt in CBS- und LBS-Software verwendet werden, gibt es:
 
-* **PICA Plain**, die lesbare Darstellung von PICA+
-* **PICA/JSON**, eine kompakte Kodierung in JSON
-* **PICA/XML**, eine Kodierung in XML (primäre XML-Kodierung im GBV)
-* **PPXML**, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)
+* **PICA Plain** Syntax, die lesbare Darstellung von PICA+
+* **PICA/JSON** Syntax, eine kompakte Kodierung in JSON
+* **PICA/XML** Syntax, eine Kodierung in XML (primäre XML-Kodierung im GBV)
+* **PPXML** Syntax, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)
 
 PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgehen können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Datensatz in allen vier Serialisierungen:
 

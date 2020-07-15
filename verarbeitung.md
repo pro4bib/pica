@@ -20,15 +20,13 @@ sudo apt-get install libxml-libxml-perl cpanminus
 sudo cpanm PICA::Data
 ~~~
 
-### Benutzung
-
-Das Programm setzt vorhandene PICA-Daten voraus (siehe [Kapitel Schnittstellen](schnittstellen) zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in [PICA Plain Serialisierung](https://format.gbv.de/pica/plain) auch mit einem Texteditor erstellt werden. Laden Sie die Datei [`example.pica`](example.pica ':ignore') mit folgendem Inhalt herunter:
+Das Programm setzt vorhandene PICA-Daten voraus (siehe [Kapitel Schnittstellen](schnittstellen) zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in [PICA Plain Syntax](https://format.gbv.de/pica/plain) auch mit einem Texteditor erstellt werden. Laden Sie die Datei [`example.pica`](example.pica ':ignore') mit folgendem Inhalt herunter:
 
 [](example.pica ':include :type=code plain')
 
-#### Konvertierung zwischen PICA-Serialisierungen
+### Syntax-Konvertierung
 
-Im einfachsten Anwendungsfall liest `picadata` eine Datei in PICA Plain und gibt ihren Inhalt mit [Syntax-Hervorhebung](darstellung?id=syntaxhervorherbung) wieder aus. Hier drei Aufruf-Möglichkeiten:
+Im einfachsten Anwendungsfall liest `picadata` PICA+ Datensätze in PICA Plain und gibt sie mit [Syntax-Hervorhebung](darstellung?id=syntaxhervorherbung) wieder aus. Hier drei Aufruf-Möglichkeiten:
 
 ~~~bash
 picadata example.pica
@@ -36,14 +34,14 @@ cat example.pica | picadata
 picadata <example.pica
 ~~~
 
-In der ersten Variante wird die PICA-Serialisierung anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f` das [Serialisierungsformat](formate?id=serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
+In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f` das [Serialisierungsformat](formate?id=serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
 
 ~~~bash
 picadata example.pica -t xml >example.xml   # PICA Plain nach PICA/XML
 picadata example.xml -t json                # PICA/XML nach PICA/JSON
 ~~~
 
-#### Auswahl von Daten
+### Auswahl von Daten
 
 Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n` werden nur eine begrenzte Zahl von Datensatzen verarbeitet, z.B. die ersten 10:
 
@@ -69,12 +67,36 @@ picadata '003@|021A' <example-pica
 Wenn die Liste der Felder länger ist, empfiehlt es sich sie in eine Datei zu schreiben und diese zur referenzieren:
 
 ~~~bash
-picadata `<fields` example.pica
+picadata $(<fields) example.pica
 ~~~
 
-<!-- TODO: Auswahl von Unterfeld-Werten -->
+Statt ganze PICA-Felder können mit PICA-Path Expressions auch Unterfelder referenziert werden. Die Werte der gefundenen Unterfelder werden zeilenweise ausgegeben. Hier einige Beispiele:
 
-Für komplexere Auswahl-Routinen (z.B. mit Wenn-Dann-Bedingungen) sollte ein mächtigeres Werkzeug zur PICA-Datenverarbeitung wie zum Beispiel [Catmandu] verwendet werden.
+~~~bash
+$ picadata '003@$0' example.pica
+12345X
+$ picadata '021A$a' example.pica
+Ein Buch
+$ picadata '021A$ah' example.pica
+Ein Buch
+Zum Lesen
+~~~
+
+Für komplexere Auswahl- und Konvertierungs-Routinen (zum Beispiel mit Wenn-Dann-Regeln und Zusammenführung von Feldern) sollte ein mächtigeres Werkzeug zur PICA-Datenverarbeitung wie [Catmandu] oder eine andere Programmiersprache verwendet werden.
+
+### Datenanalyse
+
+Die Option `--count` erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit `-t` ist explizit eine Syntax festgelegt. 
+
+Eine ausführlichere Analyse ist mit der Option `--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate?id=avram-schemas) erstellt. Hier die Kurzversion mit der Option `-B`:
+
+~~~bash
+picadata -B example.pica
+~~~
+
+[](example-schema.json ':include :type=code json')
+
+### Validierung
 
 ## Catmandu
 

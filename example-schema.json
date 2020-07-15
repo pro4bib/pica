@@ -1,0 +1,32 @@
+{
+   "fields": {
+      "003@": {
+         "required": true,
+         "subfields": {
+            "0": {
+               "required": true
+            }
+         }
+      },
+      "021A": {
+         "required": true,
+         "subfields": {
+            "a": {
+               "required": true
+            },
+            "h": {
+               "required": true
+            }
+         }
+      },
+      "045B/02": {
+         "required": true,
+         "subfields": {
+            "a": {
+               "repeatable": true,
+               "required": true
+            }
+         }
+      }
+   }
+}
