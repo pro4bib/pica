@@ -2,7 +2,7 @@
 
 Dieses Handbuch bietet eine Einführung in die Verarbeitung von Daten in, aus und zwischen **PICA-Formaten**.
 
-*Jakob Voß (Verbundzentrale des GBV), [Datum siehe Änderungshistorie](https://github.com/pro4bib/pica/commits/master)*
+*Jakob Voß (Verbundzentrale des GBV), 2020- (aktuelles[Datum siehe Änderungshistorie](https://github.com/pro4bib/pica/commits/master)*)
 
 ## Vorwort
 
