@@ -1,6 +1,6 @@
 # Schnittstellen
 
-Für den lesenden Zugriff auf PICA-Daten gibt es [unAPI](#unapi) für einzelne Datensätze und [SRU](#sru) zur Abfrage von Suchergebnissen. Darüber hinaus können PICA-Daten manuell über die [OPAC-Oberfläche](#opac) und mit [WinIBW](#winibw) heruntergeladen werden.
+Für den lesenden Zugriff auf PICA-Daten gibt es [unAPI](#unapi) für einzelne Datensätze und [SRU](#sru) zur Abfrage von Suchergebnissen. Darüber hinaus können PICA-Daten manuell über die [OPAC-Oberfläche](#opac) und mit [WinIBW](#winibw) heruntergeladen werden. Über die [Avram-API](#avram-api) können Informationen zu Anwendungsprofilen abgerufen werden.
 
 ## unAPI
 
@@ -163,3 +163,9 @@ Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Da
 WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verbreitete Programm zur Verarbeitung von PICA-Daten. Nicht zuletzt werden PICA-Daten bei der Katalogisierung in der Regel mittels WinIBW in PICA-Datenbanken eingetragen.
 
 ?> [Download von Datensätzen in WinIBW](https://wiki.k10plus.de/pages/viewpage.action?pageId=64225417)
+
+## Avram-API
+
+Neben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der **Avram-API** eine Schnittstelle zum Zugriff auf Schema-Informationen ([Avram Schemas](formate?id=avram-schemas)). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter `field` bzw. `pica3`) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter `profile`).
+
+!> Die API für befindet sich noch im Aufbau!
