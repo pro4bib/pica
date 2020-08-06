@@ -24,7 +24,7 @@ Das Kommandozeilenprogramm [picadata](verarbeitung?id=picadata) wird im folgende
 
 ### Prism
 
-[Prism](https://prismjs.com) ist eine Highlighting-Engine für Code auf HTML-Seiten, beispielsweise die Webseiten dieses Skriptes. Die Unterstützung für PICA beinhaltet PICA Plain, PICA Path Expressions und das Title-Revision Format:
+[Prism](https://prismjs.com) ist eine Highlighting-Engine für Code auf HTML-Seiten, beispielsweise die Webseiten dieses Handbuchs. Die Unterstützung für PICA beinhaltet PICA Plain, PICA Path Expressions und das Title-Revision Format:
 
 ~~~pica
 003@ $012345X

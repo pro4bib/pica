@@ -5,4 +5,4 @@
 * [Verarbeitung](verarbeitung.md)
 * [Schnittstellen](schnittstellen.md)
 * [Ausblick](ausblick.md)
-* [Über dieses Skript](CONTRIBUTING.md)
+* [Über dieses Handbuch](CONTRIBUTING.md)

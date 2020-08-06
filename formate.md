@@ -1,6 +1,6 @@
 # PICA-Formate
 
-Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Skript das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
+Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Handbuch das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
 
 * Zunächst werden der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) von PICA+ und [Pica3](#pica3) sowie mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
 
