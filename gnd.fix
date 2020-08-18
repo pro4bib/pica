@@ -7,6 +7,6 @@ pica_map('065@$axzg', alias.$append, join:', ')
 # 065Q: Geografikum – Bevorzugter Name
 pica_map('065A$a', name)
 
-# entferne ursprünlichen PICA+ Datensatz
+# entferne ursprünglichen PICA+ Datensatz
 remove_field(record)
 remove_field(_id)

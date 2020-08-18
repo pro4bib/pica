@@ -60,7 +60,7 @@ document.getElementById('loadViaPPN').addEventListener("click", function () {
 
 ## SRU
 
-Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des entsprechenden Katalogs:
+Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des Katalogs:
 
 * [https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&**IKT=7&TRM=9783894018108**](https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=7&TRM=9783894018108)
 * [http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=**pica.isb=9783894018108**&maximumRecords=10&recordSchema=picaxml](http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.ppn%3D9783894018108&maximumRecords=5&recordSchema=picaxml)
@@ -83,7 +83,7 @@ In den Katalogisierungsrichtlinien finden sich auch Angaben dazu, welche PICA-(U
 
 ?> [Wikipedia-Artikel zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 
-### Beispiel: K10plus-Abfrage
+### Beispiel: K10plus-Abfragen
 
 Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der [im Catmandu-Kapitel](verarbeitung?id=catmandu) angegebenen [Konfiguration](catmandu.yaml ':ignore')) ein einzelner Datensatz per PPN abgerufen werden:
 

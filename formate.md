@@ -117,7 +117,9 @@ Neben den Binärformaten **Binäres PICA** und **Normalisiertes PICA**, die dire
 * **PICA/XML** Syntax, eine Kodierung in XML (primäre XML-Kodierung im GBV)
 * **PPXML** Syntax, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)
 
-PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgehen können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Datensatz in allen vier Serialisierungen:
+PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgehen können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen vier Serialisierungen:
+
+#### PICA Plain
 
 ~~~pica
 003@ $012345X
@@ -125,7 +127,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 045B/02 $aSpo 1025$aBID 200
 ~~~
 
-*Beispiel für PICA Plain*
+#### PICA/JSON
 
 ~~~json
 [
@@ -135,7 +137,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 ]
 ~~~
 
-*Beispiel für PICA/JSON*
+#### PICA/XML
 
 ~~~xml
 <record xmlns="info:srw/schema/5/picaXML-v1.0">
@@ -153,7 +155,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 </record>
 ~~~
 
-*Beispiel für PICA/XML*
+#### PPXML
 
 ~~~xml
 <record xmlns="http://www.oclcpica.org/xmlns/ppxml-1.0">
@@ -172,8 +174,6 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
   </global>
 </record>
 ~~~
-
-*Beispiel für PPXML*
 
 ?> Weitere Informationen zu [PICA-Serialisierungen in der GBV-Formatdatenbank](https://format.gbv.de/pica)
 
