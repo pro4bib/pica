@@ -58,6 +58,8 @@ document.getElementById('loadViaPPN').addEventListener("click", function () {
 })
 </script>
 
+Die Web-Komponente [PicaEditor](verarbeitung?id=picaeditor) unterstützt ebenfalls den Zugriff auf Katalogdaten per unAPI.
+
 ## SRU
 
 Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des Katalogs:
@@ -168,4 +170,7 @@ WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verb
 
 Neben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der **Avram-API** eine Schnittstelle zum Zugriff auf Schema-Informationen ([Avram Schemas](formate?id=avram-schemas)). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter `field` bzw. `pica3`) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter `profile`).
 
-!> Die API für befindet sich noch im Aufbau!
+Die Avram-API für den K10Plus-Katalog steht unter <https://format.k10plus.de/avram.pl> zur Verfügung und ist dort dokumentiert. So lässt sich beispielsweise mit der URL <https://format.k10plus.de/avram.pl?pica3=4000&profile=k10plus> abrufen, wie das Pica3-Feld `4000` im K10Plus-Format definiert ist:
+
+
+Ein Beispiel für die Verwendung der Schnittstelle liefert die Web-Komponente [PicaEditor](verarbeitung?id=picaeditor).
