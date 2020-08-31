@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="css/mermaid.min.css">
   <link rel="stylesheet" href="css/codemirror.min.css">
   <link rel="stylesheet" href="css/gbv.css">
+  <link rel="stylesheet" href="https://unpkg.com/pica-editor/dist/pica-editor.css">
+  <style>
+   .PicaEditorPanel code { font-size: 0.8rem; color: black; }
+   .PicaEditorPanel { overflow: hidden; }
+   table.PicaFieldInfo { margin: 0; }
+   table.PicaFieldInfo tr, table.PicaFieldInfo td, table.PicaFieldInfo th
+     { border: none; padding: 0 0.2em; }
+  </style>
 </head>
 <body>
   <div id="app"></div>
@@ -64,6 +72,7 @@
       ]
     }
   </script>
+
   <script src="js/codemirror.min.js"></script>
   <script src="js/codemirror-marc.js"></script>
 
@@ -79,5 +88,8 @@
   <script src="js/prism-pica.js"></script>
   <script src="js/mermaid.min.js"></script>
   <script>mermaid.initialize({startOnLoad:false})</script>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/pica-editor"></script>
 </body>
 </html>

@@ -41,7 +41,7 @@ Das Kommandozeilenprogramm [picadata](verarbeitung?id=picadata) wird im folgende
 
 ### CodeMirror
 
-[CodeMirror](https://codemirror.net/) ist eine HTML-Komponente für ansprechende Textformulare mit Syntaxhervorhebung. Der PICA+ Datensatz im folgenden Beispiel kann direkt im Browser bearbeitet werden:
+[CodeMirror](https://codemirror.net/) ist eine HTML-Komponente für ansprechende Textformulare mit Syntaxhervorhebung. Der PICA+ Datensatz im folgenden Beispiel kann direkt im Browser bearbeitet werden. Umfangreichere Möglichkeiten zur Bearbeitung und Analyse bietet der auf CodeMirror aufbauende [PicaEditor](verarbeitung?id=picaeditor).
 
 <div>
 <textarea id="pica-editor">
