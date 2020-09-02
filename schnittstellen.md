@@ -10,6 +10,18 @@ Die unAPI-Schnittstelle ermöglicht den Abruf einzelner PICA-Datensätze mittels
 
 ?> [unAPI im GBV-Verbundwiki](https://verbundwiki.gbv.de/display/VZG/unAPI)
 
+Eine Liste aller unterstützen Formaten wird bei Aufruf der unAPI-URL (<https://unapi.k10plus.de/> bzw. <https://unapi.gbv.de/>) zurückgeliefert. Die PICA-basierten Serialisierungen sind:
+
+`format=`   |Serialisierung
+------------|--------------
+`pp`        |[PICA Plain](https://format.gbv.de/pica/plain)
+`picajson`  |[PICA/JSON](https://format.gbv.de/pica/json)
+`picaxml`   |[PICA/XML](https://format.gbv.de/pica/json)
+`normpp`    |[Normalisiertes PICA](https://format.gbv.de/pica/normalized)
+`extpp`     |[Binäres PICA](https://format.gbv.de/pica/binary)
+
+Alle weiteren Formate (`marcxml`, `mods36`...) werden durch Konvertierung aus PICA erzeugt.
+
 ### Beispiel auf der Kommandozeile
 
 Der Datensatz mit der [PPN 161165839X](https://opac.k10plus.de/DB=2.299/PPNSET?PPN=161165839X) aus dem K10plus-Verbundkatalog (`opac-de-627`) lässt sich im PICA Plain Format (`pp`) unter der URL <http://unapi.k10plus.de/?id=opac-de-627:ppn:161165839X&format=pp> abrufen. Auf der Unix-Kommandozeile ist dies beispielsweise mit `curl` möglich so dass und anschließend mit [`picadata`](verarbeitung?id=picadata) weiterverarbeitet werden:
@@ -171,6 +183,5 @@ WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verb
 Neben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der **Avram-API** eine Schnittstelle zum Zugriff auf Schema-Informationen ([Avram Schemas](formate?id=avram-schemas)). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter `field` bzw. `pica3`) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter `profile`).
 
 Die Avram-API für den K10Plus-Katalog steht unter <https://format.k10plus.de/avram.pl> zur Verfügung und ist dort dokumentiert. So lässt sich beispielsweise mit der URL <https://format.k10plus.de/avram.pl?pica3=4000&profile=k10plus> abrufen, wie das Pica3-Feld `4000` im K10Plus-Format definiert ist:
-
 
 Ein Beispiel für die Verwendung der Schnittstelle liefert die Web-Komponente [PicaEditor](verarbeitung?id=picaeditor).

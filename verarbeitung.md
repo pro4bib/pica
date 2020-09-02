@@ -87,7 +87,7 @@ Für komplexere Auswahl- und Konvertierungs-Routinen (zum Beispiel mit Wenn-Dann
 
 ### Datenanalyse
 
-Die Option `--count` erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit `-t` ist explizit eine Syntax festgelegt. 
+Die Option `--count` erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit `-t` ist explizit eine Syntax festgelegt.
 
 Eine ausführlichere Analyse ist mit der Option `--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate?id=avram-schemas) erstellt. Hier die Kurzversion mit der Option `-B`:
 
@@ -141,6 +141,7 @@ Hier der Beispieldatensatz so wie er von Catmandu gelesen wird (da in der Regel 
 ~~~bash
 catmandu convert pp to JSON < example.pica
 ~~~
+
 ~~~json
 [{"record":[["003@","","0","12345X"],["021A","","a","Ein Buch","h","zum Lesen"],["045B","02","a","Spo 1025","a","BID 200"]],"_id":"12345X"}]
 ~~~
@@ -159,6 +160,7 @@ Eine Besonderheit von Catmandu sind die so genannten **Fix-Skripe** zur Auswertu
 ~~~bash
 catmandu convert pp to CSV --fix 'pica_map(021A$ah,titel,join:" ") remove_field(record)' < example.pica
 ~~~
+
 ~~~csv
 _id,titel
 12345X,Ein Buch zum Lesen
@@ -174,6 +176,7 @@ Umgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hie
 ~~~bash
 catmandu convert pp to pp --fix 'set_field(titel,"Ein gutes Buch");pica_set(titel,021A$a)' < example.pica
 ~~~
+
 ~~~pica
 003@ $012345X
 021A $aEin gutes Buch$hzum Lesen
@@ -230,7 +233,7 @@ Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten
 </div>
 
 <script>
-  Vue.createApp({ 
+  Vue.createApp({
     components: { PicaEditor },
     data: () => {
       return { avram: {} }
@@ -249,5 +252,3 @@ Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten
 </script>
 
 ?> Technische Details zur Installation und Konfiguration findet sich [in der PicaEditor-Dokumentation](https://www.npmjs.com/package/pica-editor).
-
-
