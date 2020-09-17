@@ -212,7 +212,7 @@ Die Regeln eines PICA-Standards können auch Angaben zur erlaubten Werten und we
 
 ## Avram-Schemas
 
-Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt beispielsweise fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen und welche Felder und Unterfelder wiederholbar sind Avram-Schemas für PICA-Daten können verwendet werden um Informationen zur Definition von Feldern anzuzeigen und um PICA-Daten gegen das Schema zu validieren. Ein Beispiel für die Verwendung von Avram-Schemas ist der [PicaEditor](verarbeitung?id=picaeditor).
+Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt beispielsweise fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen und welche Felder und Unterfelder wiederholbar sind Avram-Schemas für PICA-Daten können verwendet werden um Informationen zur Definition von Feldern anzuzeigen und um PICA-Daten gegen das Schema zu validieren. Ein Beispiel für die Verwendung von Avram-Schemas ist der [PicaEditor](verarbeitung?id=picaeditor). Für verschiedene im GBV verwendeten PICA-Formate werden Avram-Schemas per [Avram-API](schnittstellen?id=avram-api) bereitgestellt.
 
 ?> [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
 
