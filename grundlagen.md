@@ -85,7 +85,7 @@ Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden di
 ?> [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
 
 [PICA Path Expression]: formate?id=abfragesprachen
-[Avram]: formate?id=schemas
+[Avram]: formate?id=avram-schemas
 
 ### Kodierungen
 

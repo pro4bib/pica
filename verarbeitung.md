@@ -208,17 +208,17 @@ Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es [im Absch
 
 **PicaEditor** ist eine Komponente für Webanwendungen mit der PICA-Daten im Browser analysiert und bearbeitet werden können. Die Komponente basiert auf [CodeMirror](darstellung?id=codemirror) und dem JavaScript-Framework [Vue3](http://v3.vuejs.org/).
 
-Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatz gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
+Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](formate?id=avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatz gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
 
 <div id="pica-editor" style="text-align:left">
   <pica-editor :dbkey="'opac-de-627'"
                :picabase="'https://opac.k10plus.de/'"
                :unapi="'https://unapi.k10plus.de/'"
-               :avram="avram"><pre>
+               :avram="'https://format.k10plus.de/avram.pl?profile=k10plus'"><pre>
 003@ $0355973081
 010@ $ager
 011@ $a2001
-019@ $aXA-DE
+019@ $aXA-DE$XXX
 021A $a@Zehn Jahre Pica in Niedersachsen und Deutschland$dSkizzen eines Erfolgs aus Anlass der 5. Verbundkonferenz des Gemeinsamen Bibliotheksverbundes der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein und Thüringen, vom 11.-12. September, 2001 in Göttingen$h[Redaktion, Elmar Mittler]
 029A $a@Gemeinsamer Bibliotheksverbund der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein und Thüringen$bVerbundkonferenz$xGöttingen, Germany)
 029F $a@Niedersächsische Staats- und Universitätsbibliothek Göttingen
@@ -233,22 +233,7 @@ Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten
 </div>
 
 <script>
-  Vue.createApp({
-    components: { PicaEditor },
-    data: () => {
-      return { avram: {} }
-    },
-    mounted() {
-      this.loadAvram("k10plus")
-    },
-    methods: {
-      async loadAvram(profile) {
-        const avram = await (fetch("https://format.k10plus.de/avram.pl?profile="+profile)
-          .then(res => res.ok ? res.json() : {}))
-        this.avram = avram
-      }
-    }
-  }).mount("#pica-editor")
+  Vue.createApp({ components: { PicaEditor } }).mount("#pica-editor")
 </script>
 
 ?> Technische Details zur Installation und Konfiguration findet sich [in der PicaEditor-Dokumentation](https://www.npmjs.com/package/pica-editor).
