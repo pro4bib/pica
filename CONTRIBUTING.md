@@ -16,6 +16,8 @@ npm run lint
 
 Die jeweils aktuelle HTML-Version steht unter <https://pro4bib.github.io/pica/> zur Verfügung. Eine Druckversion [ist angedacht](https://github.com/pro4bib/pica/issues/1).
 
+Das Verzeichnis `slides` enthält begleitende Vortragsfolien. Zur Erstellung der HTML muss Pandoc installiert sein, dann reicht dort ein Aufruf von `make`.
+
 ## Danksagung
 
 Die Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von [Felix Lohmeier](https://felixlohmeier.de/) abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur [Verarbeitung von PICA-Daten](verarbeitung) basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski.

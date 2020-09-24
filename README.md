@@ -33,6 +33,12 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
   - Verwandte Formate (MARC, RDF, JSON...)
   - Zukünftige Alternativen (BIBFRAME, Folio...)
 
+## Screencasts
+
+Als Begleitmaterial gibt es folgende Screencasts:
+
+* *PICA-Formate entschlüsseln mit Avram und PicaEditor* <https://doi.org/10.5446/48737> (2020-09-18, 13:46 Minuten)
+
 ## Literatur
 
 - Becker et. al (1992): *Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990).* In: Bibliothek Forschung und Praxis, Band 16, Heft 3. <https://doi.org/10.1515/bfup.1992.16.3.307>
