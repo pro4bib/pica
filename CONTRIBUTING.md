@@ -20,7 +20,7 @@ Das Verzeichnis `slides` enthält begleitende Vortragsfolien. Zur Erstellung der
 
 ## Danksagung
 
-Die Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von [Felix Lohmeier](https://felixlohmeier.de/) abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur [Verarbeitung von PICA-Daten](verarbeitung) basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski.
+Die Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von [Felix Lohmeier](https://felixlohmeier.de/) abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur [Verarbeitung von PICA-Daten](verarbeitung) basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski. Weitere Beiträge zu diesem Handbuch stammen von Cornelius Amzar.
 
 ## Lizenz
 
