@@ -22,6 +22,14 @@ Das Kommandozeilenprogramm [picadata](verarbeitung?id=picadata) wird im folgende
 
 ![Screenshot PICA Syntax-Highlighting mit picadata](img/screenshot-picadata.png)
 
+### Sublime Text
+
+Der Texteditor [Sublime Text](https://www.sublimetext.com/) kann um Syntax-Highlighting für PICA erweitert werden.
+
+![Screenshot PICA Syntax-Highlighting mit Sublime](img/screenshot-sublime.png)
+
+?> [PICA-Syntax-Definition und Anleitung](https://git.bsz-bw.de/amzar/pica-sublime)
+
 ### Prism
 
 [Prism](https://prismjs.com) ist eine Highlighting-Engine für Code auf HTML-Seiten, beispielsweise die Webseiten dieses Handbuchs. Die Unterstützung für PICA beinhaltet PICA Plain, PICA Path Expressions und das Title-Revision Format:
