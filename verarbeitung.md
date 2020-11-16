@@ -136,7 +136,7 @@ Intern werden PICA-Daten in Catmandu als ein Datensätze mit je zwei Feldern ver
 * `_id` enthält die PPN (falls vorhanden, ansonsten `null`)
 * `_record` enthält die PICA-Daten in [PICA/JSON](https://format.gbv.de/pica/json)-Struktur
 
-Hier der Beispieldatensatz so wie er von Catmandu gelesen wird (da in der Regel mehrere Datensätze verarbeitet werden, ist die JSON-Ausgabe standardmäßig ein Array aller Datensätze):
+Hier der Beispieldatensatz so wie er von Catmandu gelesen wird (da in der Regel mehrere Datensätze verarbeitet werden, ist die JSON-Ausgabe standardmäßig ein Array aller Datensätze). Vorausgesetzt wird wieder die Beispieldatei [`example.pica`](example.pica ':ignore'):
 
 ~~~bash
 catmandu convert pp to JSON < example.pica
