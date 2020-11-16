@@ -112,7 +112,7 @@ picadata -B example.pica
 Für Debian-basierte Betriebsysteme kann Catmandu mit Unterstützung von PICA und SRU folgendermaßen installiert werden:
 
 ~~~bash
-sudo apt-get install libcatmandu-perl libcatmandu-sru-perl cpanm
+sudo apt-get install libcatmandu-perl libcatmandu-sru-perl cpanminus
 sudo cpanm Catmandu::PICA
 ~~~
 
