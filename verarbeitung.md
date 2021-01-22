@@ -211,8 +211,7 @@ Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es [im Absch
 Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](formate?id=avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatz gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
 
 <div id="pica-editor" style="text-align:left">
-  <pica-editor :dbkey="'opac-de-627'"
-               :picabase="'https://opac.k10plus.de/'"
+  <pica-editor :databases="databases"
                :unapi="'https://unapi.k10plus.de/'"
                :avram="'https://format.k10plus.de/avram.pl?profile=k10plus'"><pre>
 003@ $0355973081
@@ -233,7 +232,18 @@ Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten
 </div>
 
 <script>
-  Vue.createApp({ components: { PicaEditor } }).mount("#pica-editor")
+Vue.createApp({
+  components: { PicaEditor },
+  data() {
+    return {
+      databases: [{
+       title: { de: "K10Plus" },
+       picabase: "https://opac.k10plus.de/",
+       dbkey: "opac-de-627"
+      }]
+    }
+  }
+}).mount("#pica-editor")
 </script>
 
 ?> Technische Details zur Installation und Konfiguration findet sich [in der PicaEditor-Dokumentation](https://www.npmjs.com/package/pica-editor).

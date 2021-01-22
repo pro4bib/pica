@@ -37,7 +37,7 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 
 Als Begleitmaterial gibt es folgende Screencasts:
 
-* *PICA-Formate entschlüsseln mit Avram und PicaEditor* <https://doi.org/10.5446/48737> (2020-09-18, 13:46 Minuten)
+- *PICA-Formate entschlüsseln mit Avram und PicaEditor* <https://doi.org/10.5446/48737> (2020-09-18, 13:46 Minuten)
 
 ## Literatur
 
