@@ -195,14 +195,23 @@ Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage 
 
 ## Änderungsformat
 
-Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Änderungen an Datensätzen lassen sich durch Vergleich von Versionen im **title-revision format** anzeigen. Das Format entspricht im Wesentlichen der PICA Plain [Serialisierung](#serialisierungen) mit dem Unterschied dass einzelne Felder durch vorangestelltes `+` oder `-` als hinzugefügt oder entfernt markiert werden.
+Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Änderungen an Datensätzen lassen sich durch Vergleich von Versionen im **title-revision format** anzeigen. Das Format entspricht im Wesentlichen der PICA Plain [Serialisierung](#serialisierungen) mit dem Unterschied dass einzelne Felder durch vorangestelltes `+` oder `-` als hinzugefügt oder entfernt markiert werden. Eine Verallgemeinerung ist das **Annotated PICA** Format. Dabei wird jedem Feld ein **Markierungszeichen** und ein weiteres Leerzeichen vorangestellt. Um Missverständnissen vorzubeugen sind als Markierungszeichen keine Buchstaben oder Ziffern erlaubt. Das Änderungsformat ergibt sich durch Wahl der Markierungszeichen `+` und `-`. Weitere Anwendungsmöglichkeiten sind die Markierung unbekannter oder fehlerhafter Felder mit `?` oder `!`.
+
+*Beispiel einer Änderung an Feld `021A`, Unterfeld `$a`*
 
 ~~~pica
 - 021A $aEin Buch$hzum Lesen
-+ 021A $aEin gutes Buch$hzum Lesen
++ 021A $aEin gutes Buch$hzum Lesen und Genießen
 ~~~
 
-*Beispiel einer Änderung an Feld `021A`, Unterfeld `$a`*
+Als Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letztes Array-Element eines Feldes angefügt werden. Da die Anzahl der Element eines Feldes in PICA/JSON normalerweise gerade ist, kann das Markierungszeichen nicht mit anderen Bestandteilen der PICA-Struktur verwechselt werden.
+
+~~~json
+[
+  [ "021A", null, "a", "Ein Buch", "h", "zum Lesen", "-" ],
+  [ "021A", null, "a", "Ein gutes Buch", "h", "zum Lesen und Genießen", "+" ]
+]
+~~~
 
 ## Anwendungsprofile
 
