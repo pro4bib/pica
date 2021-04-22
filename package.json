@@ -9,7 +9,7 @@
     "url": "git+https://github.com/pro4bib/pica.git"
   },
   "dependencies": {
-    "docsify-cli": "^4.4.1",
-    "markdownlint-cli": "^0.23.1"
+    "docsify-cli": "^4.4.2",
+    "markdownlint-cli": "^0.23.2"
   }
 }
