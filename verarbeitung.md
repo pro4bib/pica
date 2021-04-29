@@ -253,4 +253,4 @@ Vue.createApp({
 Neben den genannten Programmen gibt es einige weitere Open-Source-Werkzeuge die mit PICA-Daten umgehen können:
 
 * Das mit Catmandu vergleichbare ETL-Werkzeug [Metafacture](http://metafacture.org) unterstützt neben anderen Formaten auch das Lesen und Schreiben von PICA-Daten (siehe [Java-Quellcode](https://github.com/metafacture/metafacture-core/tree/master/metafacture-biblio/src/main/java/org/metafacture/biblio/pica))
-* Das Node-Modul [pica-data](https://www.npmjs.com/package/pica-data) stellt JavaScript-Funktionen zur Verarbeitung von PICA+ als PICA Plain Plain und PICA JSON bereit
+* Das Node-Modul [pica-data](https://www.npmjs.com/package/pica-data) stellt JavaScript-Funktionen zur Verarbeitung von PICA+ als PICA Plain und PICA JSON bereit
