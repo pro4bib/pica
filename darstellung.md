@@ -22,6 +22,8 @@ Das Kommandozeilenprogramm [picadata](verarbeitung?id=picadata) wird im folgende
 
 ![Screenshot PICA Syntax-Highlighting mit picadata](img/screenshot-picadata.png)
 
+Standardmäßig ist Syntaxhervorhebung für PICA Plain Datensätze auf der Kommandozeile aktiviert. Mit den Optionen `-M`/`--mono` bzw. `-C`/`--color` lässt sie sich explizit ab- und anschalten.
+
 ### Sublime Text
 
 Der Texteditor [Sublime Text](https://www.sublimetext.com/) kann um Syntax-Highlighting für PICA erweitert werden.

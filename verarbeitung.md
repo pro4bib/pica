@@ -25,33 +25,37 @@ Das Programm setzt vorhandene PICA-Daten voraus (siehe [Kapitel Schnittstellen](
 
 [](example.pica ':include :type=code plain')
 
-### Syntax-Konvertierung
+### Konvertierung
 
 Im einfachsten Anwendungsfall liest `picadata` PICA+ Datensätze in PICA Plain und gibt sie mit [Syntax-Hervorhebung](darstellung?id=syntaxhervorherbung) wieder aus. Hier drei Aufruf-Möglichkeiten:
 
 ~~~bash
 picadata example.pica
 cat example.pica | picadata
-picadata <example.pica
+picadata < example.pica
 ~~~
 
-In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f` das [Serialisierungsformat](formate?id=serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
+In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f`/`--from` das [Serialisierungsformat](formate?id=serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t`/`--to` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
 
 ~~~bash
-picadata example.pica -t xml >example.xml   # PICA Plain nach PICA/XML
-picadata example.xml -t json                # PICA/XML nach PICA/JSON
+picadata example.pica -t xml > example.xml   # PICA Plain nach PICA/XML
+picadata example.xml -t json                 # PICA/XML nach PICA/JSON
 ~~~
+
+Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](formate?id=Änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
+
+In der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option `-o` sortiert Datensätze neu und zwar getrennt für die bibliographische Ebene und innerhalb der einzelnen Lokal- und Exemplardatensätze.
 
 ### Auswahl von Daten
 
-Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n` werden nur eine begrenzte Zahl von Datensatzen verarbeitet, z.B. die ersten 10:
+Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n`/`--number` werden nur eine begrenzte Zahl von Datensatzen verarbeitet, z.B. die ersten 10:
 
 ~~~bash
 picadata -n 10 example.pica
 picadata -10 example.pica     # Equivalente Abkürzung der Option
 ~~~
 
-Oft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option `-p` lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die [Abfragesprache PICA Path Expression](formate?id=abfragesprache):
+Oft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option `-p`/`--path` lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die [Abfragesprache PICA Path Expression](formate?id=abfragesprache):
 
 ~~~bash
 picadata -p '003@' example.pica        # Nur Feld 003@
@@ -62,7 +66,7 @@ picadata -p '003@|021A' example.pica   # Mehrere Felder
 Zur Abkürzung kann der Optionsschalter `-p` auch weggelassen werden wenn die Feldauswahl am Anfang steht. So lassen sich beispielsweise Datensätze auf K10plus-Felder zur klassifikatorischen Sacherschließung eingegrenzen:
 
 ~~~bash
-picadata '003@|021A' <example-pica
+picadata '003@|021A' <example.pica
 ~~~
 
 Wenn die Liste der Felder länger ist, empfiehlt es sich sie in eine Datei zu schreiben und diese zur referenzieren:
@@ -87,9 +91,36 @@ Für komplexere Auswahl- und Konvertierungs-Routinen (zum Beispiel mit Wenn-Dann
 
 ### Datenanalyse
 
-Die Option `--count` erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit `-t` ist explizit eine Syntax festgelegt.
+Die Option `-c`/`--count` erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit `-t`/`--to` ist explizit eine Syntax festgelegt.
 
-Eine ausführlichere Analyse ist mit der Option `--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate?id=avram-schemas) erstellt. Hier die Kurzversion mit der Option `-B`:
+~~~bash
+picadata -c example.pica
+~~~
+
+Das Ausgabeformat `fields` (oder kurz `f`) listet alle vorkommenden Felder auf. Entsprechend gibt es das Ausgabeformat `subfields` (kurz `sf`). 
+
+~~~bash
+picada -t f example.pica 
+~~~
+~~~
+003@
+021A
+045B/02
+~~~
+
+Bei Angabe eines Schemas wird (falls vorhanden) das Feld bzw. Unterfeld dokumentiert:
+
+~~~bash
+picada -t sf example.pica -s k10plus.json
+~~~
+~~~
+003@$0	Pica-Produktionsnummer
+021A$a	Haupttitel
+021A$h	Verantwortlichkeitsangabe, die sich auf den Haupttitel bezieht
+045B/02$a	Notation
+~~~
+
+Eine ausführlichere Analyse ist mit der Option `-b`/`--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate?id=avram-schemas) erstellt. Option `-B` reduziert das Schema zur Besseren Lesbarkeit um redundante Bestandteile.
 
 ~~~bash
 picadata -B example.pica
@@ -97,9 +128,21 @@ picadata -B example.pica
 
 [](example-schema.json ':include :type=code json')
 
-### Hilfe und Validierung
+### Validierung
 
-!> Dieser Abschnitt muss erst noch geschrieben werden
+Bei Angabe eines [Avram-Schema](formate?id=avram-schemas) per Datei oder URL mit Option `-s`/`--schema` werden Eingabedaten gegen das Schema validiert. Unbekannte Felder und Unterfelder werden dabei ignoriert, außer bei Angabe der zusätzlichen Option `-u`/`--unknown`. Das Ergebnis der Validierung kann auf verschiedene Weise angezeigt werden:
+
+* Standarmäßig werden nur Fehlermeldungen ausgegeben. Ist der Datensatz korrekt, erfolgt also keine Ausgabe. Mit der Option `-t` kann zusätzlich die Ausgabe der Datensätze aktiviert werden
+
+* Mit der Option `-a`/`--annotate` wird das Ergebnis der Validierung als Feld-Annotation ausgegeben. Die Markierung von fehlerhaften Feldern ist `!` und von unbekannten Feldern `?`.
+
+Wurde ein Fehler erkannt, so ist der Statuscode des Programms 1, so dass Shell-Programmierung verwendet werden kann:
+
+~~~bash
+picadata -s schema.json example.pica && echo "OK"
+~~~
+
+!> Die Validierung umfasst momentan nur die bibliographische Ebene und keine Occurrence-Bereiche ([Siehe Issue](https://github.com/gbv/PICA-Data/issues/35))!
 
 ## Catmandu
 
