@@ -77,9 +77,9 @@ Die Web-Komponente [PicaEditor](verarbeitung?id=picaeditor) unterstützt ebenfal
 Die SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen [OPAC-Oberfläche](#opac) über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer ("IKT") und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel `ISB` indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des Katalogs:
 
 * [https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&**IKT=7&TRM=9783894018108**](https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=7&TRM=9783894018108)
-* [http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=**pica.isb=9783894018108**&maximumRecords=10&recordSchema=picaxml](http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.ppn%3D9783894018108&maximumRecords=5&recordSchema=picaxml)
+* [http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=**pica.isb=9783894018108**&maximumRecords=10&recordSchema=picaxml](http://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.isb=9783894018108&maximumRecords=10&recordSchema=picaxml)
 
-Eine Liste aller Suchschlüssel einer Datenbank ist über die Basis-URL des SRU-Endpunktes (z.B. <http://sru.k10plus.de/opac-de-627>) abrufbar:
+Eine Liste aller Suchschlüssel einer Datenbank ist über die Basis-URL des SRU-Endpunktes (z.B. <http://sru.k10plus.de/opac-de-627>) abrufbar und kann folgendermaßen in eine übersichtliche Form gebracht werden:
 
 ~~~bash
 curl http://sru.k10plus.de/opac-de-627 | catmandu convert XML --path //index to XML | egrep -o '\[[^<]+'
