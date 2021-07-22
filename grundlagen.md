@@ -44,9 +44,9 @@ Auch allgemeine Serialisierungsformate wie ASN.1 und Typsysteme von Programmiers
 
 ### Anwendungsformate
 
-In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf reale eher Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedenen Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem **bibliographische Datenformate** und **Normdatenformate** relevant, deren Inhalte auch als **Metadaten** bezeichnet werden.
+In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf reale Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedene Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem **bibliographische Datenformate** und **Normdatenformate** relevant, deren Inhalte auch als **Metadaten** bezeichnet werden.
 
-Beispiele für Anwendungsformate die Dokumentformate [TEI] und [Markdown], die bibliographischen Datenformate [BibTeX] und [DataCite] und die Normdatenformate [JSKOS] und [GND-Internformat](http://format.gbv.de/pica/gnd) (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) [Datenmodelle] voraus und sind in Strukturierungsformaten [kodiert](#kodierungen).
+Beispiele für Anwendungsformate: die Dokumentformate [TEI] und [Markdown], die bibliographischen Datenformate [BibTeX] und [DataCite] und die Normdatenformate [JSKOS] und [GND-Internformat](http://format.gbv.de/pica/gnd) (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) [Datenmodelle] voraus und sind in Strukturierungsformaten [kodiert](#kodierungen).
 
 ?> [Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
 
@@ -67,7 +67,7 @@ Im besten Fall ist ein Datenformat durch einen **Standard** definiert und in ver
 
 Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, lässt sich in Form von **Anwendungsprofilen** ausdrücken.
 
-Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eine Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
+Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eines Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
 
 ?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag *[Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)*
 
@@ -80,7 +80,7 @@ Prinzipiell können Daten mit jeder beliebigen Programmiersprache analysiert und
 
 Der Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als **Query-Engine** und solche die zur Validierung ein Schemaformat unterstützen als **Validatoren** bezeichnet.
 
-Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die Anwendungs-unabhängige Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.
+Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die anwendungsunabhängige Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.
 
 ?> [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
 
@@ -118,6 +118,6 @@ Das PICA-Format geht auf mehr als 50 Jahre alte Bestrebungen zurück, die Inhalt
 
 Darüber hinaus lassen sich Datenformate nach unterschiedlichen Kriterien unterteilen:
 
-* **Prorietäre Formate** und **Offene Formate** (die meisten PICA-Anwendungsformate sind offen)
+* **Proprietäre Formate** und **Offene Formate** (die meisten PICA-Anwendungsformate sind offen)
 * **Internformate** und **Austauschformate** (PICA dient primär als Internformat)
 * **Metadatenformate** und **Dokumentformate** (PICA gehört zu den Metadatenformaten)
