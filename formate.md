@@ -1,12 +1,12 @@
 # PICA-Formate
 
-Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Handbuch das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
+Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauender Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Handbuch das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
 
 * Zunächst werden der [grundsätzliche Aufbau](#grundsätzlicher-aufbau) von PICA+ und [Pica3](#pica3) sowie mögliche [PICA-Serialisierungen](#serialisierungen) vorgestellt.
 
-* Zum Zugriff auf einzelne Elemente von PICA-Datensätze gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen ein [Änderungsformat](#Änderungsformat).
+* Zum Zugriff auf einzelne Elemente von PICA-Datensätzen gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen ein [Änderungsformat](#Änderungsformat).
 
-* Konkrete Anwendungsformate von PICA werden als [Anwendungsprofilen](#anwendungsprofilen) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
+* Konkrete Anwendungsformate von PICA werden als [Anwendungsprofile](#anwendungsprofile) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
 
 ## Grundsätzlicher Aufbau
 
@@ -35,7 +35,7 @@ Das PICA-Format unterscheidet **drei Ebenen** für bibliographische Daten (Level
 
 !> PICA-Unterfelder bilden keine einfache [Zuordnungstabelle](https://de.wikipedia.org/wiki/Zuordnungstabelle_(Datenstruktur)) sondern haben eine in der Regel relevante Reihenfolge.
 
-Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifiern PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert:
+Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (**PPN**) identifiziert, die auf Ebene 0 in Feld `003@`, Unterfeld `0` steht. Exemplardatensätze enthalten in Feld `203@`, Unterfeldnummer `0` die ebenfalls eindeutige Exemplarproduktionsnummer (**EPN**, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie `101@`, Unterfeld `a` mit der Internal Library Number (**ILN**) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifier PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert:
 
 | |in Datenbank|im Datensatz|im Lokaldatensatz|
 |--|---|---|--|
@@ -43,7 +43,7 @@ Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-P
 |Lokaldatensatz-ID| --- |ILN|
 |Exemplardatensatz-ID|EPN| --- |Occurrence|
 
-Die Identifizierung eines Exemplardatensatz ist also zum einen durch seine EPN möglich und zum anderen durch seine Kombination von PPN, ILN und Exemplar-Occurrence.
+Die Identifizierung eines Exemplardatensatzes ist also zum einen durch seine EPN möglich und zum anderen durch seine Kombination von PPN, ILN und Exemplar-Occurrence.
 
 Das gesamte Datenmodell von PICA+ kann folgendermaßen angegeben werden:
 
@@ -117,7 +117,7 @@ Neben den Binärformaten **[Binäres PICA](https://format.gbv.de/pica/binary)** 
 * **[PICA/XML](https://format.gbv.de/pica/xml)** Syntax, eine Kodierung in XML (primäre XML-Kodierung im GBV)
 * **[PPXML](https://format.gbv.de/pica/ppxml)** Syntax, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)
 
-PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgehen können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen vier Serialisierungen:
+PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgangen werden können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen vier Serialisierungen:
 
 #### PICA Plain
 
@@ -191,7 +191,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 
 Die Syntax der Abfragesprache ist eine Teilmenge von [MARCspec](http://marcspec.github.io/MARCspec/marc-spec.html), einer umfrangreicheren Sprache zur Referenzierung von Teilen aus MARC-Datensätzen.
 
-Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels [SRU](schnittstellen?id=sru) relevant. CQL referenziert allerdings nicht Elemente des PICA-Formats sondern basiert Felder eines Suchindex, der aus unterschiedlichen Inhalten aufgebaut sein kann.
+Neben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels [SRU](schnittstellen?id=sru) relevant. CQL referenziert allerdings nicht Elemente des PICA-Formats sondern basiert auf Feldern eines Suchindex, der aus unterschiedlichen Inhalten aufgebaut sein kann.
 
 ## Änderungsformat
 
@@ -204,7 +204,7 @@ Ab CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Än
 + 021A $aEin gutes Buch$hzum Lesen und Genießen
 ~~~
 
-Als Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letztes Array-Element eines Feldes angefügt werden. Da die Anzahl der Element eines Feldes in PICA/JSON normalerweise gerade ist, kann das Markierungszeichen nicht mit anderen Bestandteilen der PICA-Struktur verwechselt werden.
+Als Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letztes Array-Element eines Feldes angefügt werden. Da die Anzahl der Elemente eines Feldes in PICA/JSON normalerweise gerade ist, kann das Markierungszeichen nicht mit anderen Bestandteilen der PICA-Struktur verwechselt werden.
 
 ~~~json
 [
@@ -217,11 +217,11 @@ Als Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letz
 
 Die Bedeutung einzelner PICA-Felder und Unterfeld-Strukturen ist nicht universell sondern durch die jeweiligen **Katalogisierungsregeln** einer Datenbank festgelegt. Die Katalogisierungsregeln sind Teil eines [Standard](grundlagen?id=standards-und-profile) welche Felder mit welcher Bedeutung auftreten können oder sollen. Ein Beispiel für einen solchen Standard ist die [K10plus Format-Dokumentation](https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation) für die K10plus-Datenbank. Die Dokumentation enthält als semi-formalen Teil eine Tabelle aller PICA-Felder und Unterfelder mit Angaben über Reihenfolge, Wiederholbarkeit etc. Die Regeln sind allerdings eher als Empfehlungen zu betrachten, da nicht alle ihre Aspekte bei der Eingabe kontrolliert werden. Innerhalb einer Datenbank kann es auch vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst wurden. Für die Verarbeitung von Informationen aus PICA-Anwendungsprofilen eignen sich Avram-Schemas.
 
-Die Regeln eines PICA-Standards können auch Angaben zur erlaubten Werten und weiterer Strukturierung *innerhalb* von Unterfeldern beinhalten. Ein Beispiel für letzeres ist das "Nichtsortierzeichen" `@`. Das **Nichtsortierzeichen** gibt als Steuerzeichen an, dass der Inhalt des Feldes vor dem Sortierzeichen für die [Indexierung](schnittstellen?id=sru) ignoriert werden soll. Nach dem ersten Vorkommen des Nichtsortierzeichens hat das Zeichen keine besondere Bedeutung mehr, es kann also auch als normales Zeichen vorkommen.
+Die Regeln eines PICA-Standards können auch Angaben zu erlaubten Werten und weiterer Strukturierung *innerhalb* von Unterfeldern beinhalten. Ein Beispiel für Letzteres ist das "Nichtsortierzeichen" `@`. Das **Nichtsortierzeichen** gibt als Steuerzeichen an, dass der Inhalt des Feldes vor dem Sortierzeichen für die [Indexierung](schnittstellen?id=sru) ignoriert werden soll. Nach dem ersten Vorkommen des Nichtsortierzeichens hat das Zeichen keine besondere Bedeutung mehr, es kann also auch als normales Zeichen vorkommen.
 
 ## Avram-Schemas
 
-Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt beispielsweise fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen und welche Felder und Unterfelder wiederholbar sind Avram-Schemas für PICA-Daten können verwendet werden um Informationen zur Definition von Feldern anzuzeigen und um PICA-Daten gegen das Schema zu validieren. Ein Beispiel für die Verwendung von Avram-Schemas ist der [PicaEditor](verarbeitung?id=picaeditor). Für verschiedene im GBV verwendeten PICA-Formate werden Avram-Schemas per [Avram-API](schnittstellen?id=avram-api) bereitgestellt.
+Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt beispielsweise fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen und welche Felder und Unterfelder wiederholbar sind. Avram-Schemas für PICA-Daten können verwendet werden um Informationen zur Definition von Feldern anzuzeigen und um PICA-Daten gegen das Schema zu validieren. Ein Beispiel für die Verwendung von Avram-Schemas ist der [PicaEditor](verarbeitung?id=picaeditor). Für verschiedene im GBV verwendeten PICA-Formate werden Avram-Schemas per [Avram-API](schnittstellen?id=avram-api) bereitgestellt.
 
 ?> [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
 
@@ -231,4 +231,4 @@ Avram ist eine [Schemasprache](grundlagen?id=abfrage-und-schemaformate) für fel
 
 ## Zusammenfassung
 
-Das PICA-Format in seiner allgemeinen Form PICA+ ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab, die sich in Avram-Schemas als Anwendungsprofile formalisieren lassen. Für die Katalogisierung wird zwischen PICA+ und Pica3 konvertiert. Zur Speicherung und den Austausch von PICA-Daten gibt es verschiedene Serialisierungen (PICA Plain, PICA/XML, PICA/JSON...) und für den Zugriff auf einzelne Elemente die Abfragesprache PICA Path Expressions. Mit dem PICA-Änderungsformat lassen sich Unterschiede zwischen PICA-Datensätzen angeben.
+Das PICA-Format in seiner allgemeinen Form PICA+ ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab, die sich in Avram-Schemas als Anwendungsprofile formalisieren lassen. Für die Katalogisierung wird zwischen PICA+ und Pica3 konvertiert. Zur Speicherung und zum Austausch von PICA-Daten gibt es verschiedene Serialisierungen (PICA Plain, PICA/XML, PICA/JSON...) und für den Zugriff auf einzelne Elemente die Abfragesprache PICA Path Expressions. Mit dem PICA-Änderungsformat lassen sich Unterschiede zwischen PICA-Datensätzen angeben.
