@@ -8,7 +8,7 @@ Dieses Kapitel gibt eine Übersicht von Werkzeugen zur Verarbeitung von PICA-Dat
 
 ## picadata
 
-Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate?id=serialisierungen), einfache Analyseund Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate?id=avram-schemas).
+Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate?id=serialisierungen), einfache Analyse und Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate?id=avram-schemas).
 
 ?> [Dokumentation von picadata auf metacpan](https://metacpan.org/pod/picadata)
 
@@ -48,7 +48,7 @@ In der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option `-o` sorti
 
 ### Auswahl von Daten
 
-Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n`/`--number` werden nur eine begrenzte Zahl von Datensatzen verarbeitet, z.B. die ersten 10:
+Bei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option `-n`/`--number` werden nur eine begrenzte Zahl von Datensätzen verarbeitet, z.B. die ersten 10:
 
 ~~~bash
 picadata -n 10 example.pica
@@ -214,7 +214,7 @@ Dieses Fix-Skript besteht aus zwei Befehlen (bei längeren Fix-Skripten empfiehl
 * `pica_map(021A$ah,titel,join:" ")` fügt ein neues Feld `titel` mit dem Inhalt der Unterfelder `$a` und `$h` des PICA-Feld `021A` hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels [PICA Path Expression](formate?id=abfragesprache).
 * `remove_field(record)` entfernt den PICA-Datensatz, so dass nur noch `_id` und `titel` übrig bleiben.
 
-Umgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hier ein Beispiel zur Änderung des Unterfeld `021A$a`:
+Umgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hier ein Beispiel zur Änderung des Unterfelds `021A$a`:
 
 ~~~bash
 catmandu convert pp to pp --fix 'set_field(titel,"Ein gutes Buch");pica_set(titel,021A$a)' < example.pica
@@ -228,7 +228,7 @@ catmandu convert pp to pp --fix 'set_field(titel,"Ein gutes Buch");pica_set(tite
 
 ### Schnittstellen
 
-Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen?id=SRU) des K10Plus-Katalog. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikatione erschlossen sind:
+Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen?id=SRU) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:
 
 ~~~bash
 catmandu convert kxp --query pica.sgd=590 --fix 'reject pica_match(045Q) remove_field(record)' to CSV --header 0
@@ -251,7 +251,7 @@ Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es [im Absch
 
 **PicaEditor** ist eine Komponente für Webanwendungen mit der PICA-Daten im Browser analysiert und bearbeitet werden können. Die Komponente basiert auf [CodeMirror](darstellung?id=codemirror) und dem JavaScript-Framework [Vue3](http://v3.vuejs.org/).
 
-Der zentralen Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](formate?id=avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatz gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
+Der zentrale Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](formate?id=avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatzes gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
 
 <div id="pica-editor" style="text-align:left">
   <pica-editor :databases="databases"
