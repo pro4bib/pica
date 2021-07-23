@@ -38,9 +38,29 @@ picadata < example.pica
 In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f`/`--from` das [Serialisierungsformat](formate?id=serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t`/`--to` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
 
 ~~~bash
+picadata example.pica                        # PICA Plain nach PICA Plain
 picadata example.pica -t xml > example.xml   # PICA Plain nach PICA/XML
+picadata example.xml                         # PICA/XML nach PICA/XML
 picadata example.xml -t json                 # PICA/XML nach PICA/JSON
 ~~~
+
+Folgende Serialisierungsformate werden unterstützt:
+
+| Format                | Name oder Dateiendungen   |
+|-----------------------|---------------------------|
+| [PICA Plain]          | `plain`, `pp` (Standard)  | 
+| [Binäres PICA]        | `binary`, `bin`, `dat`, `extpp`, `ext` |
+| [Normalisiertes PICA] | `plus`, `norm`, `normpp` |
+| [PICA/JSON]           | `json`, `ndjson`  |
+| [PICA/XML]            | `xml` |
+| [PPXML]               | `ppxml` | 
+
+[PICA Plain]: https://format.gbv.de/pica/plain
+[Binäres PICA]: https://format.gbv.de/pica/binary
+[Normalisiertes PICA]: https://format.gbv.de/pica/normalized
+[PICA/JSON]: https://format.gbv.de/pica/json
+[PICA/XML]: https://format.gbv.de/pica/xml
+[PPXML]: https://format.gbv.de/pica/ppxml
 
 Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](formate?id=Änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
 
