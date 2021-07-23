@@ -100,7 +100,7 @@ picadata -c example.pica
 Das Ausgabeformat `fields` (oder kurz `f`) listet alle vorkommenden Felder auf. Entsprechend gibt es das Ausgabeformat `subfields` (kurz `sf`). 
 
 ~~~bash
-picada -t f example.pica 
+picadata f example.pica 
 ~~~
 ~~~
 003@
@@ -111,7 +111,7 @@ picada -t f example.pica
 Bei Angabe eines Schemas wird (falls vorhanden) das Feld bzw. Unterfeld dokumentiert:
 
 ~~~bash
-picada -t sf example.pica -s k10plus.json
+picadata sf example.pica -s k10plus.json
 ~~~
 ~~~
 003@$0	Pica-Produktionsnummer
