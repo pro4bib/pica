@@ -185,7 +185,7 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 
 * Eine Feldnummer bestehend aus drei Ziffern (die erste `0`, `1` oder `2`), gefolgt von einem Großbuchstaben oder `@`. An jeder der vier Stellen der Feldnummer kann auch ein Punkt `.` als Platzhalter verwenden werden. Beispiele: `003@`, `1..A`, `2...`
 
-* Optional eine Occurrence bestehend aus zwei oder drei Ziffern in eckigen Klammern. Auch hier ist der Punkt als Platzhalter erlaubt. Beispiele: `[12]`, `[0.]`, `[102]`
+* Optional eine Occurrence bestehend aus zwei oder drei Ziffern. Auch hier ist der Punkt als Platzhalter erlaubt. Je nach Anwendung wird die Occurrence in eckigen Klammern (zum Beispiel `[12]`, `[0.]`, `[102]`) oder nach einem Slash (zum Beispiel `/12`, `/0.`, `/102`) angegeben.
 
 * Optional eine Liste von Unterfeld-Codes (`A-Z`, `a-z`, `0-9`). Die Liste wird mit einem Dollar-Zeichen (`$`) eingeleitet. Beispiele: `$0`, `$axy`.
 
