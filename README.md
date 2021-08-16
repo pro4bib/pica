@@ -39,6 +39,10 @@ Als Begleitmaterial gibt es folgende Screencasts:
 
 - *PICA-Formate entschlüsseln mit Avram und PicaEditor* <https://doi.org/10.5446/48737> (2020-09-18, 13:46 Minuten)
 
+## Weiterführende Quellen
+
+* Die Online-Hilfe der [CBS MARC21 database](https://help.oclc.org/Metadata_Services/CBS_MARC_21_database) enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationengleich sind
+
 ## Literatur
 
 - Becker et. al (1992): *Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990).* In: Bibliothek Forschung und Praxis, Band 16, Heft 3. <https://doi.org/10.1515/bfup.1992.16.3.307>
