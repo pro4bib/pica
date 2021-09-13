@@ -134,6 +134,19 @@ picadata '011@$a' ana.pica  # Jahreszahlen
 catmandu convert pp --fix 'pica_map(011@$a,jahr); remove_field(record)' to CSV
 ~~~
 
+Die Abfrage von Titeln die mit einem Normdatensatz verknüpft sind ist etwas komlizierter. Zunächst muss die PPN des Normdatensatzes ermittelt werden, beispielsweise auf Grundlage der GND-ID `2085624-6`.
+
+~~~bash
+$ catmandu convert kxpnorm --query "pica.nid=2085624-6" to JSON | jq -r .[]._id
+100221165
+~~~
+
+Mit der PPN lässt sich anschließend eine CQL-Query wie `pica.1049=100221165 and pica.1045=rel-tt and pica.1001=b` bilden und zur Abfrage von Titeldatensätzen verwenden:
+
+~~~
+catmandu convert kxpnorm --query "pica.1049=100221165 and pica.1045=rel-tt and pica.1001=b" to pp | picadata -p '003@,021A'
+~~~
+
 ### Beispiel: GND-Abfrage
 
 Die PICA-Datenbank der Gemeinsamen Normdatei (GND) ist als [Online-GND](https://swb.bsz-bw.de/DB=2.104/) (OGND) per SRU abfragbar. Mit Kenntnis des [GND-Format](https://format.gbv.de/pica/gnd) und der Suchschlüssel lassen sich gezielt GND-Datensätze im Internformat abrufen.
