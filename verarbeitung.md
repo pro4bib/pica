@@ -128,17 +128,18 @@ picadata f example.pica
 045B/02
 ~~~
 
-Bei Angabe eines Schemas wird (falls vorhanden) das Feld bzw. Unterfeld dokumentiert:
+Bei Angabe eines Schemas per Dateiname oder URL wird (falls vorhanden) das Feld bzw. Unterfeld dokumentiert:
 
 ~~~bash
-picadata sf example.pica -s k10plus.json
+picadata fields example.pica -s https://format.k10plus.de/avram.pl?profile=k10plus
 ~~~
 ~~~
-003@$0	Pica-Produktionsnummer
-021A$a	Haupttitel
-021A$h	Verantwortlichkeitsangabe, die sich auf den Haupttitel bezieht
-045B/02$a	Notation
+003@ o Pica-Produktionsnummer
+021A o Haupttitel, Titelzusatz, Verantwortlichkeitsangabe
+045B/02 * Systematik fÃ¼r Bibliotheken (SfB)
 ~~~
+
+Das Zeichen nach der Feldnummer gibt an, ob das entsprechende Feld optional und wiederholbar oder nicht wiederholbar (`*` oder `o`) bzw. notwendig (`+` oder `.`) ist.
 
 Eine ausführlichere Analyse ist mit der Option `-b`/`--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate?id=avram-schemas) erstellt. Option `-B` reduziert das Schema zur Besseren Lesbarkeit um redundante Bestandteile.
 
