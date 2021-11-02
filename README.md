@@ -22,11 +22,13 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
   - Anwendungsprofile und Schemas
 - [Darstellung](darstellung.md)
   - Anzeige von PICA-Daten mit Syntaxhervorhebung
-  - Hilfe zur einzelnen PICA-Feldern
+  - Hilfe zu einzelnen PICA-Feldern
 - [Verarbeitung](verarbeitung.md)
-  - Konvertierung
-  - Auswertung
-  - Werkzeuge
+  - Auswertung und Konvertierung von PICA-Daten
+  - Vergleich vorhandener Werkzeuge
+- [Verarbeitung mit picadata](picadata.md)
+- [Verarbeitung mit Catmandu](catmandu.md)
+- [Verarbeitung mit pica-rs](pica-rs.md)
 - [Schnittstellen](schnittstellen.md)
   - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
 - [Ausblick](ausblick.md)
@@ -41,7 +43,7 @@ Als Begleitmaterial gibt es folgende Screencasts:
 
 ## Weiterführende Quellen
 
-* Die Online-Hilfe der [CBS MARC21 database](https://help.oclc.org/Metadata_Services/CBS_MARC_21_database) enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationengleich sind
+- Die Online-Hilfe der [CBS MARC21 database](https://help.oclc.org/Metadata_Services/CBS_MARC_21_database) enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationengleich sind
 
 ## Literatur
 

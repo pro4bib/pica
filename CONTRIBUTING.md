@@ -1,6 +1,6 @@
 # Über dieses Handbuch
 
-Der Quelltext dieses Handbuchs wird in Markdown-Syntax geschrieben und in einem git-Repository verwaltet. Kommentare, Korrekturen und Änderungen können [direkt bei GitHub](https://github.com/pro4bib/pica) angemeldet werden. 
+Der Quelltext dieses Handbuchs wird in Markdown-Syntax geschrieben und in einem git-Repository verwaltet. Kommentare, Korrekturen und Änderungen können [direkt bei GitHub](https://github.com/pro4bib/pica) angemeldet werden.
 
 Die jeweils aktuelle HTML-Version steht unter <https://pro4bib.github.io/pica/> zur Verfügung. Eine Druckversion [ist angedacht](https://github.com/pro4bib/pica/issues/1).
 
