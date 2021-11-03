@@ -60,6 +60,6 @@ Vue.createApp({
 
 Bei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Grenzen, so dass eigene Programme entwickelt werden müssen. Für einige Programmiersprachen gibt es Softwarebibliotheken, die die Arbeit mit PICA-Daten vereinfachen und verlässlicher machen. Bislang gibt es:
 
-* Die **Perl**-Programmbibliotheken [PICA::Data](https://github.com/gbv/PICA-Record), auf der sowohl [picadata] als auch die PICA-Funktionen von [Catmandu] basiert (ein ältere, inzwischen nicht mehr weiterentwickelte Version der Bibliothek ist [PICA::Record](https://github.com/gbv/PICA-Record)).
+* Die **Perl**-Programmbibliotheken [PICA::Data](https://github.com/gbv/PICA-Data), auf der sowohl [picadata] als auch die PICA-Funktionen von [Catmandu] basiert (ein ältere, inzwischen nicht mehr weiterentwickelte Version der Bibliothek ist [PICA::Record](https://github.com/gbv/PICA-Record)).
 * Das Node-Modul [pica-data](https://www.npmjs.com/package/pica-data) stellt **JavaScript**-Funktionen zur Verarbeitung von PICA+ als PICA Plain und PICA JSON bereit.
 * [luapica](http://gbv.github.io/luapica/) ist eine Programmbibliothek zur PICA-Verarbeitung in **Lua**.
