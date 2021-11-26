@@ -34,6 +34,7 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 - [Ausblick](ausblick.md)
   - Verwandte Formate (MARC, RDF, JSON...)
   - Allgemeines und Weiterführendes zur Datenverarbeitung
+- [Über dieses Handbuch](CONTRIBUTING.md)
 
 ## Screencasts
 
