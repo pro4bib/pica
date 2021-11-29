@@ -10,4 +10,5 @@ Am einfachsten die Installation einer Release-Version des Programms von der Seit
 
 ## Bedienung
 
-*Eine genauere Anleitung befindet sich noch in Aufbau!*
+>? Siehe [pica-rs Anfänger-Tutorial](https://deutsche-nationalbibliothek.github.io/pica-rs/book/beginner-tutorial.html)
+
