@@ -10,20 +10,15 @@ author:
 
 ## Was ist PICA+?
 
-- Internes Datenformat der Bibliotheksysteme CBS und LBS von OCLC/PICA
+- **Internes Datenformat** der Bibliotheksysteme CBS und LBS von OCLC/PICA
 - Entwickelt Ende der 1970er, angelehnt an MARC
-- Zentrales Format in GBV, SWB (via K10plus), DNB (ZDB, GND...) u.A.
+- Zentral in GBV & SWB (via K10plus), DNB u.A.
 
 ## Einsatz
- 
-~~~svgbob
-                      .----.
-       Import -----> | CBS  | ----> Export
-               .--->  '----'
-              / Pica3
- Katalogisierung: WinIBW
 
-~~~
+[](einsatz.bob){.svgbob scale=3}
+
+*Konvertierung von und nach PICA+*
 
 ## PICA-Datensatz
 
@@ -33,15 +28,14 @@ author:
 
 Hier nun ein fiktives Beispiel für einen ganz einfachen PICA-Datensatz.
 
-...TODO...
-
+Das Format besteht im Wesentlichen aus Feldern (003@, 021A, 045B/02...) und Unterfeldern (0, a, h, a). Was diese Felder bedeuten ist jedoch nicht Bestandteil der Datenstruktur.
 :::
 
 ## PICA-Formate
 
 ![](../img/format-beispiel-k10plus.png)
 
-K10plus-PICA ≠ ZDB-PICA ≠ GND-PICA...
+K10plus ≠ ZDB ≠ GND...
 
 ::: notes
 
@@ -61,6 +55,28 @@ Das jeweilige Format lässt sich nochmal unterteilen in das Datenformat im enger
 
 :::
 
+## Avram-Schemas
+
+Formatbeschreibung in maschinenlesbarer Form
+
+~~~json
+{
+   "fields" : {
+      "021A" : {
+         "label" : "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
+         "repeatable" : false,
+         "subfields" : {
+            "a" : {
+               "label" : "Haupttitel",
+               "repeatable" : false
+            }
+        }
+    }
+}
+~~~
+
+<https://format.k10plus.de/avram.pl>
+
 ## Beispiel aus dem K10plus
 
 <https://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=12&TRM=017651735&HILN=888>
@@ -79,13 +95,9 @@ Erste Ziffer der Feldnummer: Ebene (0=Titel, 1=Bibliothek, 2=Exemplar)
 
 :::
 
+## Ebenen eines PICA-Datensatz
 
-<!-- ## {data-background-image=""} -->
-
-
-::: notes
-
-:::
+[](ebenen.bob){.svgbob scale=2}
 
 # Werkzeuge
 
@@ -97,56 +109,74 @@ Kommandozeilen-Werkzeuge
 
 ## picadata
 
-- Daten aus dem Katalog (copy & paste)
-- picadata
-    - PICA-Serialisierungen (XML, Binär, JSON...)
-    - Befehle: count, levels
-    - Befehl: explain
-    - Daten herauziehen mit PICA Path expression
-    - `picadata 04.. beispiel.pica`
+- Konvertierung zwischen PICA-Serialisierungen (XML, Binär, JSON...)
+- Analyse von PICA-Daten
+- Validierung gegen Avram-Schemas
+- ...
+
+## picadata: Beispiele
 
 ~~~
-curl 'https://format.k10plus.de/avram.pl?profile=k10plus-title' > k10plus-title.json
-picadata fields minimal.pp -s k10plus-title.json
+picadata beispiel.pp
+picadata levels beispiel.pp
+picadata 021A beispiel.pp
+picadata validate beispiel.pp -s k10plus.json
+picadata fields beispiel.pp -s k10plus.json
 ~~~~
 
 ## Catmandu
 
-- Catmandu
-    - Daten von API abrufen
-    - Fix-Skript (zwischen PICA und andere Formate konvertieren)
+- Allgemeines Werkzeug zur Datenverarbeitung
+- Ebenso wie picadata in Perl entwickelt
+- Abruf von Daten via APIs
+- Datenkonvertierung (u.A. von und nach PICA+)
+- ...
 
-catmandu convert SRU --query ''
+## Catmandu: Beispiele
 
 Welche anderen Titel mit der gleichen DDC "Computereinsatz für Katalogisierung in Bibliotheken"
 
-    catmandu convert kxp --query "pica.ddc=025.30285" to pp > result.pica
+    catmandu convert kxp --query "pica.ddc=025.30285" to pp > result.pp
 
-Aus welchen Jahren stammen die Titel:
+Aus welchen Jahren stammen die Titel?
 
-    picadata 011@\$a result.pica | sort | uniq -c
+    picadata 011@\$a result.pp | sort | uniq -c
 
-=> vor allem Ende der 1980er, Anfang der 1990er
+Welche Titel sind ebenfalls mit PPN `181564734` (Schlagwort) verlinkt?
 
-Welche Titel sind ebenfalls mit PPN `181564734` (PICA) verlinkt?
-
-    catmandu convert kxp --query "pica.1049=181564734 and pica.1045=rel-tt and pica.1001=b" to pp > pica.pp
-    picadata count pica.pp
-    catmandu convert pp --fix 'pica_map(011@$a,jahr)pica_map(021A$a,titel)' to TSV --fields jahr,titel < pica.pp
+    catmandu convert kxp --query "pica.1049=181564734 and pica.1045=rel-tt and pica.1001=b"
 
 ## pica-rs
 
-- pica-rs
+- Vergleichbar mit `picadata`
+- Implementation in Rust
+- Gut zum Filtern größerer Datenmengen
 
-# Fortgeschrittene Techniken
+## pica-rs: Beispiele
 
-## Validierung mit Avram-Schemas
+~~~
+pica filter -s "002@.0 == 'Oa'" records.dat
+pica filter -s "0100.a in ['ger', 'eng']" records.dat
+pica select "003@.0, 021A.a" -H "PPN, Titel" records.dat
+~~~
 
-- Validierung gegen Avram-Schemas
+# Weitere Techniken und Formate
 
-## Änderungsformat
+## PICA Path Expression Syntax
 
-- Änderungen verfolgen und durchführen mit PICA Patch Format
+Referenzierung von PICA-Feldern und Unterfeldern
+
+* **`003@$0`** = PPN
+* **`04../*`** = Alle Sacherschließungsfelder (K10plus)
+* ...
+
+## PICA Änderungsformat
+
+Datensatz-Änderungen erkennen und durchführen
+
+![](../img/patch-example.png){width=50%}
+
+*Nutzung zur Eintragung im K10plus in Entwicklung*
 
 # Ausblick
 
@@ -158,4 +188,3 @@ Welche Titel sind ebenfalls mit PPN `181564734` (PICA) verlinkt?
 
 * Vortrag *Werkzeuge zur Analyse von Bibliotheksdaten* 
   eingereicht zum Bibliothekar*innentag 2022
-

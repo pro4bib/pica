@@ -17,6 +17,7 @@
 017G	$uhttp://www.gbv.de/dms/tib-ub-hannover/017651735.pdf$mV:DE-601$mB:DE-89$qpdf/application$xH$yInhaltsverzeichnis$3Inhaltsverzeichnis$504$AGBV$B2
 019@	$aXA-BE
 021A	$a@Database management systems$hPaula Goossens [Hrsg.]
+021A	$a@Database management systems$hPaula Goossens [Hrsg.]
 028C	$dPaula$aGoossens$BHrsg.
 030F	$a@Library systems seminar$kBrüssel$p1981.10.14-16
 030F	$a@INTERMARC software-subgroup seminar$j5$kBrüssel$p1981.10.14-16
