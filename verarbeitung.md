@@ -63,3 +63,4 @@ Bei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Gren
 * Die **Perl**-Programmbibliotheken [PICA::Data](https://github.com/gbv/PICA-Data), auf der sowohl [picadata] als auch die PICA-Funktionen von [Catmandu] basiert (ein ältere, inzwischen nicht mehr weiterentwickelte Version der Bibliothek ist [PICA::Record](https://github.com/gbv/PICA-Record)).
 * Das Node-Modul [pica-data](https://www.npmjs.com/package/pica-data) stellt **JavaScript**-Funktionen zur Verarbeitung von PICA+ als PICA Plain und PICA JSON bereit.
 * [luapica](http://gbv.github.io/luapica/) ist eine Programmbibliothek zur PICA-Verarbeitung in **Lua**.
+* [pica_parse](https://github.com/FID-Judaica/pica_parse.py) ist eine **Python**-Bibliothek für PICA+ Daten.
