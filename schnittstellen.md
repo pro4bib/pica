@@ -112,11 +112,12 @@ $ catmandu convert kxp --query "pica.ppn=161165839X" to pp | picadata 045H\$a
 335.83092
 ~~~
 
-Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Hier zwei Möglichkeiten der Auswertung:
+Die DDC ist im Suchindex mit dem Schlüssel `ddc` erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Hier mehrere Möglichkeiten der Auswertung. Die letzte Variante ruft nur die Anzahl der Datensätze ab:
 
 ~~~bash
 catmandu convert kxp --query "pica.ddc=335.83092" to Count
 catmandu convert kxp --query "pica.ddc=335.83092" to pp | picadata --count
+catmandu convert kxp --query "pica.ddc=335.83092" --parser meta --limit 0 --fix 'retain(numberOfRecords)'
 ~~~
 
 Mehrere Suchschlüssel können mit `and` oder `or` verknüpft werden. Hier eine Liste der Titel von Publikationen zu Anarchisten die im Jahr 2014 oder 2015 erschienen sind:
