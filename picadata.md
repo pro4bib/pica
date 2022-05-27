@@ -160,7 +160,6 @@ Hier ein vollständiges Beispiel zur Abfrage und Validierung eines Teilbestandes
 ~~~bash
 curl https://format.k10plus.de/avram.pl?profile=k10plus-title > k10plus-title.json
 catmandu convert kxp --base http://sru.k10plus.de/opac-de-84 --query pica.bkl=56.23 to pp > brueckenbau.pp
-pc
 picadata validate -s k10plus-title.json brueckenbau.pp
 ~~~
 
