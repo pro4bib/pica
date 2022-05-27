@@ -145,7 +145,7 @@ picadata -B example.pica
 
 Bei Angabe eines [Avram-Schema](formate?id=avram-schemas) per Datei oder URL mit Option `-s`/`--schema` werden Eingabedaten gegen das Schema validiert. Unbekannte Felder und Unterfelder werden dabei ignoriert, außer bei Angabe der zusätzlichen Option `-u`/`--unknown`. Das Ergebnis der Validierung kann auf verschiedene Weise angezeigt werden:
 
-* Standarmäßig werden nur Fehlermeldungen ausgegeben. Ist der Datensatz korrekt, erfolgt also keine Ausgabe. Mit der Option `-t` kann zusätzlich die Ausgabe der Datensätze aktiviert werden
+* Standarmäßig werden nur Fehlermeldungen ausgegeben. Ist der Datensatz korrekt, erfolgt also keine Ausgabe.
 
 * Mit der Option `-a`/`--annotate` wird das Ergebnis der Validierung als Feld-Annotation ausgegeben. Die Markierung von fehlerhaften Feldern ist `!` und von unbekannten Feldern `?`.
 
@@ -153,6 +153,15 @@ Wurde ein Fehler erkannt, so ist der Statuscode des Programms 1, so dass Shell-P
 
 ~~~bash
 picadata -s schema.json example.pica && echo "OK"
+~~~
+
+Hier ein vollständiges Beispiel zur Abfrage und Validierung eines Teilbestandes des K10plus (Titel zum Thema Brückenbau an der TU Braunschweig):
+
+~~~bash
+curl https://format.k10plus.de/avram.pl?profile=k10plus-title > k10plus-title.json
+catmandu convert kxp --base http://sru.k10plus.de/opac-de-84 --query pica.bkl=56.23 to pp > brueckenbau.pp
+pc
+picadata validate -s k10plus-title.json brueckenbau.pp
 ~~~
 
 !> Die Validierung umfasst momentan nur die bibliographische Ebene und keine Occurrence-Bereiche ([Siehe Issue](https://github.com/gbv/PICA-Data/issues/35))!
