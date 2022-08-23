@@ -1,12 +1,12 @@
 # Verarbeitung von PICA-Daten
 
-Dieses Kapitel gibt eine allgemeine Übersicht von frei zugänglichen Werkzeugen zur Verarbeitung von PICA-Daten. Im Wesentlichen sind dies:
+Dieses Kapitel gibt eine allgemeine Übersicht von frei zugänglichen Werkzeugen zur Verarbeitung von PICA-Daten. Auf folgende Werkzeuge wird ausführlicher eingegangen:
 
 * Das Kommandozeilenprogramm [picadata](picadata.md)
 * Das Datenverarbeitungs-Werkzeug [Catmandu](catmandu.md)
 * Das Kommandozeilenprogramm [pica-rs](pica-rs.md)
 
-Das mit Catmandu vergleichbare Werkzeug [Metafacture](http://metafacture.org) unterstützt neben anderen Formaten auch das Lesen und Schreiben von PICA-Daten (siehe [Java-Quellcode](https://github.com/metafacture/metafacture-core/tree/master/metafacture-biblio/src/main/java/org/metafacture/biblio/pica)). Darüber hinaus gibt es die Web-Komponente [PicaEditor](#picaeditor) und mehrere [Programmbibliotheken](#programmbibliotheken) zur Entwicklung eigener Werkzeuge und Anwendungen.
+Darüber hinaus gibt es die Web-Komponente [PicaEditor](#picaeditor) und mehrere [Programmbibliotheken](#programmbibliotheken) zur Entwicklung eigener Werkzeuge und Anwendungen. Schließlich können PICA-Daten in beliebigen Programmiersprachen auch [direkt verarbeitet werden](#direkte-verarbeitung).
 
 [picadata]: picadata.md
 [Catmandu]: catmandu.md
@@ -64,3 +64,22 @@ Bei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Gren
 * Das Node-Modul [pica-data](https://www.npmjs.com/package/pica-data) stellt **JavaScript**-Funktionen zur Verarbeitung von PICA+ als PICA Plain und PICA JSON bereit.
 * [luapica](http://gbv.github.io/luapica/) ist eine Programmbibliothek zur PICA-Verarbeitung in **Lua**.
 * [pica_parse](https://github.com/FID-Judaica/pica_parse.py) ist eine **Python**-Bibliothek für PICA+ Daten.
+* Das mit Catmandu vergleichbare Werkzeug [Metafacture](http://metafacture.org) unterstützt neben anderen Formaten auch das Lesen und Schreiben von PICA-Daten (siehe [Java-Quellcode](https://github.com/metafacture/metafacture-core/tree/master/metafacture-biblio/src/main/java/org/metafacture/biblio/pica)).
+
+## Direkte Verarbeitung
+
+Die relativ einfache Struktur von PICA ermöglicht die direkte Verarbeitung von PICA-Daten, insbesondere wenn diese in Form von normalisiertem PICA vorliegen. Ohne PICA-Programmbibliothek können sich zwar etwas leichter Fehler einschleichen, dafür muss nichts installiert werden und die Verarbeitung ist unter Umständen sogar schneller. Hier ein Beispiel, das aus normalisiertem PICA alle Unterfelder `$a` von Felder mit Inhaltserschließung (`044.` und `045.`) ausgibt:
+
+~~~perl
+while (<>) {                                      # Ein Datensatz pro Zeile
+    for ( split /\x1E/ ) {                        # Schleife über alle Felder 
+        my ( $field, $tmp ) = split ' ', $_, 2;   # Tag und Occurrence
+        my ( undef, @sfs ) = split /\x1F/, $tmp;  # Unterfelder
+
+        next if $field !~ /^04[45]/;
+        for (@sfs) {
+            say $1 if $_ =~ /^a(.+)/;
+        }
+    }
+}
+~~~
