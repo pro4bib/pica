@@ -68,7 +68,7 @@ Bei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Gren
 
 ## Direkte Verarbeitung
 
-Die relativ einfache Struktur von PICA ermöglicht die direkte Verarbeitung von PICA-Daten, insbesondere wenn diese in Form von normalisiertem PICA vorliegen. Ohne PICA-Programmbibliothek können sich zwar etwas leichter Fehler einschleichen, dafür muss nichts installiert werden und die Verarbeitung ist unter Umständen sogar schneller. Hier ein Beispiel, das aus normalisiertem PICA alle Unterfelder `$a` von Felder mit Inhaltserschließung (`044.` und `045.`) ausgibt:
+Die relativ einfache Struktur von PICA ermöglicht die direkte Verarbeitung von PICA-Daten, insbesondere wenn diese in Form von normalisiertem PICA vorliegen. Ohne PICA-Programmbibliothek können sich zwar etwas leichter Fehler einschleichen, dafür muss nichts installiert werden und die Verarbeitung ist unter Umständen sogar schneller. Hier ein Beispiel in Perl, das aus normalisiertem PICA alle Unterfelder `$a` von Felder mit Inhaltserschließung (`044.` und `045.`) ausgibt:
 
 ~~~perl
 while (<>) {                                      # Ein Datensatz pro Zeile
@@ -76,7 +76,7 @@ while (<>) {                                      # Ein Datensatz pro Zeile
         my ( $field, $tmp ) = split ' ', $_, 2;   # Tag und Occurrence
         my ( undef, @sfs ) = split /\x1F/, $tmp;  # Unterfelder
 
-        next if $field !~ /^04[45]/;
+        next if $field !~ /^04[45]/;              # Verarbeitung des Datensatz
         for (@sfs) {
             say $1 if $_ =~ /^a(.+)/;
         }
