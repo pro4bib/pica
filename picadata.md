@@ -43,12 +43,14 @@ Folgende Serialisierungsformate werden unterstützt:
 | [PICA Plain]          | `plain`, `pp` (Standard)  | 
 | [Binäres PICA]        | `binary`, `bin`, `dat`, `extpp`, `ext` |
 | [Normalisiertes PICA] | `plus`, `norm`, `normpp` |
+| [PICA-Importformat]   | `import` |
 | [PICA/JSON]           | `json`, `ndjson`  |
 | [PICA/XML]            | `xml` |
 | [PPXML]               | `ppxml` | 
 
 [PICA Plain]: https://format.gbv.de/pica/plain
 [Binäres PICA]: https://format.gbv.de/pica/binary
+[PICA-Importformat]: https://format.gbv.de/pica/import
 [Normalisiertes PICA]: https://format.gbv.de/pica/normalized
 [PICA/JSON]: https://format.gbv.de/pica/json
 [PICA/XML]: https://format.gbv.de/pica/xml

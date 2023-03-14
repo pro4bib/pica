@@ -110,14 +110,14 @@ Zur Speicherung und Übertragung können PICA-Daten in verschiedener Form [kodie
 
 [Schnittstellen]: schnittstellen
 
-Neben den Binärformaten **[Binäres PICA](https://format.gbv.de/pica/binary)** und **[Normalisiertes PICA](https://format.gbv.de/pica/normalized)**, die direkt in CBS- und LBS-Software verwendet werden, gibt es:
+Neben den Binärformaten **[Binäres PICA](https://format.gbv.de/pica/binary)**, **[Normalisiertes PICA](https://format.gbv.de/pica/normalized)** und dem [PICA-Importformat](https://format.gbv.de/pica/import), die direkt in CBS- und LBS-Software verwendet werden, gibt es:
 
 * **[PICA Plain](https://format.gbv.de/pica/plain)** Syntax, die lesbare Darstellung von PICA+
 * **[PICA/JSON](https://format.gbv.de/pica/json)** Syntax, eine kompakte Kodierung in JSON
 * **[PICA/XML](https://format.gbv.de/pica/xml)** Syntax, eine Kodierung in XML (primäre XML-Kodierung im GBV)
 * **[PPXML](https://format.gbv.de/pica/ppxml)** Syntax, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)
 
-PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgangen werden können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen vier Serialisierungen:
+PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit einem Dollar-Zeichen (`$`) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung (`$$`) kodieren. Das Format ist über einen "versteckten Link" direkt [aus dem OPAC verfügbar](schnittstellen?id=OPAC). Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgangen werden können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen sieben Serialisierungen (bei den Binärformaten steht zur besseren Lesbarkeit `[XX]` für ein Byte mit dem hexadezimalen Bytecode `XX`):
 
 #### PICA Plain
 
@@ -125,6 +125,29 @@ PICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder 
 003@ $012345X
 021A $aEin Buch$hzum Lesen
 045B/02 $aSpo 1025$aBID 200
+~~~
+
+### Normalisiertes PICA
+
+~~~
+003@ [1F]012345X[1E]021A [1F]aEin Buch[1F]hzum Lesen[1E]045B/02 [1F]aSpo 1025[1F]aBID 200[1E]
+~~~
+
+### Binäres PICA
+
+~~~
+003@ [1F]012345X[1E]021A [1F]aEin Buch[1F]hzum Lesen[1E]045B/02 [1F]aSpo 1025[1F]aBID 200[1E][1D]
+~~~
+
+_Nach dem Datensatz folgt kein Zeilenumbruch!_
+
+### PICA-Importformat
+
+~~~
+[1D]
+[1E]003@ [1F]012345X
+[1E]021A [1F]aEin Buch[1F]hzum Lesen
+[1E]045B/02 [1F]aSpo 1025[1F]aBID 200
 ~~~
 
 #### PICA/JSON
