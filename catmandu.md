@@ -80,6 +80,8 @@ catmandu convert pp to pp --fix 'set_field(titel,"Ein gutes Buch");pica_set(tite
 045B/02 $aSpo 1025$aBID 200
 ~~~
 
+Weitere Beispiele für Fix-Skripte gibt es [im Abschnitt zur PICA-Bearbeitung](bearbeitung).
+
 ## Schnittstellen
 
 Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen?id=SRU) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:

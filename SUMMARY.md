@@ -7,5 +7,6 @@
 * [Verarbeitung mit Catmandu](catmandu.md)
 * [Verarbeitung mit pica-rs](pica-rs.md)
 * [Schnittstellen](schnittstellen.md)
+* [Bearbeitung](bearbeitung.md)
 * [Ausblick](ausblick.md)
 * [Über dieses Handbuch](CONTRIBUTING.md)

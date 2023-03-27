@@ -31,6 +31,7 @@ Das PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht d
 - [Verarbeitung mit pica-rs](pica-rs.md)
 - [Schnittstellen](schnittstellen.md)
   - Zugriff auf PICA-Daten (OPAC, WinIBW, SRU, unAPI...)
+- [Bearbeitung](bearbeitung.md) von PICA-Daten
 - [Ausblick](ausblick.md)
   - Verwandte Formate (MARC, RDF, JSON...)
   - Allgemeines und Weiterführendes zur Datenverarbeitung
