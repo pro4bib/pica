@@ -1,2 +1,0 @@
-#!/bin/bash
-curl "http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:$1"

@@ -48,9 +48,24 @@ Hier einige weitere Beispiele von [Fix-Skripten](catmandu?id=fix-skripte) zur Ä
 von Datensätzen mit Catmandu:
 
 ~~~
-# Füge ein Unterfeld hinzu
+# Entferne Felder der Basisklassifikation (BK) mit invalider Notation
 
-# Entferne die Occurrence von allen `028C` Feldern
+# Nur Titeldatensatz betrachten
+pica_keep(0.../*)
+
+do pica_diff()
+  do pica_each(045Q/01)
+    unless pica_match($9) # Wenn keine BK-Normdaten-Verknüpfung vorhanden
+      unless pica_match($a,"\d\d\.\d\d")
+        pica_remove(045Q/01)
+      end
+    end
+  end
+end
+~~~
+
+~~~
+# Entferne die Occurrence von allen `028C` Feldern,
 # außer wenn das Feld per `$9` mit einem Normdatensatz verknüpft ist
 
 do pica_diff()
