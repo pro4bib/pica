@@ -10,7 +10,7 @@ Die unAPI-Schnittstelle ermöglicht den Abruf einzelner PICA-Datensätze mittels
 
 ?> [unAPI im GBV-Verbundwiki](https://verbundwiki.gbv.de/display/VZG/unAPI)
 
-Eine Liste aller unterstützen Formaten wird bei Aufruf der unAPI-URL (<https://unapi.k10plus.de/> bzw. <https://unapi.gbv.de/>) zurückgeliefert. Die PICA-basierten Serialisierungen sind:
+Eine Liste aller unterstützen Formaten wird bei Aufruf der unAPI-URL (<https://unapi.k10plus.de/>) zurückgeliefert. Die PICA-basierten Serialisierungen sind:
 
 `format=`   |Serialisierung
 ------------|--------------
