@@ -10,7 +10,7 @@ Hilfreich für die Arbeit mit verschiedenen Datenformaten ist zumindest ein Grun
 
 ## Allgemeines und Weiterführendes zur Datenverarbeitung
 
-!> Dieser Abschnutt muss erst noch geschrieben werden!
+!> Dieser Abschnitt muss erst noch geschrieben werden!
 
 * Wohin mit weiteren Fragen?
 
