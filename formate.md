@@ -184,11 +184,11 @@ _Nach dem Datensatz folgt kein Zeilenumbruch!_
 <record xmlns="http://www.oclcpica.org/xmlns/ppxml-1.0">
   <global opacflag="" status="">
     <tag id="003@" occ="">
-      <subf id="0">12345X</ppxml:subf>
+      <subf id="0">12345X</subf>
     </tag>
     <tag id="021A" occ="">
-      <subf id="a">Ein Buch</ppxml:subf>
-      <subf id="h">zum Lesen</ppxml:subf>
+      <subf id="a">Ein Buch</subf>
+      <subf id="h">zum Lesen</subf>
     </tag>
     <tag id="045B" occ="2">
       <subf id="a">Spo 1025</subf>
