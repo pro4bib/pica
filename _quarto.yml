@@ -1,0 +1,56 @@
+project:
+  type: book
+  preview:
+    browser: false
+
+metadata-files:
+  - about.yml
+
+book:
+  repo-url: https://github.com/pro4bib/pica/
+  chapters:
+    - index.md
+    - grundlagen.qmd
+    - formate.qmd
+    - darstellung.qmd
+    - verarbeitung.qmd
+    - picadata.qmd
+    - catmandu.qmd
+    - pica-rs.qmd
+    - schnittstellen.qmd
+    - bearbeitung.qmd
+    - ausblick.qmd
+    - CONTRIBUTING.md
+    - literatur.md
+  sidebar:
+    style: docked
+    logo: img/gbv-vzg-logo.png
+  page-footer: 
+    left: 
+      - text: CC BY 3.0 DE
+        href: https://creativecommons.org/licenses/by/3.0/de/
+    right: 
+      - text: Datenschutz
+        href: https://www.gbv.de/datenschutz
+      - text: hosted by VZG
+        href: https://www.gbv.de/impressum
+      - icon: github
+        href: https://github.com/pro4bib/pica/
+      - text: "![](img/quarto-badge.svg)"
+        href: https://quarto.org
+  favicon: img/gbv-vzg-logo.png
+
+bibliography: references.bib 
+nocite: |
+  @*
+tbl-cap-location: bottom
+
+format:
+  html:
+    theme: cosmo
+    css: style.css
+    link-external-icon: true
+    callout-appearance: simple
+    published-title: "Letzte Änderung"
+    number-sections: true
+    number-depth: 2

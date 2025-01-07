@@ -1,8 +1,10 @@
-# Einführung in pica-rs
+# Das Werkzeug pica-rs
 
-pica-rs ist wie [picadata](picadata.md) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.
+pica-rs ist wie [picadata](picadata.qmd) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.
 
-?> [Dokumentation von pica-rs](https://github.com/deutsche-nationalbibliothek/pica-rs#readme)
+::: {.callout-note appearance="simple"}
+[Dokumentation von pica-rs](https://github.com/deutsche-nationalbibliothek/pica-rs#readme)
+:::
 
 ## Installation
 
@@ -10,7 +12,9 @@ Am einfachsten die Installation einer Release-Version des Programms von der Seit
 
 ## Bedienung
 
-?> Siehe [pica-rs Anfänger-Tutorial](https://deutsche-nationalbibliothek.github.io/pica-rs/book/beginner-tutorial.html)
+::: {.callout-note appearance="simple"}
+Siehe [pica-rs Anfänger-Tutorial](https://deutsche-nationalbibliothek.github.io/pica-rs/book/beginner-tutorial.html)
+:::
 
 Das Kommandozeilenprogramm von pica-rs heisst `pica`. Im Gegensatz zu `picadata` wird als Standard-Syntax normalisiertes PICA (mit einem Datensatz pro Zeile) angenommen. Das Programm stellt folgende Befehle bereit:
 

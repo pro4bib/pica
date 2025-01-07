@@ -10,7 +10,9 @@ Hilfreich für die Arbeit mit verschiedenen Datenformaten ist zumindest ein Grun
 
 ## Allgemeines und Weiterführendes zur Datenverarbeitung
 
-!> Dieser Abschnitt muss erst noch geschrieben werden!
+::: {.callout-important appearance="simple"}
+Dieser Abschnitt muss erst noch geschrieben werden!
+:::
 
 * Wohin mit weiteren Fragen?
 

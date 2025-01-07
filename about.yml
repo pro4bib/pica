@@ -1,0 +1,11 @@
+lang: de
+
+book:
+  title: "Einführung in die Verarbeitung von PICA-Daten"
+#  subtitle: "..."
+  description: "Verarbeitung von Daten in, aus und zwischen PICA-Formaten"
+  language: de
+  date: today
+  author: Jakob Voß # (Verbundzentrale des GBV), 2020- ([siehe Änderungshistorie](https://github.com/pro4bib/pica/commits/master)*)
+#  abstract: >    
+#    Dieses Handbuch gibt ...

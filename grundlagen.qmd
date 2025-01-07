@@ -1,6 +1,6 @@
 # Grundlagen
 
-Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [Geschichte von PICA](#historisches) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf PICA-Formate im Speziellen wird [im nächsten Kapitel](formate) eingegangen.
+Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [Geschichte von PICA](#historisches) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf PICA-Formate im Speziellen wird [im nächsten Kapitel](formate.qmd) eingegangen.
 
 ## Historisches
 
@@ -12,9 +12,7 @@ Das PICA-Format ist an das noch ältere [MARC-Format](http://format.gbv.de/marc)
 [Bericht zum PICA-System]: https://doi.org/10.1515/bfup.1992.16.3.307
 [OCLC PICA]: https://de.wikipedia.org/wiki/OCLC_PICA
 
-![Hardware-Infrastruktur des ersten PICA Systems (1979)](img/pica1979.png)
-
-*Hardware-Infrastruktur des ersten PICA Systems (1979)*
+![Hardware-Infrastruktur des ersten PICA Systems (1979)](img/pica1979.png){#fig-hardwarepica}
 
 ## Datenformate
 
@@ -48,7 +46,9 @@ In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkre
 
 Beispiele für Anwendungsformate: die Dokumentformate [TEI] und [Markdown], die bibliographischen Datenformate [BibTeX] und [DataCite] und die Normdatenformate [JSKOS] und [GND-Internformat](http://format.gbv.de/pica/gnd) (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) [Datenmodelle] voraus und sind in Strukturierungsformaten [kodiert](#kodierungen).
 
-?> [Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
+::: {.callout-note appearance="simple"}
+[Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
+:::
 
 [Markdown]: http://format.gbv.de/markdown
 [TEI]: http://format.gbv.de/tei
@@ -69,7 +69,9 @@ Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Me
 
 Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eines Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
 
-?> Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag *[Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)*
+::: {.callout-note appearance="simple"} 
+Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag *[Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)*
+:::
 
 ### Abfrage- und Schemaformate
 
@@ -82,10 +84,12 @@ Der Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenf
 
 Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die anwendungsunabhängige Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.
 
-?> [Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
+::: {.callout-note appearance="simple"}
+[Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
+:::
 
-[PICA Path Expression]: formate?id=abfragesprachen
-[Avram]: formate?id=avram-schemas
+[PICA Path Expression]: formate.qmd#abfragesprachen
+[Avram]: formate.qmd#avram-schemas
 
 ### Kodierungen
 
@@ -93,22 +97,23 @@ Letzendlich müssen alle Daten als Folge von Bits bzw. Bytes ausgedrückt werden
 
 Während Computer nur mit Kodierungen arbeiten, interessiert Menschen eigentlich nur was mit Kodierungen ausgedrückt wird. In der Praxis wird deshalb nicht immer genau zwischen einem Datenformat und seiner Kodierung unterschieden. So liegt beispielsweise XML in der Regel in XML-Syntax vor, also wird beides als XML bezeichnet. Bei der Verarbeitung von Daten ist jedoch genau darauf zu achten, auch welcher Kodierungsebene jeweils angesetzt wird.
 
-```mermaid
+:::{#fig-picakodierung}
+```{mermaid}
 graph LR
   PICA+ -- PICA/XML --> XML -- XML-Syntax --> Unicode -- UTF-8 --> Bytes
 ```
 
-*Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*
-
-?> [Kodierungen](https://format.gbv.de/code) in der GBV-Formatdatenbank
+Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*
+:::
+::: {.callout-note appearance="simple"}
+[Kodierungen](https://format.gbv.de/code) in der GBV-Formatdatenbank
+:::
 
 ### Datenmodelle
 
 Ein grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarten während Daten letzendlich immer nur als Folge von Nullen und Einsen vorliegen. Zur Abbildung abstrakter Vorstellungen auf konkrete Datenformate im Zuge der **Datenmodellierung** dienen **Datenmodelle**. Ein Datenmodell ist gewissermaßen die Vorstufe oder Abstraktion eines Datenformates. Die Bandbreite an Methoden zur Formulierung von Datenmodellen reicht von groben Skizzen auf Papier bis zu komplexen Datenmodellierungssprachen aus denen automatisch Schemas erzeugt werden können. Die Grenze zwischen Datenmodellen und Schemas ist daher unscharf. Als Faustregel kann gelten, dass Datenmodelle eher der Kommunikation mit Menschen und Schemas eher der Kommunikation mit Computern dienen. Grundsätzlich haben alle Datenformate zumindest implizit zugrunde liegende Modelle.
 
-![Ebenen der Datenmodellierung](img/data-modeling-simplified.png)
-
-*Ebenen der Datenmodellierung*
+![Ebenen der Datenmodellierung](img/data-modeling-simplified.png){#fig-ebenendaten}
 
 Ein weiteres Hilfsmittel zum Verständnis von Datenformaten sind **Beispiele**. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.
 

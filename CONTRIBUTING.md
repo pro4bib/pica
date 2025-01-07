@@ -8,7 +8,7 @@ Das Verzeichnis `slides` enthält begleitende Vortragsfolien.
 
 ## Technische Details
 
-Um das Handbuch lokal nach HTML zu übersetzen wird [docsify](https://docsify.js.org/) benötigt:
+Um das Handbuch lokal nach HTML zu übersetzen wird [quarto](https://quarto.org/) benötigt:
 
 ~~~bash
 git clone git@github.com:pro4bib/pica.git && cd pica

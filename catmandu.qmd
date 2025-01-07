@@ -1,8 +1,10 @@
-# Einführung in Catmandu
+# Das Werkzeug Catmandu
 
 **Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf [Schnittstellen](schnittstellen) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
 
-?> [Catmandu-Einführung](https://metacpan.org/pod/Catmandu::Introduction) (in Englisch)
+::: {.callout-note appearance="simple"}
+[Catmandu-Einführung](https://metacpan.org/pod/Catmandu::Introduction) (in Englisch)
+:::
 
 ## Installation
 
@@ -45,10 +47,10 @@ catmandu convert pp to JSON < example.pica
 
 Funktionen zur Verarbeitung von PICA in Catmandu werden erst durch das Paket [Catmandu-PICA](https://metacpan.org/release/Catmandu-PICA) bereitgestellt (siehe [Installation](#installation-1)):
 
-* Lesen und Schreiben verschiedener [PICA-Serialisierungen](formate?id=serialisierungen)
+* Lesen und Schreiben verschiedener [PICA-Serialisierungen](formate.qmd#serialisierungen)
 * Auswerten und Verändern der Inhalte von PICA-Datensätzen
-* Abruf von PICA-Daten über [SRU-Schnittstellen](schnittstellen?id=sru)
-* Validierung von PICA-Daten mit [Avram-Schemas](formate?id=avram-schemas)
+* Abruf von PICA-Daten über [SRU-Schnittstellen](schnittstellen.qmd#sru)
+* Validierung von PICA-Daten mit [Avram-Schemas](formate.qmd#avram-schemas)
 
 ## Fix-Skripte
 
@@ -65,7 +67,7 @@ _id,titel
 
 Dieses Fix-Skript besteht aus zwei Befehlen (bei längeren Fix-Skripten empfiehlt sich das Auslagern in eine eigene Datei):
 
-* `pica_map(021A$ah,titel,join:" ")` fügt ein neues Feld `titel` mit dem Inhalt der Unterfelder `$a` und `$h` des PICA-Feld `021A` hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels [PICA Path Expression](formate?id=abfragesprache).
+* `pica_map(021A$ah,titel,join:" ")` fügt ein neues Feld `titel` mit dem Inhalt der Unterfelder `$a` und `$h` des PICA-Feld `021A` hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels [PICA Path Expression](formate.qmd#abfragesprache).
 * `remove_field(record)` entfernt den PICA-Datensatz, so dass nur noch `_id` und `titel` übrig bleiben.
 
 Umgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hier ein Beispiel zur Änderung des Unterfelds `021A$a`:
@@ -84,7 +86,7 @@ Weitere Beispiele für Fix-Skripte gibt es [im Abschnitt zur PICA-Bearbeitung](b
 
 ## Schnittstellen
 
-Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen?id=SRU) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:
+Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen.qmd#SRU) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:
 
 ~~~bash
 catmandu convert kxp --query pica.sgd=590 --fix 'reject pica_match(045Q) remove_field(record)' to CSV --header 0
@@ -101,6 +103,6 @@ Im einzelnen besteht der Aufruf aus:
 3. Ausgabe der PPNs als CSV ohne Header (also nur je eine PPN pro Zeile):\
   `to CSV --header 0`
 
-Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es [im Abschnitt zur SRU-Schnittstelle](schnittstellen?id=SRU). Eine vollständige Einführung in Catmandu würde jedoch den Umfang dieses Handbuchs übersteigen.
+Weitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es [im Abschnitt zur SRU-Schnittstelle](schnittstellen.qmd#SRU). Eine vollständige Einführung in Catmandu würde jedoch den Umfang dieses Handbuchs übersteigen.
 
 

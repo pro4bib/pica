@@ -1,4 +1,4 @@
-# PICA-Daten erstellen und ändern
+# Ändern von PICA-Daten
 
 Die **Änderung von PICA-Daten** beschränkt sich in der Regel auf Bibliotheken und Verbundzentralen, die gemeinsam PICA-Datenbanken wie den K10plus betreiben. Dazu
 gibt es folgende, nicht frei zugängliche Werkzeuge:
@@ -16,9 +16,9 @@ indirekt zu Änderungen an PICA-Daten führen können:
 - den **Digitalen Assistent** (DA-3)
 - das Mapping-Werkzeug **[Cocoda](https://coli-conc.gbv.de/cocoda/)**
 
-Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](formate?id=Änderungsformat) entwickelt.
+Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](formate.qmd#Änderungsformat) entwickelt.
 
-### Änderungen mit Catmandu
+## Änderungen mit Catmandu
 
 Das Werkzeug [Catmandu](catmandu) ermöglicht neben der Abfrage und Auswertung
 von PICA-Daten auch die Erstellung von PICA-Patch-Datensätzen um Änderungen
@@ -44,7 +44,7 @@ verwendet werden; weitere Kommandos [sind geplant](https://github.com/gbv/Catman
 - `pica_tag()`
 - `pica_occurrence()`
 
-Hier einige weitere Beispiele von [Fix-Skripten](catmandu?id=fix-skripte) zur Änderung
+Hier einige weitere Beispiele von [Fix-Skripten](catmandu.qmd#fix-skripte) zur Änderung
 von Datensätzen mit Catmandu:
 
 ~~~
