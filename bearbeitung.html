@@ -298,10 +298,10 @@ div.csl-indent {
 <li>den <strong>Digitalen Assistent</strong> (DA-3)</li>
 <li>das Mapping-Werkzeug <strong><a href="https://coli-conc.gbv.de/cocoda/">Cocoda</a></strong></li>
 </ul>
-<p>Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das <a href="./formate.html#Änderungsformat">PICA-Patch-Format</a> entwickelt.</p>
+<p>Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das <a href="./formate.html#änderungsformat">PICA-Patch-Format</a> entwickelt.</p>
 <section id="änderungen-mit-catmandu" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="änderungen-mit-catmandu"><span class="header-section-number">5.1</span> Änderungen mit Catmandu</h2>
-<p>Das Werkzeug <a href="catmandu">Catmandu</a> ermöglicht neben der Abfrage und Auswertung von PICA-Daten auch die Erstellung von PICA-Patch-Datensätzen um Änderungen festzustellen (“diff”) oder ausführen (“patch”). Die Eintragung dieser Änderungen in zentrale PICA-Datenbanken ist allerdings nur durch Verbundzentralen möglich.</p>
+<p>Das Werkzeug Catmandu (<a href="catmandu.html" class="quarto-xref"><span>Kapitel 8</span></a>) ermöglicht neben der Abfrage und Auswertung von PICA-Daten auch die Erstellung von PICA-Patch-Datensätzen um Änderungen festzustellen (“diff”) oder ausführen (“patch”). Die Eintragung dieser Änderungen in zentrale PICA-Datenbanken ist allerdings nur durch Verbundzentralen möglich.</p>
 <p>Um mit Catmandu Änderungen zu erzeugen sind Bearbeitungen am PICA-Datensatz mit <code>do pica_diff() ... end</code> zu umschließen. So können beispielsweise die Sacherschließungsfelder <code>045B/00-99</code>, falls vorhanden, aus dem Datensatz der Datei <a href="example.pica" title=":ignore"><code>example.pica</code></a> entfernt werden:</p>
 <pre><code>$ catmandu convert pp --fix 'do pica_diff() pica_remove(045./*) end' to pp &lt; example.pica
   003@ $012345X

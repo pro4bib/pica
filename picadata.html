@@ -341,12 +341,12 @@ div.csl-indent {
 <p>Das Tool ist Teil der Perl-Programmbibliothek <a href="https://metacpan.org/release/PICA-Data">PICA::Data</a> und wird mit dieser installiert. Unter Debian-basierten Linux-Distributionen (u.A. Ubuntu) geht dies so:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libxml-libxml-perl cpanminus</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cpanm PICA::Data</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Das Programm setzt vorhandene PICA-Daten voraus (siehe <a href="schnittstellen">Kapitel Schnittstellen</a> zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in <a href="https://format.gbv.de/pica/plain">PICA Plain Syntax</a> auch mit einem Texteditor erstellt werden. Laden Sie die Datei <a href="example.pica" title=":ignore"><code>example.pica</code></a> mit folgendem Inhalt herunter:</p>
+<p>Das Programm setzt vorhandene PICA-Daten voraus (siehe <a href="schnittstellen.html" class="quarto-xref"><span>Kapitel 6</span></a>) zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in <a href="https://format.gbv.de/pica/plain">PICA Plain Syntax</a> auch mit einem Texteditor erstellt werden. Laden Sie die Datei <a href="example.pica" title=":ignore"><code>example.pica</code></a> mit folgendem Inhalt herunter:</p>
 <p><a href="example.pica" title=":include :type=code plain"></a></p>
 </section>
 <section id="konvertierung" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="konvertierung"><span class="header-section-number">7.2</span> Konvertierung</h2>
-<p>Im einfachsten Anwendungsfall liest <code>picadata</code> PICA+ Datensätze in PICA Plain und gibt sie mit <a href="./darstellung.html#syntaxhervorherbung">Syntax-Hervorhebung</a> wieder aus. Hier drei Aufruf-Möglichkeiten:</p>
+<p>Im einfachsten Anwendungsfall liest <code>picadata</code> PICA+ Datensätze in PICA Plain und gibt sie mit <a href="./darstellung.html#syntaxhervorhebung">Syntax-Hervorhebung</a> wieder aus. Hier drei Aufruf-Möglichkeiten:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">picadata</span> example.pica</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> example.pica <span class="kw">|</span> <span class="ex">picadata</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">picadata</span> <span class="op">&lt;</span> example.pica</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -394,7 +394,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>Für PICA Plain und PICA/JSON werden vorhandene <a href="./formate.html#Änderungsformat">Annotationen</a> standardmäßig mit ausgegeben. Die Option <code>-A</code> unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option <code>-a</code>/<code>--annotate</code> sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.</p>
+<p>Für PICA Plain und PICA/JSON werden vorhandene <a href="./formate.html#änderungsformat">Annotationen</a> standardmäßig mit ausgegeben. Die Option <code>-A</code> unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option <code>-a</code>/<code>--annotate</code> sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.</p>
 <p>In der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option <code>-o</code> sortiert Datensätze neu und zwar getrennt für die bibliographische Ebene und innerhalb der einzelnen Lokal- und Exemplardatensätze.</p>
 </section>
 <section id="auswahl-von-daten" class="level2" data-number="7.3">
