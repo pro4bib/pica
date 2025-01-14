@@ -1,18 +1,25 @@
-# Grundlagen
+# Grundlagen {#sec-grundlagen}
 
-Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel gibt eine kurze Einführung in den [Geschichte von PICA](#historisches) von PICA sowie in [Datenformate im Allgemeinen](#datenformate). Auf PICA-Formate im Speziellen wird [im nächsten Kapitel](formate.qmd) eingegangen.
+Das **PICA-Format** ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel bietet einen kurzen Überblick zur [Geschichte von PICA](#historisches) und zu [PICA-Datenbanken] und erläutert allgemeine [Grundlagen zu Datenformaten](#datenformate). Auf konkrete PICA-Formate wird [im nächsten Kapitel](formate.qmd) eingegangen.
 
 ## Historisches
 
-Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: "Project for Integrated Catalogue Automation"). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland gibt der [Bericht zum PICA-System], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: "Project for Integrated Catalogue Automation"). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland geben der Bericht zum PICA-System [@becker_pica-system_1992], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden, und für den Einsatz von PICA im GBV die Darstellung von @mittler_reiner_2024. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
 
 Das PICA-Format ist an das noch ältere [MARC-Format](http://format.gbv.de/marc) (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
 
 [PDP 11]: https://de.wikipedia.org/wiki/PDP-11
-[Bericht zum PICA-System]: https://doi.org/10.1515/bfup.1992.16.3.307
 [OCLC PICA]: https://de.wikipedia.org/wiki/OCLC_PICA
 
 ![Hardware-Infrastruktur des ersten PICA Systems (1979)](img/pica1979.png){#fig-hardwarepica}
+
+## PICA-Datenbanken
+
+::: {.callout-important appearance="simple"}
+Hier fehlt noch eine kurze Erläuterung von Zweck und Aufbau des CSB und LBS: warum gibt es sie? Wie hängen sie zusammen? Was sind Normdaten, Verknüpfungen und Expansion? Klarstellung, dass Suchindex nicht direkt auf PICA-Daten gebildet wird....
+:::
+
+Eine umfassende [Einführung zu Bibliotheksmanagementsystemen] gibt es im Handbuch IT in Bibliotheken -@noauthor_handbuch_nodate.
 
 ## Datenformate
 

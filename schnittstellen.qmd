@@ -1,4 +1,4 @@
-# Schnittstellen
+# Schnittstellen {#sec-apis}
 
 Für den lesenden Zugriff auf PICA-Daten gibt es [unAPI](#unapi) für einzelne Datensätze und [SRU](#sru) zur Abfrage von Suchergebnissen. Darüber hinaus können PICA-Daten manuell über die [OPAC-Oberfläche](#opac) und mit [WinIBW](#winibw) heruntergeladen werden. Über die [Avram-API](#avram-api) können Informationen zu Anwendungsprofilen abgerufen werden.
 

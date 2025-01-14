@@ -1,4 +1,4 @@
-# PICA-Formate
+# PICA-Formate {#sec-pica-format}
 
 Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Handbuch das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
 

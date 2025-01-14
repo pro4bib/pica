@@ -1,4 +1,4 @@
-# Das Werkzeug pica-rs
+# Das Werkzeug pica-rs {#sec-pica-rs}
 
 pica-rs ist wie [picadata](picadata.qmd) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.
 

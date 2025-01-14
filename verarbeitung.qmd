@@ -1,4 +1,4 @@
-# Verarbeitung von PICA-Daten
+# Verarbeiten von PICA-Daten {#sec-verarbeiten}
 
 Dieses Kapitel gibt eine allgemeine Übersicht von frei zugänglichen Werkzeugen zur Verarbeitung von PICA-Daten. Auf folgende Werkzeuge wird ausführlicher eingegangen:
 

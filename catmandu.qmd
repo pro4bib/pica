@@ -1,4 +1,4 @@
-# Das Werkzeug Catmandu
+# Das Werkzeug Catmandu {#sec-catmandu}
 
 **Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf [Schnittstellen](schnittstellen) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
 
@@ -82,7 +82,7 @@ catmandu convert pp to pp --fix 'set_field(titel,"Ein gutes Buch");pica_set(tite
 045B/02 $aSpo 1025$aBID 200
 ~~~
 
-Weitere Beispiele für Fix-Skripte gibt es [im Abschnitt zur PICA-Bearbeitung](bearbeitung).
+Weitere Beispiele für Fix-Skripte gibt es in @sec-aendern.
 
 ## Schnittstellen
 

@@ -1,4 +1,4 @@
-# Das Werkzeug picadata
+# Das Werkzeug picadata {#sec-picadata}
 
 Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate.qmd#serialisierungen), einfache Analyse und Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate.qmd#avram-schemas).
 
