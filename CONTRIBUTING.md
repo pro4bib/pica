@@ -26,7 +26,7 @@ Zur Erstellung der HTML-Version der Vortragsfolien in `slides` muss Pandoc insta
 
 ## Danksagung
 
-Die Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von [Felix Lohmeier](https://felixlohmeier.de/) abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur [Verarbeitung von PICA-Daten](verarbeitung) basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski. Weitere Beiträge und hilfreiche Hinweise zu diesem Handbuch stammen von Cornelius Amzar, Nico Wagner, Sabrina Gaab und Anne Schuchardt.
+Die Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von [Felix Lohmeier](https://felixlohmeier.de/) abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur [Verarbeitung von PICA-Daten](verarbeitung) basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski. Weitere Beiträge und hilfreiche Hinweise zu diesem Handbuch stammen von Cornelius Amzar, Nico Wagner, Sabrina Gaab und Anne Schuchardt. Das Handbuch wurde von Monty Bitto zu Quarto konvertiert.
 
 ## Lizenz
 

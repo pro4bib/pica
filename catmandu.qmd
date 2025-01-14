@@ -1,6 +1,6 @@
 # Das Werkzeug Catmandu {#sec-catmandu}
 
-**Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf [Schnittstellen](schnittstellen) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
+**Catmandu** ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf Schnittstellen (@sec-apis) und der Konvertierung zwischen PICA und anderen Formaten betrifft.
 
 ::: {.callout-note appearance="simple"}
 [Catmandu-Einführung](https://metacpan.org/pod/Catmandu::Introduction) (in Englisch)
@@ -45,7 +45,7 @@ catmandu convert pp to JSON < example.pica
 [{"record":[["003@","","0","12345X"],["021A","","a","Ein Buch","h","zum Lesen"],["045B","02","a","Spo 1025","a","BID 200"]],"_id":"12345X"}]
 ~~~
 
-Funktionen zur Verarbeitung von PICA in Catmandu werden erst durch das Paket [Catmandu-PICA](https://metacpan.org/release/Catmandu-PICA) bereitgestellt (siehe [Installation](#installation-1)):
+Funktionen zur Verarbeitung von PICA in Catmandu werden erst durch das Paket [Catmandu-PICA](https://metacpan.org/release/Catmandu-PICA) bereitgestellt (siehe [Installation](#installation)):
 
 * Lesen und Schreiben verschiedener [PICA-Serialisierungen](formate.qmd#serialisierungen)
 * Auswerten und Verändern der Inhalte von PICA-Datensätzen
@@ -86,7 +86,7 @@ Weitere Beispiele für Fix-Skripte gibt es in @sec-aendern.
 
 ## Schnittstellen
 
-Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen.qmd#SRU) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:
+Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der [SRU-Schnittstelle](schnittstellen.qmd#sru) des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:
 
 ~~~bash
 catmandu convert kxp --query pica.sgd=590 --fix 'reject pica_match(045Q) remove_field(record)' to CSV --header 0

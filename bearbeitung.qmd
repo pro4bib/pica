@@ -16,11 +16,11 @@ indirekt zu Änderungen an PICA-Daten führen können:
 - den **Digitalen Assistent** (DA-3)
 - das Mapping-Werkzeug **[Cocoda](https://coli-conc.gbv.de/cocoda/)**
 
-Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](formate.qmd#Änderungsformat) entwickelt.
+Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](formate.qmd#änderungsformat) entwickelt.
 
 ## Änderungen mit Catmandu
 
-Das Werkzeug [Catmandu](catmandu) ermöglicht neben der Abfrage und Auswertung
+Das Werkzeug Catmandu (@sec-catmandu) ermöglicht neben der Abfrage und Auswertung
 von PICA-Daten auch die Erstellung von PICA-Patch-Datensätzen um Änderungen
 festzustellen ("diff") oder ausführen ("patch"). Die Eintragung dieser Änderungen
 in zentrale PICA-Datenbanken ist allerdings nur durch Verbundzentralen möglich.

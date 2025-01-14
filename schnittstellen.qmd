@@ -28,7 +28,7 @@ Alle weiteren Formate (`marcxml`, `mods36`...) werden durch Konvertierung aus PI
 
 ### Beispiel auf der Kommandozeile
 
-Der Datensatz mit der [PPN 161165839X](https://opac.k10plus.de/DB=2.299/PPNSET?PPN=161165839X) aus dem K10plus-Verbundkatalog (`opac-de-627`) lässt sich im PICA Plain Format (`pp`) unter der URL <http://unapi.k10plus.de/.qmd#opac-de-627:ppn:161165839X&format=pp> abrufen. Auf der Unix-Kommandozeile ist dies beispielsweise mit `curl` möglich so dass und anschließend mit [`picadata`](verarbeitung.qmd#picadata) weiterverarbeitet werden:
+Der Datensatz mit der [PPN 161165839X](https://opac.k10plus.de/DB=2.299/PPNSET?PPN=161165839X) aus dem K10plus-Verbundkatalog (`opac-de-627`) lässt sich im PICA Plain Format (`pp`) unter der URL <http://unapi.k10plus.de/.qmd#opac-de-627:ppn:161165839X&format=pp> abrufen. Auf der Unix-Kommandozeile ist dies beispielsweise mit `curl` möglich so dass und anschließend mit picadata (@sec-picadata) weiterverarbeitet werden:
 
 ~~~bash
 curl 'http://unapi.k10plus.de/.qmd#opac-de-627:ppn:161165839X&format=pp' | picadata '028A|028C'
@@ -115,7 +115,7 @@ In den Katalogisierungsrichtlinien finden sich auch Angaben dazu, welche PICA-(U
 
 ### Beispiel: K10plus-Abfragen
 
-Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der [im Catmandu-Kapitel](verarbeitung.qmd#catmandu) angegebenen [Konfiguration](catmandu.yaml ':ignore')) ein einzelner Datensatz per PPN abgerufen werden:
+Zum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der in @sec-catmandu angegebenen [Konfiguration](catmandu.yaml ':ignore')) ein einzelner Datensatz per PPN abgerufen werden:
 
 ~~~bash
 catmandu convert kxp --query "pica.ppn=161165839X" to pp

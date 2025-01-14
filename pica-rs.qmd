@@ -1,6 +1,6 @@
 # Das Werkzeug pica-rs {#sec-pica-rs}
 
-pica-rs ist wie [picadata](picadata.qmd) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.
+pica-rs ist wie picadata (@sec-picadata) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.
 
 ::: {.callout-note appearance="simple"}
 [Dokumentation von pica-rs](https://github.com/deutsche-nationalbibliothek/pica-rs#readme)

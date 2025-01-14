@@ -15,13 +15,13 @@ sudo apt-get install libxml-libxml-perl cpanminus
 sudo cpanm PICA::Data
 ~~~
 
-Das Programm setzt vorhandene PICA-Daten voraus (siehe [Kapitel Schnittstellen](schnittstellen) zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in [PICA Plain Syntax](https://format.gbv.de/pica/plain) auch mit einem Texteditor erstellt werden. Laden Sie die Datei [`example.pica`](example.pica ':ignore') mit folgendem Inhalt herunter:
+Das Programm setzt vorhandene PICA-Daten voraus (siehe @sec-apis) zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in [PICA Plain Syntax](https://format.gbv.de/pica/plain) auch mit einem Texteditor erstellt werden. Laden Sie die Datei [`example.pica`](example.pica ':ignore') mit folgendem Inhalt herunter:
 
 [](example.pica ':include :type=code plain')
 
 ## Konvertierung
 
-Im einfachsten Anwendungsfall liest `picadata` PICA+ Datensätze in PICA Plain und gibt sie mit [Syntax-Hervorhebung](darstellung.qmd#syntaxhervorherbung) wieder aus. Hier drei Aufruf-Möglichkeiten:
+Im einfachsten Anwendungsfall liest `picadata` PICA+ Datensätze in PICA Plain und gibt sie mit [Syntax-Hervorhebung](darstellung.qmd#syntaxhervorhebung) wieder aus. Hier drei Aufruf-Möglichkeiten:
 
 ~~~bash
 picadata example.pica
@@ -58,7 +58,7 @@ Folgende Serialisierungsformate werden unterstützt:
 [PICA/XML]: https://format.gbv.de/pica/xml
 [PPXML]: https://format.gbv.de/pica/ppxml
 
-Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](formate.qmd#Änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
+Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](formate.qmd#änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
 
 In der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option `-o` sortiert Datensätze neu und zwar getrennt für die bibliographische Ebene und innerhalb der einzelnen Lokal- und Exemplardatensätze.
 

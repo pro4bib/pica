@@ -1,12 +1,12 @@
 # Anzeigen von PICA-Daten {#sec-anzeigen}
 
-Der erste Schritte bei jeder Analyse und Verarbeitung von PICA-Daten besteht darin, sich die Daten anzusehen. Dazu ist am besten die [PICA Plain Serialisierung](formate.qmd#serialisierungen) geeingnet. Werkzeuge zur Konvertierung in dieses Format werden [im folgenden Kapitel](verarbeitung) vorgestellt. Zur übersichtlicheren Anzeige von PICA Plain gibt es verschiedene Methoden der [Syntaxhervorhebung](#syntaxhervorhebung).
+Der erste Schritte bei jeder Analyse und Verarbeitung von PICA-Daten besteht darin, sich die Daten anzusehen. Dazu ist am besten die [PICA Plain Serialisierung](formate.qmd#serialisierungen) geeingnet. Werkzeuge zur Konvertierung in dieses Format werden in @sec-verarbeiten vorgestellt. Zur übersichtlicheren Anzeige von PICA Plain gibt es verschiedene Methoden der [Syntaxhervorhebung](#syntaxhervorhebung).
 
 ::: {.callout-important appearance="simple"}
 Dieses Kapitel soll noch um Methoden ergänzt werden um Hilfe zu einzelnen PICA-Feldern abzurufen.
 :::
 
-## Syntaxhervorherbung
+## Syntaxhervorhebung
 
 Durch farbliche Hervorhebung von Feldern und Unterfeldern lassen sich PICA-Daten leichter lesen. Unter <https://gbv.github.io/lipstick/> werden Funktionen zum **Syntax-Highlighting von PICA+** und verwandten Formaten gesammelt:
 
@@ -22,7 +22,7 @@ Der Texteditor vim gehört praktisch zur Standardausstattung für jedes Unix-Sys
 
 ### picadata
 
-Das Kommandozeilenprogramm [picadata](verarbeitung.qmd#picadata) wird im folgenden Kapitel vorgestellt.
+Das Kommandozeilenprogramm picadata wird im @sec-picadata vorgestellt.
 
 ![Screenshot PICA Syntax-Highlighting mit picadata](img/screenshot-picadata.png){#fig-picadatasyntax}
 
