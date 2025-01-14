@@ -10,18 +10,24 @@ book:
   repo-url: https://github.com/pro4bib/pica/
   chapters:
     - index.md
-    - grundlagen.qmd
-    - formate.qmd
-    - darstellung.qmd
-    - verarbeitung.qmd
-    - bearbeitung.qmd
-    - picadata.qmd
-    - catmandu.qmd
-    - pica-rs.qmd
-    - schnittstellen.qmd
-    - ausblick.qmd
-    - CONTRIBUTING.md
+    - part: "Theorie"
+      chapters:
+        - grundlagen.qmd
+        - formate.qmd
+    - part: "Praxis"
+      chapters:
+        - darstellung.qmd
+        - verarbeitung.qmd
+        - bearbeitung.qmd
+        - schnittstellen.qmd
+    - part: "Werkzeuge"
+      chapters:
+        - picadata.qmd
+        - catmandu.qmd
+        - pica-rs.qmd
     - literatur.md
+  appendices:
+    - CONTRIBUTING.md
   sidebar:
     style: docked
     logo: img/gbv-vzg-logo.png

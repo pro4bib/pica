@@ -1,4 +1,4 @@
-# Literaturverzeichnis {#sec-literatur}
+# Literatur {#sec-literatur .unnumbered}
 
 ::: {#refs}
 :::
