@@ -14,6 +14,8 @@ Das interne Datenformat der CBS- und LBS-Software ist **PICA+** (auch "PicaPlus"
 
 Das PICA-Format ist an das noch ältere MARC-Format angelehnt (weitere verwandte Formate sind [MAB] und [allegro]). Als [Datenstrukturierungssprachen](grundlagen.qmd#strukturierungsformate) lässt sich PICA+ unter den auch außerhalb des Bibliothekswesens relevanten Formaten am ehesten mit dem ebenfalls feldbasierten [INI-Format](http://format.gbv.de/ini) vergleichen. Zur Illustration ein Beispiel: folgender Datensatz enthält zweimal das Feld `012A` mit jeweils unterschiedlichen Unterfeldern.
 
+::: {#lst-ini lst-cap="Fiktiver PICA-Datensatz in PICA Plain und als INI-Datei"}
+
 ~~~pica
 012A $xHallo$yWelt
 012A $yWelt$xHallo
@@ -28,8 +30,7 @@ y = Welt
 y = Welt
 x = Hallo
 ~~~
-
-*Fiktiver PICA-Datensatz in PICA Plain und als INI-Datei*
+:::
 
 Das PICA-Format unterscheidet **drei Ebenen** für bibliographische Daten (Level 0, auch Titel-Ebene oder Titeldatensatz), Lokaldaten (Level 1) und Exemplardaten (Level 2). Dem Titeldatensatz können mehrere Lokaldatensätze untergeordnet sein, welchen wiederum einzelne Exemplardatensätze untergeordnet sind. Die Felder auf Ebene 2 haben immer eine Occurrence, die pro Exemplardatensatz gleich ist. Für die hierarchische Gruppierung eines PICA-Datensatzes in Teildatensätze ist die Reihenfolge der Felder relevant. Abgesehen davon lassen sich die Felder eines Datensatzes (abgesehen von wiederholten Feldern gleicher Feldnummer und Occurrence) automatisch sortieren.
 
@@ -257,11 +258,9 @@ Avram ist eine [Schemasprache](grundlagen.qmd#abfrage-und-schemaformate) für fe
 [Avram-Spezifikation in der GBV-Formatdatenbank](http://format.gbv.de/schema/avram/specification)
 :::
 
-```json
+```{#lst-avram .json lst-cap="Beispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN"}
 {{< include avram004A.json >}}
 ```
-
-*Beispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN*
 
 ## Zusammenfassung
 

@@ -33,10 +33,15 @@ div.csl-entry {
   border-right: 2px solid #747a7f;
 }
 
-/* Infoboxen */
-.callout {
-  box-shadow: 5px 5px 5px grey;
+div.listing {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
 }
+figure > div > div.sourceCode {
+  margin-bottom: 0;
+}
+
+/* Infoboxen */
 .callout.callout-style-simple .callout-body,
 .callout.callout-style-simple > div.callout-header
 {
