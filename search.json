@@ -1,0 +1,512 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Einführung in die Verarbeitung von PICA-Daten",
+    "section": "",
+    "text": "1 Einleitung\nDas PICA-Format ist seit mehr als 40 Jahren im Einsatz und konnte bisher nicht durch modernere Techniken wie relationale Datenbanksysteme oder Wissensgraphen ersetzt werden. PICA ist einerseits zentral für die Datenhaltung in den meisten Bibliotheken in Deutschland, andererseits wird das Format nicht außerhalb des Bibliothekswesens benutzt. Um sich mit der Verarbeitung von PICA-Daten vertraut zu machen, ist daher Dokumentation notwendig, wozu das vorliegende Handbuch beitragen soll. Schwerpunkt ist die Verarbeitung von PICA-Daten mit frei zugänglichen Werkzeugen.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#screencasts",
+    "href": "index.html#screencasts",
+    "title": "Einführung in die Verarbeitung von PICA-Daten",
+    "section": "1.1 Screencasts",
+    "text": "1.1 Screencasts\nAls Begleitmaterial gibt es folgende Screencasts:\n\nPICA-Formate entschlüsseln mit Avram und PicaEditor https://doi.org/10.5446/48737 (2020-09-18, 13:46 Minuten)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#weiterführende-quellen",
+    "href": "index.html#weiterführende-quellen",
+    "title": "Einführung in die Verarbeitung von PICA-Daten",
+    "section": "1.2 Weiterführende Quellen",
+    "text": "1.2 Weiterführende Quellen\n\nDie Online-Hilfe der CBS MARC21 database enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationengleich sind\n\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "grundlagen.html",
+    "href": "grundlagen.html",
+    "title": "2  Grundlagen",
+    "section": "",
+    "text": "2.1 Historisches\nDas PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: “Project for Integrated Catalogue Automation”). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer PDP 11 in Betrieb genommen. Einen historischen Einblick für Deutschland gibt der Bericht zum PICA-System, auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an OCLC PICA bzw. OCLC über.\nDas PICA-Format ist an das noch ältere MARC-Format (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Grundlagen</span>"
+    ]
+  },
+  {
+    "objectID": "grundlagen.html#historisches",
+    "href": "grundlagen.html#historisches",
+    "title": "2  Grundlagen",
+    "section": "",
+    "text": "Abbildung 2.1: Hardware-Infrastruktur des ersten PICA Systems (1979)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Grundlagen</span>"
+    ]
+  },
+  {
+    "objectID": "grundlagen.html#datenformate",
+    "href": "grundlagen.html#datenformate",
+    "title": "2  Grundlagen",
+    "section": "2.2 Datenformate",
+    "text": "2.2 Datenformate\nDas PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ein Datenformat ist eine Konvention zur Strukturierung digitaler Objekte (Datensätze). So legen beispielsweise CSV-Formate die Struktur einer Tabelle aus Zeilen und Spalten fest. Letzendlich dienen alle Datenformate dazu, Daten in Bestandteile zu zerlegen, denen Bedeutung zugewiesen werden kann. Bei CSV besteht die Bedeutung von einzelnen Datenelementen beispielsweise aus “Zeile”, “Spalte”, “Trennzeichen” und “Zelle”. Datenformat deren Elemente solche eher abstrakten Bedeutungen haben, werden auch Strukturierungsformate genannt. Davon zu unterscheiden sind Anwendungsformate, Kodierungen und Datenmodelle. Eine besondere Rolle bei der Festlegung von Datenformaten spielen Standards und Profile sowie Abfrage- und Schemaformate.\n\nStrukturierungsformate\n(Daten)strukturierungsformate oder -sprachen ermöglichen es Daten in abstrakte Einheiten zu unterteilen und miteinander in Beziehung zu setzen. Dabei lassen sich einige allgemeine Ordnungsprinzipien festmachen, die je nach Strukturierungsformat mehr oder weniger gut unterstützt werden:\n\n\n\nOrdnungsprinzip\nBeispiele für Strukturierungsformate\n\n\n\n\nListe\nZeichenkette, Unicode, Bytes\n\n\nTabelle\nCSV\n\n\nFelder\nPICA, MARC, INI\n\n\nHierachie/Dokument\nJSON, XML\n\n\nGraph/Netzwerk\nRDF\n\n\n\nAuch allgemeine Serialisierungsformate wie ASN.1 und Typsysteme von Programmiersprachen gehören zu den Strukturierungssprachen: sie beinhalten verschiedene abstrakte Datentypen wie Zeichenkette, Ganzzahl, Array… aus denen konkrete Datenformate konstriert werden können. Auch das PICA-Format ist ein Datenstrukturierungsformat. Konkrete Bedeutungen wie “Vorname” und “Erscheinungsjahr” kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie “Feld” und “Unterfeld”!\n\n\nAnwendungsformate\nIn der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von Anwendungsformaten beziehen sich eher auf reale Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedene Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem bibliographische Datenformate und Normdatenformate relevant, deren Inhalte auch als Metadaten bezeichnet werden.\nBeispiele für Anwendungsformate: die Dokumentformate TEI und Markdown, die bibliographischen Datenformate BibTeX und DataCite und die Normdatenformate JSKOS und GND-Internformat (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) Datenmodelle voraus und sind in Strukturierungsformaten kodiert.\n\n\n\n\n\n\nAnwendungsformate in der GBV-Formatdatenbank\n\n\n\n\n\nStandards und Profile\nIm besten Fall ist ein Datenformat durch einen Standard definiert und in verschiedenen Softwareprogrammen umgesetzt. Oft ergeben sich Formate aber auch aus der Praxis (“De-Facto-Standard”) oder die Praxis weicht von der Spezifikation ab. Daher ist genau darauf zu achten was bei Bezugnahme auf ein Format gemeint ist:\n\nDas Format so wie es in einem bestimmten Standard spezifiziert ist\nDas Format so wie es formal (d.h. durch eine automatisch nachprüfbare Methode) definiert ist\nDas Format so wie es in einer bestimmten Software implementiert ist\nDas Format so wie es von einer bestimmten Gruppe von Menschen interpretiert wird\n\nIm (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, lässt sich in Form von Anwendungsprofilen ausdrücken.\nOb ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels Validierung, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eines Standards automatisch überprüfen lassen, handelt es sich um einen formalen Standard.\n\n\n\n\n\n\nHinweise wie es nicht gemacht werden sollte gibt der Vortrag Eine Anleitung für schlechte Standards\n\n\n\n\n\nAbfrage- und Schemaformate\nPrinzipiell können Daten mit jeder beliebigen Programmiersprache analysiert und strukturiert werden. Konkrete Implementierungen wie Eingabemasken, Prüfroutinen und Konvertierungsskripte legen implizit fest wie Daten einer Anwendung aussehen können. Da Software weniger gut zugänglich ist, sollten Datenformate jedoch primär durch einen Standard spezifiziert werden. Dabei hilft eine besondere Klasse von Anwendungsformaten, deren Elemente sich in ihrer Bedeutung auf andere Datenformate und -Strukturen bezieht. Relevant sind diese Formate\n\num sich auf einzelne Elemente und Inhalte von Datensätzen zu beziehen (Abfrageformate) und\nzur Validierung von Datensätzen sowie zur Dokumentation des Formates (Schemaformate).\n\nDer Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als Query-Engine und solche die zur Validierung ein Schemaformat unterstützen als Validatoren bezeichnet.\nDa das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die anwendungsunabhängige Abfragesprache PICA Path Expression und die Schemasprache Avram erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.\n\n\n\n\n\n\nSchemaformate in der GBV-Formatdatenbank\n\n\n\n\n\nKodierungen\nLetzendlich müssen alle Daten als Folge von Bits bzw. Bytes ausgedrückt werden. Eine Kodierung, Serialisierung oder Syntax legt fest, wie Datensätze eines Datenformates oder -Modells durch Elemente eines anderen Datenformates ausgedrückt werden können. Meist werden Anwendungsformate in Strukturierungsformaten kodiert, die sich wiederum über mehrere Ebenen auf Bytes zurückführen lassen. Direkt in Bytes kodierte Datenformate werden auch Binärformate genannt.\nWährend Computer nur mit Kodierungen arbeiten, interessiert Menschen eigentlich nur was mit Kodierungen ausgedrückt wird. In der Praxis wird deshalb nicht immer genau zwischen einem Datenformat und seiner Kodierung unterschieden. So liegt beispielsweise XML in der Regel in XML-Syntax vor, also wird beides als XML bezeichnet. Bei der Verarbeitung von Daten ist jedoch genau darauf zu achten, auch welcher Kodierungsebene jeweils angesetzt wird.\n\n\n\n\n\n\n\n\ngraph LR\n  PICA+ -- PICA/XML --&gt; XML -- XML-Syntax --&gt; Unicode -- UTF-8 --&gt; Bytes\n\n\n\n\n\n\n\n\nAbbildung 2.2: Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*\n\n\n\n\n\n\n\n\n\nKodierungen in der GBV-Formatdatenbank\n\n\n\n\n\nDatenmodelle\nEin grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarten während Daten letzendlich immer nur als Folge von Nullen und Einsen vorliegen. Zur Abbildung abstrakter Vorstellungen auf konkrete Datenformate im Zuge der Datenmodellierung dienen Datenmodelle. Ein Datenmodell ist gewissermaßen die Vorstufe oder Abstraktion eines Datenformates. Die Bandbreite an Methoden zur Formulierung von Datenmodellen reicht von groben Skizzen auf Papier bis zu komplexen Datenmodellierungssprachen aus denen automatisch Schemas erzeugt werden können. Die Grenze zwischen Datenmodellen und Schemas ist daher unscharf. Als Faustregel kann gelten, dass Datenmodelle eher der Kommunikation mit Menschen und Schemas eher der Kommunikation mit Computern dienen. Grundsätzlich haben alle Datenformate zumindest implizit zugrunde liegende Modelle.\n\n\n\n\n\n\nAbbildung 2.3: Ebenen der Datenmodellierung\n\n\n\nEin weiteres Hilfsmittel zum Verständnis von Datenformaten sind Beispiele. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Grundlagen</span>"
+    ]
+  },
+  {
+    "objectID": "grundlagen.html#zusammenfassung",
+    "href": "grundlagen.html#zusammenfassung",
+    "title": "2  Grundlagen",
+    "section": "2.3 Zusammenfassung",
+    "text": "2.3 Zusammenfassung\nDas PICA-Format geht auf mehr als 50 Jahre alte Bestrebungen zurück, die Inhalte physischer Bibliothekskataloge in kompater Form mit Daten auszudrücken. In seiner allgemeinen Form ist PICA eine Datenstrukturierungssprache. Erst konkrete Anwendungsformate und die ihnen zugrunde liegenden Datenmodelle geben Daten Bedeutung. Formate können auf verschiedene Weisen (Standards, Schemas, Implementierungen, implizite Annahmen) festgelegt werden. Zur Überprüfung ob ein Datensatz einem Format entspricht dient die Validierung, idealerweise mit einem Schema.\nDarüber hinaus lassen sich Datenformate nach unterschiedlichen Kriterien unterteilen:\n\nProprietäre Formate und Offene Formate (die meisten PICA-Anwendungsformate sind offen)\nInternformate und Austauschformate (PICA dient primär als Internformat)\nMetadatenformate und Dokumentformate (PICA gehört zu den Metadatenformaten)\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Grundlagen</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html",
+    "href": "formate.html",
+    "title": "3  PICA-Formate",
+    "section": "",
+    "text": "3.1 Grundsätzlicher Aufbau\nDas interne Datenformat der CBS- und LBS-Software ist PICA+ (auch “PicaPlus”). Ein PICA-Datensatz besteht aus einer Liste von Feldern (auch “Kategorien”), die jeweils eine Liste von Unterfeldern enthalten. Unterfelder werden durch einen alphanumerischen Unterfeld-Code identifiziert (A-Z, a-z, 0-9) während Feldnummern mindestens aus drei Ziffern und einem Zeichen (A-Z oder @) bestehen. Die erste Ziffer des Feldes ist 0, 1 oder 2 und gibt die Ebene des Feldes an. Zusätzlich können Felder eine numerische Occurrence von 00 bis 99 haben. Felder deren erste Ziffer 2 ist haben immer eine Occurrence und als zusätzliche Werte sind 100 bis 999 möglich. Sowohl Felder als auch Unterfelder sind wiederholbar und die Reihenfolge von Unterfeldern und Feldern ist relevant!\nDas PICA-Format ist an das noch ältere MARC-Format angelehnt (weitere verwandte Formate sind MAB und allegro). Als Datenstrukturierungssprachen lässt sich PICA+ unter den auch außerhalb des Bibliothekswesens relevanten Formaten am ehesten mit dem ebenfalls feldbasierten INI-Format vergleichen. Zur Illustration ein Beispiel: folgender Datensatz enthält zweimal das Feld 012A mit jeweils unterschiedlichen Unterfeldern.\nFiktiver PICA-Datensatz in PICA Plain und als INI-Datei\nDas PICA-Format unterscheidet drei Ebenen für bibliographische Daten (Level 0, auch Titel-Ebene oder Titeldatensatz), Lokaldaten (Level 1) und Exemplardaten (Level 2). Dem Titeldatensatz können mehrere Lokaldatensätze untergeordnet sein, welchen wiederum einzelne Exemplardatensätze untergeordnet sind. Die Felder auf Ebene 2 haben immer eine Occurrence, die pro Exemplardatensatz gleich ist. Für die hierarchische Gruppierung eines PICA-Datensatzes in Teildatensätze ist die Reihenfolge der Felder relevant. Abgesehen davon lassen sich die Felder eines Datensatzes (abgesehen von wiederholten Feldern gleicher Feldnummer und Occurrence) automatisch sortieren.\nInnerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-Produktionsnummer (PPN) identifiziert, die auf Ebene 0 in Feld 003@, Unterfeld 0 steht. Exemplardatensätze enthalten in Feld 203@, Unterfeldnummer 0 die ebenfalls eindeutige Exemplarproduktionsnummer (EPN, auch Exemplar-Identifikationsnummer). Lokaldatensätze haben keine eigenen Identifier sondern sind über Kategorie 101@, Unterfeld a mit der Internal Library Number (ILN) einzelnen Bibliotheken zugeordnet. Pro PICA-Datensatz darf jede ILN nur einmal vorkommen. Die Inhalte einer PICA-Datenbank sind durch die Identifier PPN, ILN und Occurrence (auf Ebene 2) hierarchisch gegliedert:\nDie Identifizierung eines Exemplardatensatzes ist also zum einen durch seine EPN möglich und zum anderen durch seine Kombination von PPN, ILN und Exemplar-Occurrence.\nDas gesamte Datenmodell von PICA+ kann folgendermaßen angegeben werden:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#grundsätzlicher-aufbau",
+    "href": "formate.html#grundsätzlicher-aufbau",
+    "title": "3  PICA-Formate",
+    "section": "",
+    "text": "012A $xHallo$yWelt\n012A $yWelt$xHallo\n[012A]\nx = Hallo\ny = Welt\n\n[012A]\ny = Welt\nx = Hallo\n\n\n\n\n\n\n\n\nPICA-Unterfelder bilden keine einfache Zuordnungstabelle sondern haben eine in der Regel relevante Reihenfolge.\n\n\n\n\n\n\n\n\nin Datenbank\nim Datensatz\nim Lokaldatensatz\n\n\n\n\nDatensatz-ID\nPPN\n\n\n\n\nLokaldatensatz-ID\n—\nILN\n\n\n\nExemplardatensatz-ID\nEPN\n—\nOccurrence\n\n\n\n\n\n\n\n\n\n\n\nAbbildung 3.1: Datenmodell von PICA+\n\n\n\n\n\n\n\n\n\nWeitere Informationen zu PICA in der GBV-Formatdatenbank",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#pica3",
+    "href": "formate.html#pica3",
+    "title": "3  PICA-Formate",
+    "section": "3.2 Pica3",
+    "text": "3.2 Pica3\nIn PICA-Bibliotheksystemen treten PICA-Formate meist als Paar auf:\n\nPICA+ als internes Datenbankformat zur Speicherung und Indexierung\nPica3 als diagnostisches Format zur Bearbeitung von Datensätzen bei der Katalogisierung\n\nPica3 ist im Gegensatz zu PICA+ kein formal standardisiertes Strukturierungsformat sondern Bestandteil der jeweiligen Katalogisierungsregeln. Im Rahmen eines Anwendungsprofils lassen sich beide Formate verlustfrei ineinander umwandeln. Ähnlich wie PICA+ besteht ein Pica3-Datensatz aus Feldern (“Kategorien”) und Unterfeldern. Die Feldnummern sind rein numerisch und werden je nach Anwendungsprofil mit drei oder vier Ziffern angegeben. Die Unterfeld-Struktur von Pica3 hängt vom jeweiligen Feld ab. Zur Kennzeichnung von Unterfeldern sind je nach Feld verschiedene Sonderzeichen (“Steuerzeichen”) und Zeichenfolgen festgelegt. Häufig kommt es allerdings vor, dass als Sonderzeichen für ein Unterfeld in Pica3 das Dollarzeichen und der entsprechende Unterfeld-Code aus PICA+ verwendet wird, so dass Pica3 und PICA+ (in PICA Plain Serialisierung) an dieser Stelle übereinstimmen.\n\nBeispiel\nIm K10plus-Katalogisierungsformat entspricht die Pica3-Kategorie 1131 dem PICA+-Feld 013D und enthält die “Art des Inhalts” einer Publikation. Die Angabe erfolgt durch Verweis (“Verknüpfung”) auf einen entsprechenden Datensatz in der Gemeinsamen Normdatei (GND). Bei Konferenzschriften können zusätzlich Angaben über Zeit und Ort gemacht werden. Hier ein Beispiel für das Feld einer fiktiven Konferenzschrift in Pica3 und in PICA+\n1131 !826484824!Konferenzschrift ; ID: gnd/1071861417$y2020$zEntenhausen\n013D $9826484824$8Konferenzschrift$y2020$zEntenhausen\nHier einige der Unterfelder im Vergleich:\n\n\n\n\n\n\n\n\n\nPica3\nPICA+\nUnterfeld\nBesonderheit\n\n\n\n\nohne\n$a\nAngabe zum Inhalt (Text)\nInhalt steht in Pica3 ohne Steuerzeichen am Anfang\n\n\n!...!\n$9\nPPN des verknüpften GND-Datensatz\n\n\n\n—\n$8\nExpansion\nInhalt wird automatisch vom Bibliotheksystem aus der Verknüpfung erzeugt\n\n\n$y\n$y\nChronologische Unterteilung\n\n\n\n$z\n$z\nGeografische Unterteilung\n\n\n\n\nBei der formalen Beschreibung von Katalogisierungsregeln mittels Avram können Pica3-Feldnummern und Unterfeld-Kennzeichen mit angegeben werden. Hier ein (unvollständiges) Schema mit den Feldern aus dem Beispiel:\n{\n  \"013D\": {\n    \"pica3\": \"1131\",\n    \"subfields\": {\n      \"a\": { \"pica3\": \"\" },\n      \"9\": { \"pica3\": \"!...!\" },\n      \"y\": { \"pica3\": \"$y\" },\n      \"z\": { \"pica3\": \"$z\" }\n    }\n}",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#serialisierungen",
+    "href": "formate.html#serialisierungen",
+    "title": "3  PICA-Formate",
+    "section": "3.3 Serialisierungen",
+    "text": "3.3 Serialisierungen\nZur Speicherung und Übertragung können PICA-Daten in verschiedener Form kodiert bzw. serialisiert werden. Alle PICA-Kodierungen lassen sich verlustfrei ineinander umwandeln, so dass jeweils die für eine Anwendung am einfachsten zu verarbeitende Serialisierung genutzt werden kann. Bei den Schnittstellen unAPI, SRU und OAI-PMH kann mit der Anfrage unter PICA-Kodierungen ausgewählt werden.\nNeben den Binärformaten Binäres PICA, Normalisiertes PICA und dem PICA-Importformat, die direkt in CBS- und LBS-Software verwendet werden, gibt es:\n\nPICA Plain Syntax, die lesbare Darstellung von PICA+\nPICA/JSON Syntax, eine kompakte Kodierung in JSON\nPICA/XML Syntax, eine Kodierung in XML (primäre XML-Kodierung im GBV)\nPPXML Syntax, eine alternative Kodierung in XML (primäre XML-Kodierung der Deutschen Nationalbibliothek)\n\nPICA Plain ist den internen Binärformaten am nächsten: Datensätze und Felder werden durch Zeilenumbrüche (Bytecode 0A) getrennt und Unterfelder mit einem Dollar-Zeichen ($) eingeleitet. Dollar-Zeichen in Werten lassen sich durch Doppelung ($$) kodieren. Das Format ist über einen “versteckten Link” direkt aus dem OPAC verfügbar. Statt dem Dollarzeichen verwendet WinIBW zur Kennzeichnung von Unterfeldern den kleinen Buchstaben F mit Haken (ƒ). PICA/JSON hat den Vorteil dass Felder und Unterfelder bereits maschinenlesbar getrennt sind und dass praktisch alle Programmiersprachen mit JSON umgangen werden können. Die XML-Serialisierungen sind für XML-basierte Anwendungen und Schnittstellen relevant. PPXML weist die Besonderheit auf, dass Titel-, Lokal- und Exemplarebene bereits im Format getrennt sind. Nachfolgend der gleiche Beispieldatensatz in allen sieben Serialisierungen (bei den Binärformaten steht zur besseren Lesbarkeit [XX] für ein Byte mit dem hexadezimalen Bytecode XX):\n\nPICA Plain\n003@ $012345X\n021A $aEin Buch$hzum Lesen\n045B/02 $aSpo 1025$aBID 200\n\n\nNormalisiertes PICA\n003@ [1F]012345X[1E]021A [1F]aEin Buch[1F]hzum Lesen[1E]045B/02 [1F]aSpo 1025[1F]aBID 200[1E]\n\n\nBinäres PICA\n003@ [1F]012345X[1E]021A [1F]aEin Buch[1F]hzum Lesen[1E]045B/02 [1F]aSpo 1025[1F]aBID 200[1E][1D]\nNach dem Datensatz folgt kein Zeilenumbruch!\n\n\nPICA-Importformat\n[1D]\n[1E]003@ [1F]012345X\n[1E]021A [1F]aEin Buch[1F]hzum Lesen\n[1E]045B/02 [1F]aSpo 1025[1F]aBID 200\n\n\nPICA/JSON\n[\n  [ \"003@\", null, \"0\", \"12345X\" ],\n  [ \"021A\", null, \"a\", \"Ein Buch\", \"h\", \"zum Lesen\" ],\n  [ \"045B\", \"02\", \"a\", \"Spo 1025\", \"a\", \"BID 200\" ]\n]\n\n\nPICA/XML\n&lt;record xmlns=\"info:srw/schema/5/picaXML-v1.0\"&gt;\n  &lt;datafield tag=\"003@\"&gt;\n    &lt;subfield code=\"0\"&gt;12345X&lt;/subfield&gt;\n  &lt;/datafield&gt;\n  &lt;datafield tag=\"021A\"&gt;\n    &lt;subfield code=\"a\"&gt;Ein Buch&lt;/subfield&gt;\n    &lt;subfield code=\"h\"&gt;zum Lesen&lt;/subfield&gt;\n  &lt;/datafield&gt;\n  &lt;datafield tag=\"045B\" occurrence=\"02\"&gt;\n    &lt;subfield code=\"a\"&gt;Spo 1025&lt;/subfield&gt;\n    &lt;subfield code=\"a\"&gt;BID 200&lt;/subfield&gt;\n  &lt;/datafield&gt;\n&lt;/record&gt;\n\n\nPPXML\n&lt;record xmlns=\"http://www.oclcpica.org/xmlns/ppxml-1.0\"&gt;\n  &lt;global opacflag=\"\" status=\"\"&gt;\n    &lt;tag id=\"003@\" occ=\"\"&gt;\n      &lt;subf id=\"0\"&gt;12345X&lt;/subf&gt;\n    &lt;/tag&gt;\n    &lt;tag id=\"021A\" occ=\"\"&gt;\n      &lt;subf id=\"a\"&gt;Ein Buch&lt;/subf&gt;\n      &lt;subf id=\"h\"&gt;zum Lesen&lt;/subf&gt;\n    &lt;/tag&gt;\n    &lt;tag id=\"045B\" occ=\"2\"&gt;\n      &lt;subf id=\"a\"&gt;Spo 1025&lt;/subf&gt;\n      &lt;subf id=\"a\"&gt;BID 200&lt;/subf&gt;\n    &lt;/tag&gt;\n  &lt;/global&gt;\n&lt;/record&gt;\n\n\n\n\n\n\nWeitere Informationen zu PICA-Serialisierungen in der GBV-Formatdatenbank\n\n\n\n\n\n\n\n\n\nZur Konvertierung zwischen PICA-Serialisierungen mit picadata",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#abfragesprache",
+    "href": "formate.html#abfragesprache",
+    "title": "3  PICA-Formate",
+    "section": "3.4 Abfragesprache",
+    "text": "3.4 Abfragesprache\nPICA Path Expressions ist eine Abfragesprache um in formaler Syntax auf Elemente eines PICA-Datensatz zu verweisen. Eine offizielle Spezifikation existiert noch nicht. Eine Abfrage besteht aus folgenden Teilen:\n\nEine Feldnummer bestehend aus drei Ziffern (die erste 0, 1 oder 2), gefolgt von einem Großbuchstaben oder @. An jeder der vier Stellen der Feldnummer kann auch ein Punkt . als Platzhalter verwenden werden. Beispiele: 003@, 1..A, 2...\nOptional eine Occurrence bestehend aus zwei oder drei Ziffern. Zur Angabe mehrerer Occurrences ist auch hier der Punkt als Platzhalter erlaubt, alternativ kann ein Bereich angegeben werden (zum Beispiel 00-12). Je nach Anwendung wird die Occurrence in eckigen Klammern (zum Beispiel [12], [0.], [102]) oder nach einem Slash (zum Beispiel /12, /0., /102) geschrieben.\nOptional eine Liste von Unterfeld-Codes (A-Z, a-z, 0-9). Die Liste wird mit einem Dollar-Zeichen ($) eingeleitet. Beispiele: $0, $axy.\n\nDie Syntax der Abfragesprache ist eine Teilmenge von MARCspec, einer umfrangreicheren Sprache zur Referenzierung von Teilen aus MARC-Datensätzen.\nNeben PICA Path Expressions ist die Contextual Query Language (CQL) zur Abfrage von Datensätzen mittels SRU relevant. CQL referenziert allerdings nicht Elemente des PICA-Formats sondern basiert auf Feldern eines Suchindex, der aus unterschiedlichen Inhalten aufgebaut sein kann.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#änderungsformat",
+    "href": "formate.html#änderungsformat",
+    "title": "3  PICA-Formate",
+    "section": "3.5 Änderungsformat",
+    "text": "3.5 Änderungsformat\nAb CBS-Version 8 beherrscht die zentrale PICA-Datenbank Datensatz-Versionen. Änderungen an Datensätzen lassen sich durch Vergleich von Versionen im title-revision format anzeigen. Das Format entspricht im Wesentlichen der PICA Plain Serialisierung mit dem Unterschied dass einzelne Felder durch vorangestelltes + oder - als hinzugefügt oder entfernt markiert werden. Eine Verallgemeinerung ist das Annotated PICA Format. Dabei wird jedem Feld ein Markierungszeichen und ein weiteres Leerzeichen vorangestellt. Um Missverständnissen vorzubeugen sind als Markierungszeichen keine Buchstaben oder Ziffern erlaubt. Das Änderungsformat PICA Patch ergibt sich durch Wahl der Markierungszeichen + und -. Weitere Anwendungsmöglichkeiten sind die Markierung unbekannter oder fehlerhafter Felder mit ? oder !.\nBeispiel einer Änderung an Feld 021A, Unterfeld $a\n- 021A $aEin Buch$hzum Lesen\n+ 021A $aEin gutes Buch$hzum Lesen und Genießen\nAls Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letztes Array-Element eines Feldes angefügt werden. Da die Anzahl der Elemente eines Feldes in PICA/JSON normalerweise gerade ist, kann das Markierungszeichen nicht mit anderen Bestandteilen der PICA-Struktur verwechselt werden.\n[\n  [ \"021A\", null, \"a\", \"Ein Buch\", \"h\", \"zum Lesen\", \"-\" ],\n  [ \"021A\", null, \"a\", \"Ein gutes Buch\", \"h\", \"zum Lesen und Genießen\", \"+\" ]\n]\nZur Erzeugung von Änderungsdatensätzen siehe auch der Abschnitt zur Bearbeitung von PICA-Daten.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#anwendungsprofile",
+    "href": "formate.html#anwendungsprofile",
+    "title": "3  PICA-Formate",
+    "section": "3.6 Anwendungsprofile",
+    "text": "3.6 Anwendungsprofile\nDie Bedeutung einzelner PICA-Felder und Unterfeld-Strukturen ist nicht universell sondern durch die jeweiligen Katalogisierungsregeln einer Datenbank festgelegt. Die Katalogisierungsregeln sind Teil eines Standard welche Felder mit welcher Bedeutung auftreten können oder sollen. Ein Beispiel für einen solchen Standard ist die K10plus Format-Dokumentation für die K10plus-Datenbank. Die Dokumentation enthält als semi-formalen Teil eine Tabelle aller PICA-Felder und Unterfelder mit Angaben über Reihenfolge, Wiederholbarkeit etc. Die Regeln sind allerdings eher als Empfehlungen zu betrachten, da nicht alle ihre Aspekte bei der Eingabe kontrolliert werden. Innerhalb einer Datenbank kann es auch vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst wurden. Für die Verarbeitung von Informationen aus PICA-Anwendungsprofilen eignen sich Avram-Schemas.\nDie Regeln eines PICA-Standards können auch Angaben zu erlaubten Werten und weiterer Strukturierung innerhalb von Unterfeldern beinhalten. Ein Beispiel für Letzteres ist das “Nichtsortierzeichen” @. Das Nichtsortierzeichen gibt als Steuerzeichen an, dass der Inhalt des Feldes vor dem Sortierzeichen für die Indexierung ignoriert werden soll. Nach dem ersten Vorkommen des Nichtsortierzeichens hat das Zeichen keine besondere Bedeutung mehr, es kann also auch als normales Zeichen vorkommen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#avram-schemas",
+    "href": "formate.html#avram-schemas",
+    "title": "3  PICA-Formate",
+    "section": "3.7 Avram-Schemas",
+    "text": "3.7 Avram-Schemas\nAvram ist eine Schemasprache für feldbasierte Formate wie MARC, PICA, MAB und allegro. Ein Avram-Schema legt beispielsweise fest welche PICA-Felder und -Unterfelder in einem Datensatz vorkommen können oder müssen und welche Felder und Unterfelder wiederholbar sind. Avram-Schemas für PICA-Daten können verwendet werden um Informationen zur Definition von Feldern anzuzeigen und um PICA-Daten gegen das Schema zu validieren. Ein Beispiel für die Verwendung von Avram-Schemas ist der PicaEditor. Für verschiedene im GBV verwendeten PICA-Formate werden Avram-Schemas per Avram-API bereitgestellt.\n\n\n\n\n\n\nAvram-Spezifikation in der GBV-Formatdatenbank\n\n\n\n{\n  \"fields\": {\n    \"004A\": {\n      \"tag\": \"004A\",\n      \"pica3\": \"2000\",\n      \"label\": \"ISBN\",\n      \"url\": \"https://swbtools.bsz-bw.de/cgi-bin/k10plushelp.pl?cmd=kat&val=2000&katalog=Standard\",\n      \"repeatable\": true,\n      \"modified\": \"2019-12-18 09:53:31\",\n      \"subfields\": {\n        \"0\": {\n          \"code\": \"0\",\n          \"pica3\": \"\",\n          \"label\": \"ISBN\",\n          \"repeatable\": false,\n          \"modified\": \"2019-11-28 14:27:12\",\n          \"position\": 1\n        },\n        \"f\": {\n          \"code\": \"f\",\n          \"pica3\": \"$f\",\n          \"label\": \"Kommentar zur ISBN, Einbandart, Lieferbedingungen und/oder Preis\",\n          \"repeatable\": false,\n          \"modified\": \"2019-12-17 15:03:31\",\n          \"position\": 2\n        }\n      }\n    }\n  }\n}\nBeispiel für ein Avram-Schema mit Definition des K10plus-Feldes für die ISBN",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "formate.html#zusammenfassung",
+    "href": "formate.html#zusammenfassung",
+    "title": "3  PICA-Formate",
+    "section": "3.8 Zusammenfassung",
+    "text": "3.8 Zusammenfassung\nDas PICA-Format in seiner allgemeinen Form PICA+ ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab, die sich in Avram-Schemas als Anwendungsprofile formalisieren lassen. Für die Katalogisierung wird zwischen PICA+ und Pica3 konvertiert. Zur Speicherung und zum Austausch von PICA-Daten gibt es verschiedene Serialisierungen (PICA Plain, PICA/XML, PICA/JSON…) und für den Zugriff auf einzelne Elemente die Abfragesprache PICA Path Expressions. Mit dem PICA-Änderungsformat lassen sich Unterschiede zwischen PICA-Datensätzen angeben.\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>PICA-Formate</span>"
+    ]
+  },
+  {
+    "objectID": "darstellung.html",
+    "href": "darstellung.html",
+    "title": "4  Darstellung von PICA-Daten",
+    "section": "",
+    "text": "4.1 Syntaxhervorherbung\nDurch farbliche Hervorhebung von Feldern und Unterfeldern lassen sich PICA-Daten leichter lesen. Unter https://gbv.github.io/lipstick/ werden Funktionen zum Syntax-Highlighting von PICA+ und verwandten Formaten gesammelt:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Darstellung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "darstellung.html#syntaxhervorherbung",
+    "href": "darstellung.html#syntaxhervorherbung",
+    "title": "4  Darstellung von PICA-Daten",
+    "section": "",
+    "text": "vim\nDer Texteditor vim gehört praktisch zur Standardausstattung für jedes Unix-System.\n\n\n\n\n\n\nAbbildung 4.1: Screenshot PICA Syntax-Highlighting unter vim\n\n\n\n\n\n\n\n\n\nAnleitung der Einrichtung von PICA-Highlighting unter vim\n\n\n\n\n\npicadata\nDas Kommandozeilenprogramm picadata wird im folgenden Kapitel vorgestellt.\n\n\n\n\n\n\nAbbildung 4.2: Screenshot PICA Syntax-Highlighting mit picadata\n\n\n\nStandardmäßig ist Syntaxhervorhebung für PICA Plain Datensätze auf der Kommandozeile aktiviert. Mit den Optionen -M/--mono bzw. -C/--color lässt sie sich explizit ab- und anschalten.\n\n\nSublime Text\nDer Texteditor Sublime Text kann um Syntax-Highlighting für PICA erweitert werden.\n\n\n\n\n\n\nAbbildung 4.3: Screenshot PICA Syntax-Highlighting mit Sublime\n\n\n\n\n\n\n\n\n\nPICA-Syntax-Definition und Anleitung\n\n\n\n\n\nPrism\nPrism ist eine Highlighting-Engine für Code auf HTML-Seiten, beispielsweise die Webseiten dieses Handbuchs. Die Unterstützung für PICA beinhaltet PICA Plain, PICA Path Expressions und das Title-Revision Format:\n003@ $012345X\n021A $aEin Buch$hzum Lesen\n045B/02 $aSpo 1025$aBID 200\n\n003@$0\n\n- 021A $aEin Buch$hzum Lesen\n+ 021A $aEin gutes Buch$hzum Lesen\n\n\n\n\n\n\nAnleitung der Nutzung von Prism für PICA\n\n\n\n\n\nCodeMirror\nCodeMirror ist eine HTML-Komponente für ansprechende Textformulare mit Syntaxhervorhebung. Der PICA+ Datensatz im folgenden Beispiel kann direkt im Browser bearbeitet werden. Umfangreichere Möglichkeiten zur Bearbeitung und Analyse bietet der auf CodeMirror aufbauende PicaEditor.\n\n003@ $012345X\n021A $aEin Buch$hzum Lesen\n045B/02 $aSpo 1025$aBID 200\n\n\n\n\n\n\n\n\n\nAnleitung zu PICA-Highlighting mit CodeMirror\n\n\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Darstellung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "verarbeitung.html",
+    "href": "verarbeitung.html",
+    "title": "5  Verarbeitung von PICA-Daten",
+    "section": "",
+    "text": "5.1 PicaEditor\nPicaEditor ist eine Komponente für Webanwendungen mit der PICA-Daten im Browser analysiert und bearbeitet werden können. Die Komponente basiert auf CodeMirror und dem JavaScript-Framework Vue3.\nDer zentrale Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein Avram Schema werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatzes gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verarbeitung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "verarbeitung.html#picaeditor",
+    "href": "verarbeitung.html#picaeditor",
+    "title": "5  Verarbeitung von PICA-Daten",
+    "section": "",
+    "text": "&lt;pica-editor :databases=“databases” :unapi=“‘https://unapi.k10plus.de/’” :avram=“‘https://format.k10plus.de/avram.pl?profile=k10plus’”&gt;\n003@ $0355973081\n010@ $ager\n011@ $a2001\n019@ $aXA-DE$XXX\n021A $a@Zehn Jahre Pica in Niedersachsen und Deutschland$dSkizzen eines Erfolgs aus Anlass der 5. Verbundkonferenz des Gemeinsamen Bibliotheksverbundes der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein und Thüringen, vom 11.-12. September, 2001 in Göttingen$h[Redaktion, Elmar Mittler]\n029A $a@Gemeinsamer Bibliotheksverbund der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein und Thüringen$bVerbundkonferenz$xGöttingen, Germany)\n029F $a@Niedersächsische Staats- und Universitätsbibliothek Göttingen\n033A $pGöttingen$nNiedersächsische Staats- und Universitätsbibliothek\n034D $a181 p\n034I $a21 cm\n034M $aill\n044A $aPICA Project$aCongresses\n045A $aZ699.4.P23\n045V $a10$a24,2\n\n\n\n\n\n\n\n\n\n\nTechnische Details zur Installation und Konfiguration findet sich in der PicaEditor-Dokumentation.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verarbeitung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "verarbeitung.html#programmbibliotheken",
+    "href": "verarbeitung.html#programmbibliotheken",
+    "title": "5  Verarbeitung von PICA-Daten",
+    "section": "5.2 Programmbibliotheken",
+    "text": "5.2 Programmbibliotheken\nBei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Grenzen, so dass eigene Programme entwickelt werden müssen. Für einige Programmiersprachen gibt es Softwarebibliotheken, die die Arbeit mit PICA-Daten vereinfachen und verlässlicher machen. Bislang gibt es:\n\nDie Perl-Programmbibliotheken PICA::Data, auf der sowohl picadata als auch die PICA-Funktionen von Catmandu basiert (ein ältere, inzwischen nicht mehr weiterentwickelte Version der Bibliothek ist PICA::Record).\nDas Node-Modul pica-data stellt JavaScript-Funktionen zur Verarbeitung von PICA+ als PICA Plain und PICA JSON bereit.\nluapica ist eine Programmbibliothek zur PICA-Verarbeitung in Lua.\npica_parse ist eine Python-Bibliothek für PICA+ Daten.\nDas mit Catmandu vergleichbare Werkzeug Metafacture unterstützt neben anderen Formaten auch das Lesen und Schreiben von PICA-Daten (siehe Java-Quellcode).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verarbeitung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "verarbeitung.html#direkte-verarbeitung",
+    "href": "verarbeitung.html#direkte-verarbeitung",
+    "title": "5  Verarbeitung von PICA-Daten",
+    "section": "5.3 Direkte Verarbeitung",
+    "text": "5.3 Direkte Verarbeitung\nDie relativ einfache Struktur von PICA ermöglicht die direkte Verarbeitung von PICA-Daten, insbesondere wenn diese in Form von normalisiertem PICA vorliegen. Ohne PICA-Programmbibliothek können sich zwar etwas leichter Fehler einschleichen, dafür muss nichts installiert werden und die Verarbeitung ist unter Umständen sogar schneller. Hier ein Beispiel in Perl, das aus normalisiertem PICA alle Unterfelder $a von Felder mit Inhaltserschließung (044. und 045.) ausgibt:\nwhile (&lt;&gt;) {                                      # Ein Datensatz pro Zeile\n    for ( split /\\x1E/ ) {                        # Schleife über alle Felder \n        my ( $field, $tmp ) = split ' ', $_, 2;   # Tag und Occurrence\n        my ( undef, @sfs ) = split /\\x1F/, $tmp;  # Unterfelder\n\n        next if $field !~ /^04[45]/;              # Verarbeitung des Datensatz\n        for (@sfs) {\n            say $1 if $_ =~ /^a(.+)/;\n        }\n    }\n}\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verarbeitung von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html",
+    "href": "picadata.html",
+    "title": "6  Das Werkzeug picadata",
+    "section": "",
+    "text": "6.1 Installation\nDas Tool ist Teil der Perl-Programmbibliothek PICA::Data und wird mit dieser installiert. Unter Debian-basierten Linux-Distributionen (u.A. Ubuntu) geht dies so:\nDas Programm setzt vorhandene PICA-Daten voraus (siehe Kapitel Schnittstellen zum Zugriff auf PICA-Daten). Zum Ausprobieren können PICA-Daten in PICA Plain Syntax auch mit einem Texteditor erstellt werden. Laden Sie die Datei example.pica mit folgendem Inhalt herunter:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html#installation",
+    "href": "picadata.html#installation",
+    "title": "6  Das Werkzeug picadata",
+    "section": "",
+    "text": "sudo apt-get install libxml-libxml-perl cpanminus\nsudo cpanm PICA::Data",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html#konvertierung",
+    "href": "picadata.html#konvertierung",
+    "title": "6  Das Werkzeug picadata",
+    "section": "6.2 Konvertierung",
+    "text": "6.2 Konvertierung\nIm einfachsten Anwendungsfall liest picadata PICA+ Datensätze in PICA Plain und gibt sie mit Syntax-Hervorhebung wieder aus. Hier drei Aufruf-Möglichkeiten:\npicadata example.pica\ncat example.pica | picadata\npicadata &lt; example.pica\nIn der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option -f/--from das Serialisierungsformat festgelegt werden, beispielsweise -f bin für binäres PICA. Mit der Option -t/--to kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.\npicadata example.pica                        # PICA Plain nach PICA Plain\npicadata example.pica -t xml &gt; example.xml   # PICA Plain nach PICA/XML\npicadata example.xml                         # PICA/XML nach PICA/XML\npicadata example.xml -t json                 # PICA/XML nach PICA/JSON\nFolgende Serialisierungsformate werden unterstützt:\n\n\n\nFormat\nName oder Dateiendungen\n\n\n\n\nPICA Plain\nplain, pp (Standard)\n\n\nBinäres PICA\nbinary, bin, dat, extpp, ext\n\n\nNormalisiertes PICA\nplus, norm, normpp\n\n\nPICA-Importformat\nimport\n\n\nPICA/JSON\njson, ndjson\n\n\nPICA/XML\nxml\n\n\nPPXML\nppxml\n\n\n\nFür PICA Plain und PICA/JSON werden vorhandene Annotationen standardmäßig mit ausgegeben. Die Option -A unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option -a/--annotate sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.\nIn der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option -o sortiert Datensätze neu und zwar getrennt für die bibliographische Ebene und innerhalb der einzelnen Lokal- und Exemplardatensätze.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html#auswahl-von-daten",
+    "href": "picadata.html#auswahl-von-daten",
+    "title": "6  Das Werkzeug picadata",
+    "section": "6.3 Auswahl von Daten",
+    "text": "6.3 Auswahl von Daten\nBei größeren Datenmengen macht es Sinn sich erstmal einige Beispiele anzuschauen. Mit der Option -n/--number werden nur eine begrenzte Zahl von Datensätzen verarbeitet, z.B. die ersten 10:\npicadata -n 10 example.pica\npicadata -10 example.pica     # Equivalente Abkürzung der Option\nOft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option -p/--path lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die Abfragesprache PICA Path Expression:\npicadata -p '003@' example.pica        # Nur Feld 003@\npicadata -p '00..' example.pica        # Alle Felder die mit 00 beginnen\npicadata -p '003@|021A' example.pica   # Mehrere Felder\nZur Abkürzung kann der Optionsschalter -p auch weggelassen werden wenn die Feldauswahl am Anfang steht. So lassen sich beispielsweise Datensätze auf K10plus-Felder zur klassifikatorischen Sacherschließung eingegrenzen:\npicadata '003@|021A' &lt;example.pica\nWenn die Liste der Felder länger ist, empfiehlt es sich sie in eine Datei zu schreiben und diese zur referenzieren:\npicadata $(&lt;fields) example.pica\nStatt ganze PICA-Felder können mit PICA-Path Expressions auch Unterfelder referenziert werden. Die Werte der gefundenen Unterfelder werden zeilenweise ausgegeben. Hier einige Beispiele:\n$ picadata '003@$0' example.pica\n12345X\n$ picadata '021A$a' example.pica\nEin Buch\n$ picadata '021A$ah' example.pica\nEin Buch\nZum Lesen\nFür komplexere Auswahl- und Konvertierungs-Routinen (zum Beispiel mit Wenn-Dann-Regeln und Zusammenführung von Feldern) sollte ein mächtigeres Werkzeug zur PICA-Datenverarbeitung wie [Catmandu] oder eine andere Programmiersprache verwendet werden.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html#datenanalyse",
+    "href": "picadata.html#datenanalyse",
+    "title": "6  Das Werkzeug picadata",
+    "section": "6.4 Datenanalyse",
+    "text": "6.4 Datenanalyse\nDie Option -c/--count erzeugt eine Einfache Statistik mit der Anzahl gelesener Datensätze und Felder. Standardmäßig wird die Ausgabe der Datensätze unterdrückt, außer mit -t/--to ist explizit eine Syntax festgelegt.\npicadata -c example.pica\nDas Ausgabeformat fields (oder kurz f) listet alle vorkommenden Felder auf. Entsprechend gibt es das Ausgabeformat subfields (kurz sf).\npicadata f example.pica \n003@\n021A\n045B/02\nBei Angabe eines Schemas per Dateiname oder URL wird (falls vorhanden) das Feld bzw. Unterfeld dokumentiert:\npicadata fields example.pica -s https://format.k10plus.de/avram.pl?profile=k10plus\n003@ o Pica-Produktionsnummer\n021A o Haupttitel, Titelzusatz, Verantwortlichkeitsangabe\n045B/02 * Systematik fÃ¼r Bibliotheken (SfB)\nDas Zeichen nach der Feldnummer gibt an, ob das entsprechende Feld optional und wiederholbar oder nicht wiederholbar (* oder o) bzw. notwendig (+ oder .) ist.\nEine ausführlichere Analyse ist mit der Option -b/--build möglich, die aus vorhandenen PICA-Daten ein Avram-Schema erstellt. Option -B reduziert das Schema zur Besseren Lesbarkeit um redundante Bestandteile.\npicadata -B example.pica\n{\n   \"fields\": {\n      \"003@\": {\n         \"required\": true,\n         \"subfields\": {\n            \"0\": {\n               \"required\": true\n            }\n         }\n      },\n      \"021A\": {\n         \"required\": true,\n         \"subfields\": {\n            \"a\": {\n               \"required\": true\n            },\n            \"h\": {\n               \"required\": true\n            }\n         }\n      },\n      \"045B/02\": {\n         \"required\": true,\n         \"subfields\": {\n            \"a\": {\n               \"repeatable\": true,\n               \"required\": true\n            }\n         }\n      }\n   }\n}",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "picadata.html#validierung",
+    "href": "picadata.html#validierung",
+    "title": "6  Das Werkzeug picadata",
+    "section": "6.5 Validierung",
+    "text": "6.5 Validierung\nBei Angabe eines Avram-Schema per Datei oder URL mit Option -s/--schema werden Eingabedaten gegen das Schema validiert. Unbekannte Felder und Unterfelder werden dabei ignoriert, außer bei Angabe der zusätzlichen Option -u/--unknown. Das Ergebnis der Validierung kann auf verschiedene Weise angezeigt werden:\n\nStandarmäßig werden nur Fehlermeldungen ausgegeben. Ist der Datensatz korrekt, erfolgt also keine Ausgabe.\nMit der Option -a/--annotate wird das Ergebnis der Validierung als Feld-Annotation ausgegeben. Die Markierung von fehlerhaften Feldern ist ! und von unbekannten Feldern ?.\n\nWurde ein Fehler erkannt, so ist der Statuscode des Programms 1, so dass Shell-Programmierung verwendet werden kann:\npicadata -s schema.json example.pica && echo \"OK\"\nHier ein vollständiges Beispiel zur Abfrage und Validierung eines Teilbestandes des K10plus (Titel zum Thema Brückenbau an der TU Braunschweig):\ncurl https://format.k10plus.de/avram.pl?profile=k10plus-title &gt; k10plus-title.json\ncatmandu convert kxp --base http://sru.k10plus.de/opac-de-84 --query pica.bkl=56.23 to pp &gt; brueckenbau.pp\npicadata validate -s k10plus-title.json brueckenbau.pp\n\n\n\n\n\n\nDie Validierung umfasst momentan nur die bibliographische Ebene und keine Occurrence-Bereiche (Siehe Issue)!\n\n\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Das Werkzeug picadata</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html",
+    "href": "catmandu.html",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "",
+    "text": "7.1 Installation\nFür Debian-basierte Betriebsysteme kann Catmandu mit Unterstützung von PICA und SRU folgendermaßen installiert werden:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html#installation",
+    "href": "catmandu.html#installation",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "",
+    "text": "sudo apt-get install libcatmandu-perl libcatmandu-sru-perl cpanminus\nsudo cpanm Catmandu::PICA",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html#konfiguration",
+    "href": "catmandu.html#konfiguration",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "7.2 Konfiguration",
+    "text": "7.2 Konfiguration\nIn der Konfigurationsdatei catmandu.yaml lassen sich häufig benötigte Einstellungen angeben, so dass sie nicht bei jedem Aufruf von catmandu mit angegeben werden müssen. Für die Verarbeitung von PICA-Daten, insbesondere aus dem K10plus-Katalog empfiehlt sich folgende YAML-Datei, die in den folgenden Beispielen vorausgesetzt wird:\n\nDie folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich; die Konfiguration ermöglicht eine kürzere Schreibweise:\ncatmandu convert PICA --type XML to PICA --type plain example.pica\ncatmandu convert picaxml to pp example.pica",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html#pica-in-catmandu",
+    "href": "catmandu.html#pica-in-catmandu",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "7.3 PICA in Catmandu",
+    "text": "7.3 PICA in Catmandu\nIntern werden PICA-Daten in Catmandu als ein Datensätze mit je zwei Feldern verarbeitet:\n\n_id enthält die PPN (falls vorhanden, ansonsten null)\n_record enthält die PICA-Daten in PICA/JSON-Struktur\n\nHier der Beispieldatensatz so wie er von Catmandu gelesen wird (da in der Regel mehrere Datensätze verarbeitet werden, ist die JSON-Ausgabe standardmäßig ein Array aller Datensätze). Vorausgesetzt wird wieder die Beispieldatei example.pica:\ncatmandu convert pp to JSON &lt; example.pica\n[{\"record\":[[\"003@\",\"\",\"0\",\"12345X\"],[\"021A\",\"\",\"a\",\"Ein Buch\",\"h\",\"zum Lesen\"],[\"045B\",\"02\",\"a\",\"Spo 1025\",\"a\",\"BID 200\"]],\"_id\":\"12345X\"}]\nFunktionen zur Verarbeitung von PICA in Catmandu werden erst durch das Paket Catmandu-PICA bereitgestellt (siehe Installation):\n\nLesen und Schreiben verschiedener PICA-Serialisierungen\nAuswerten und Verändern der Inhalte von PICA-Datensätzen\nAbruf von PICA-Daten über SRU-Schnittstellen\nValidierung von PICA-Daten mit Avram-Schemas",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html#fix-skripte",
+    "href": "catmandu.html#fix-skripte",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "7.4 Fix-Skripte",
+    "text": "7.4 Fix-Skripte\nEine Besonderheit von Catmandu sind die so genannten Fix-Skripe zur Auswertung und Veränderung von Daten. Hier ein Beispiel zur Konvertierung von PICA in eine CSV-Tabelle:\ncatmandu convert pp to CSV --fix 'pica_map(021A$ah,titel,join:\" \") remove_field(record)' &lt; example.pica\n_id,titel\n12345X,Ein Buch zum Lesen\nDieses Fix-Skript besteht aus zwei Befehlen (bei längeren Fix-Skripten empfiehlt sich das Auslagern in eine eigene Datei):\n\npica_map(021A$ah,titel,join:\" \") fügt ein neues Feld titel mit dem Inhalt der Unterfelder $a und $h des PICA-Feld 021A hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels PICA Path Expression.\nremove_field(record) entfernt den PICA-Datensatz, so dass nur noch _id und titel übrig bleiben.\n\nUmgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hier ein Beispiel zur Änderung des Unterfelds 021A$a:\ncatmandu convert pp to pp --fix 'set_field(titel,\"Ein gutes Buch\");pica_set(titel,021A$a)' &lt; example.pica\n003@ $012345X\n021A $aEin gutes Buch$hzum Lesen\n045B/02 $aSpo 1025$aBID 200\nWeitere Beispiele für Fix-Skripte gibt es im Abschnitt zur PICA-Bearbeitung.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "catmandu.html#schnittstellen",
+    "href": "catmandu.html#schnittstellen",
+    "title": "7  Das Werkzeug Catmandu",
+    "section": "7.5 Schnittstellen",
+    "text": "7.5 Schnittstellen\nSeine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der SRU-Schnittstelle des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:\ncatmandu convert kxp --query pica.sgd=590 --fix 'reject pica_match(045Q) remove_field(record)' to CSV --header 0\nIm einzelnen besteht der Aufruf aus:\n\nAbfrage aller Titel mit Sachgruppe 590 (Zoologie) im K10Plus\ncatmandu convert kxp --query pica.sgd=590\nHerausfiltern von Datensätzen mit vorhandener Basisklassifikation (Feld 045Q) und Reduzierung der verbleibenden Datensätze auf die PPN in Feld _id\n--fix 'reject pica_match(045Q) remove_field(record)\nAusgabe der PPNs als CSV ohne Header (also nur je eine PPN pro Zeile):\nto CSV --header 0\n\nWeitere Beispiele für die PICA-Datenverarbeitung mit Catmandu gibt es im Abschnitt zur SRU-Schnittstelle. Eine vollständige Einführung in Catmandu würde jedoch den Umfang dieses Handbuchs übersteigen.\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Werkzeug Catmandu</span>"
+    ]
+  },
+  {
+    "objectID": "pica-rs.html",
+    "href": "pica-rs.html",
+    "title": "8  Das Werkzeug pica-rs",
+    "section": "",
+    "text": "8.1 Installation\nAm einfachsten die Installation einer Release-Version des Programms von der Seite https://github.com/deutsche-nationalbibliothek/pica-rs/releases. Unter “Assets” werden dort Pakete für verschiedene Betriebsysteme bereitgestellt. Alternativ kann die letzte Entwicklungsversion aus dem git-Repository installiert werden, wie in der Dokumentation von pica-rs beschrieben.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Das Werkzeug pica-rs</span>"
+    ]
+  },
+  {
+    "objectID": "pica-rs.html#bedienung",
+    "href": "pica-rs.html#bedienung",
+    "title": "8  Das Werkzeug pica-rs",
+    "section": "8.2 Bedienung",
+    "text": "8.2 Bedienung\n\n\n\n\n\n\nSiehe pica-rs Anfänger-Tutorial\n\n\n\nDas Kommandozeilenprogramm von pica-rs heisst pica. Im Gegensatz zu picadata wird als Standard-Syntax normalisiertes PICA (mit einem Datensatz pro Zeile) angenommen. Das Programm stellt folgende Befehle bereit:\n\npica filter zur Auswahl von Datensätzen, die ein bestimmtes Kriterium erfüllen\npica select zur Auswahl von Unterfeldwerten und Ausgabe im CSV-Format\npica frequency zur Erstellung einer Häufigkeitsverteilung von Unterfeldwerten (Histogramm)\npica partition, pica sample, pica slice und pica split zur Reduktion von Datensätzen in kleinere Mengen\npica cat, pica print, pica xml und pica json zur Ausgabe von Datensätzen in unterschiedlichen PICA-Serialisierungen\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Das Werkzeug pica-rs</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html",
+    "href": "schnittstellen.html",
+    "title": "9  Schnittstellen",
+    "section": "",
+    "text": "9.1 unAPI\nDie unAPI-Schnittstelle ermöglicht den Abruf einzelner PICA-Datensätze mittels ihrer PPN. Zusätzlich muss ein Datenbankkürzel angegeben werden und in welchem Format der Datensatz zurückgeliefert werden soll.\nEine Liste aller unterstützen Formaten wird bei Aufruf der unAPI-URL (https://unapi.k10plus.de/) zurückgeliefert. Die PICA-basierten Serialisierungen sind:\nAlle weiteren Formate (marcxml, mods36…) werden durch Konvertierung aus PICA erzeugt.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html#unapi",
+    "href": "schnittstellen.html#unapi",
+    "title": "9  Schnittstellen",
+    "section": "",
+    "text": "unAPI im K10plus-Wiki\n\n\n\n\n\n\n\n\n\nunAPI im GBV-Verbundwiki\n\n\n\n\n\n\n\nformat=\nSerialisierung\n\n\n\n\npp\nPICA Plain\n\n\npicajson\nPICA/JSON\n\n\npicaxml\nPICA/XML\n\n\nnormpp\nNormalisiertes PICA\n\n\nextpp\nBinäres PICA\n\n\n\n\n\nBeispiel auf der Kommandozeile\nDer Datensatz mit der PPN 161165839X aus dem K10plus-Verbundkatalog (opac-de-627) lässt sich im PICA Plain Format (pp) unter der URL http://unapi.k10plus.de/.qmd#opac-de-627:ppn:161165839X&format=pp abrufen. Auf der Unix-Kommandozeile ist dies beispielsweise mit curl möglich so dass und anschließend mit picadata weiterverarbeitet werden:\ncurl 'http://unapi.k10plus.de/.qmd#opac-de-627:ppn:161165839X&format=pp' | picadata '028A|028C'\n028A $9079339735$VTpv1$7gnd/118540475$3161149200$wpiz$AGoldman$DEmma$E1869$M1940\n028C $9549565094$VTpv3$7gnd/133610519$3299969355$wpiz$APetersen$DTina$E1973$BBearb.\n028C $9634784293$VTpv4$7gnd/142220213$3329568302$wpiz$ABreitinger$DMarlen$BÜbers.\nFür wiederkehrende Abrufe mit unterschiedlicher PPN lohnt es sich ein Shell-Skript anzulegen, das dann beispielsweise als ./kxp 161165839X aufgerufen werden kann:\ncat &lt;&lt;EOF &gt; kxp\n#!/bin/bash\nkxp() { curl -s \"http://unapi.k10plus.de/?format=pp&id=opac-de-627:ppn:$1\"; echo; echo; }\nif [ -z \"$1\" ]; then while read -r ppn; do kxp \"$ppn\"; done\nelse for ppn in \"$@\"; do kxp \"$ppn\"; done; fi\nEOF\nchmod +x kxp\n\n\nBeispiel im Browser\nIn die folgende CodeMirror-Instanz können PICA-Datenätze per unAPI aus dem K10plus-Katalog geladen werden:\n\n\nPPN:  Datensatz aus K10Plus laden\n\n\nDie Web-Komponente PicaEditor unterstützt ebenfalls den Zugriff auf Katalogdaten per unAPI.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html#sru",
+    "href": "schnittstellen.html#sru",
+    "title": "9  Schnittstellen",
+    "section": "9.2 SRU",
+    "text": "9.2 SRU\nDie SRU-Schnittstelle dient der Abfrage von Datensätzen aus PICA-Katalogen mittels Suchanfragen. Die Suche erfolgt wie bei der klassischen OPAC-Oberfläche über einen Suchindex mit Suchschlüsseln. Jeder Suchschlüssel hat eine interne Nummer (“IKT”) und ein Kürzel aus drei Buchstaben. So ist beispielsweise die ISBN in IKT 7 mit dem Suchschlüssel ISB indexiert. Für OPAC-Suchanfragen in diesem Index gibt es jeweils entsprechende Suchanfragen an den SRU-Endpunkt des Katalogs:\n\nhttps://opac.k10plus.de/DB=2.299/CMD?ACT=SRCHA&IKT=7&TRM=9783894018108\nhttp://sru.k10plus.de/opac-de-627?version=1.1&operation=searchRetrieve&query=pica.isb=9783894018108&maximumRecords=10&recordSchema=picaxml\n\nEine Liste aller Suchschlüssel einer Datenbank ist über die Basis-URL des SRU-Endpunktes (z.B. http://sru.k10plus.de/opac-de-627) abrufbar und kann folgendermaßen in eine übersichtliche Form gebracht werden:\ncurl http://sru.k10plus.de/opac-de-627 | catmandu convert XML --path //index to XML | egrep -o '\\[[^&lt;]+'\nIn den Katalogisierungsrichtlinien finden sich auch Angaben dazu, welche PICA-(Unter)felder in welchem Suchindex indexiert werden. Die Beziehung zwischen PICA-Feldern und Suchindex ist allerdings komplexer, da die Daten bei der Indexierung aggregiert, gefiltert und verändert werden können.\n\n\n\n\n\n\nWeitere Informationen zu SRU im K10plus-Wiki\n\n\n\n\n\n\n\n\n\nSRU im GBV-Verbundwiki\n\n\n\n\n\n\n\n\n\nSRU bei der DNB\n\n\n\n\n\n\n\n\n\nSRU bei der Zeitschriftendatenbank\n\n\n\n\n\n\n\n\n\nWikipedia-Artikel zu SRU\n\n\n\n\nBeispiel: K10plus-Abfragen\nZum Testen einer SRU-Anfrage an die K10plus-Datenbank kann mit Catmandu (und der im Catmandu-Kapitel angegebenen Konfiguration) ein einzelner Datensatz per PPN abgerufen werden:\ncatmandu convert kxp --query \"pica.ppn=161165839X\" to pp\nDer Titel ist in Feld 045H mit der Klasse 335.83092 (“Anarchisten”) der Dewey Dezimalklassifikation (DDC) erschlossen:\n$ catmandu convert kxp --query \"pica.ppn=161165839X\" to pp | picadata 045H\\$a\n335.83092\nDie DDC ist im Suchindex mit dem Schlüssel ddc erfasst. Wie viele so erfassten Publikationen über Anarchisten gibt es im im K10plus? Hier mehrere Möglichkeiten der Auswertung. Die letzte Variante ruft nur die Anzahl der Datensätze ab:\ncatmandu convert kxp --query \"pica.ddc=335.83092\" to Count\ncatmandu convert kxp --query \"pica.ddc=335.83092\" to pp | picadata --count\ncatmandu convert kxp --query \"pica.ddc=335.83092\" --parser meta --limit 0 --fix 'retain(numberOfRecords)'\nMehrere Suchschlüssel können mit and oder or verknüpft werden. Hier eine Liste der Titel von Publikationen zu Anarchisten die im Jahr 2014 oder 2015 erschienen sind:\ncatmandu convert kxp --query \"pica.ddc=335.83092 and (pica.jah=2014 or pica.jah=2015)\" to pp | picadata 021A\nFür komplexere Aufgaben empfiehlt es sich das Ergebnis der SRU-Anfrage nur einmal abzufragen und in eine Datei zu schreiben und anschließend mit verschiedenen Werkzeuge zu analysieren:\ncatmandu convert kxp --query pica.ddc=335.83092 to pp &gt; ana.pica\npicadata 021A ana.pica      # Titelfelder\npicadata '011@$a' ana.pica  # Jahreszahlen\ncatmandu convert pp --fix 'pica_map(011@$a,jahr); remove_field(record)' to CSV\nDie Abfrage von Titeln die mit einem Normdatensatz verknüpft sind ist etwas komlizierter. Zunächst muss die PPN des Normdatensatzes ermittelt werden, beispielsweise auf Grundlage der GND-ID 2085624-6.\n$ catmandu convert kxpnorm --query \"pica.nid=2085624-6\" to JSON | jq -r .[]._id\n100221165\nMit der PPN lässt sich anschließend eine CQL-Query wie pica.1049=100221165 and pica.1045=rel-tt and pica.1001=b bilden und zur Abfrage von Titeldatensätzen verwenden:\ncatmandu convert kxpnorm --query \"pica.1049=100221165 and pica.1045=rel-tt and pica.1001=b\" to pp | picadata -p '003@,021A'\n\n\nBeispiel: GND-Abfrage\nDie PICA-Datenbank der Gemeinsamen Normdatei (GND) ist als Online-GND (OGND) per SRU abfragbar. Mit Kenntnis des GND-Format und der Suchschlüssel lassen sich gezielt GND-Datensätze im Internformat abrufen.\nDer Suchschlüssel KSK enthält beispielsweise die vollständige Vorzungsbenennung eines Geografikums oder einer Organisation. Die Suche nach “Frankfurt am Main” liefert einen Treffer, die Suche nach “Frankfurt” keine Treffer:\ncatmandu convert ognd --query 'pica.ksk=\"Frankfurt am Main\"' to Count\ncatmandu convert ognd --query 'pica.ksk=Frankfurt' to Count\nIm Suchschlüssel KOR werden Suchbegriffe auch als einzelne Worte erfasst. Zu Frankfurt gibt es mehr als 15.000 Treffer (mit dem Parameter --total lässt sich die Ergebnismenge bei Bedarf beschränken, um nur testweise die erste Datensätze abzurufen). Durch Eingrenzung des Normdatentyps auf Gebietskörperschaften und Verwaltungseinheiten (gik) lässt sich die Treffermenge auf etwa 350 verringern, die Abfrage dauert dennoch einige Sekunden:\ncatmandu convert ognd --query 'pica.kor=Frankfurt and pica.9001=gik' to pp &gt; frankfurts.pica\npicadata --count frankfurts.pica\nDie so heruntergeladene Treffermenge lässt sich nun mit der Catmandu-Konvertierungssprache “Fix” weiter bearbeiten. Hier ein Beispielskript:\n# 003U: GND-Identifier\npica_map('003U$a', uri)\n\n# 065@ : Geografikum, Variante Namen\npica_map('065@$axzg', alias.$append, join:', ') \n\n# 065Q: Geografikum – Bevorzugter Name\npica_map('065A$a', name)\n\n# entferne ursprünglichen PICA+ Datensatz\nremove_field(record)\nremove_field(_id)\n\nDas Fix-Skript abgespeichert in der Datei gnd.fix, lässt sich folgendermaßen anwenden, um die Namen zu extrahieren:\ncatmandu convert pp --fix gnd.fix to YAML &lt; frankfurts.pica",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html#opac",
+    "href": "schnittstellen.html#opac",
+    "title": "9  Schnittstellen",
+    "section": "9.3 OPAC",
+    "text": "9.3 OPAC\nIn der Standard-Katalogansicht eines PICA-Katalogs (OPAC) lässt sich der PICA-Datensatz eines ausgewählten Titels über einen versteckten Link direkt unter dem Icon der Publikationsform aufrufen (siehe Screenshot). Alternativ kann die lässt Feldansicht auch durch den URL-Bestandteil /PSR=PP (nur Titelebene) bzw. /PRS=PP%7F (alle Ebenen) aktiviert werden. Der Datensatz in PICA Plain Serialisierung kann anschließend per Copy & Paste beispielsweise in eine Datei kopiert werden.\n\n\n\n\n\n\nAbbildung 9.1: Versteckter Link zum PICA-Datensatz (roter Pfeil)\n\n\n\nUnter dem PICA-Datensatz wird in der Feldansicht auch die Indexierung des Datensatz angezeigt (siehe Erklärungen zu SRU).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html#winibw",
+    "href": "schnittstellen.html#winibw",
+    "title": "9  Schnittstellen",
+    "section": "9.4 WinIBW",
+    "text": "9.4 WinIBW\nWinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verbreitete Programm zur Verarbeitung von PICA-Daten. Nicht zuletzt werden PICA-Daten bei der Katalogisierung in der Regel mittels WinIBW in PICA-Datenbanken eingetragen.\n\n\n\n\n\n\nDownload von Datensätzen in WinIBW",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "schnittstellen.html#avram-api",
+    "href": "schnittstellen.html#avram-api",
+    "title": "9  Schnittstellen",
+    "section": "9.5 Avram-API",
+    "text": "9.5 Avram-API\nNeben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der Avram-API eine Schnittstelle zum Zugriff auf Schema-Informationen (Avram Schemas). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter field bzw. pica3) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter profile).\nDie Avram-API für den K10Plus-Katalog steht unter https://format.k10plus.de/avram.pl zur Verfügung und ist dort dokumentiert. So lässt sich beispielsweise mit der URL https://format.k10plus.de/avram.pl?pica3=4000&profile=k10plus abrufen, wie das Pica3-Feld 4000 im K10Plus-Format definiert ist:\nEin Beispiel für die Verwendung der Schnittstelle liefert die Web-Komponente PicaEditor.\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Schnittstellen</span>"
+    ]
+  },
+  {
+    "objectID": "bearbeitung.html",
+    "href": "bearbeitung.html",
+    "title": "10  Ändern von PICA-Daten",
+    "section": "",
+    "text": "10.1 Änderungen mit Catmandu\nDas Werkzeug Catmandu ermöglicht neben der Abfrage und Auswertung von PICA-Daten auch die Erstellung von PICA-Patch-Datensätzen um Änderungen festzustellen (“diff”) oder ausführen (“patch”). Die Eintragung dieser Änderungen in zentrale PICA-Datenbanken ist allerdings nur durch Verbundzentralen möglich.\nUm mit Catmandu Änderungen zu erzeugen sind Bearbeitungen am PICA-Datensatz mit do pica_diff() ... end zu umschließen. So können beispielsweise die Sacherschließungsfelder 045B/00-99, falls vorhanden, aus dem Datensatz der Datei example.pica entfernt werden:\nFolgende Fix-Kommandos können derzeit (Catmandu::PICA Version 1.12) zum Ändern verwendet werden; weitere Kommandos sind geplant:\nHier einige weitere Beispiele von Fix-Skripten zur Änderung von Datensätzen mit Catmandu:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ändern von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "bearbeitung.html#änderungen-mit-catmandu",
+    "href": "bearbeitung.html#änderungen-mit-catmandu",
+    "title": "10  Ändern von PICA-Daten",
+    "section": "",
+    "text": "$ catmandu convert pp --fix 'do pica_diff() pica_remove(045./*) end' to pp &lt; example.pica\n  003@ $012345X\n- 045B/02 $aSpo 1025$aBID 200\n\n\npica_remove()\npica_keep()\npica_tag()\npica_occurrence()\n\n\n# Entferne Felder der Basisklassifikation (BK) mit invalider Notation\n\n# Nur Titeldatensatz betrachten\npica_keep(0.../*)\n\ndo pica_diff()\n  do pica_each(045Q/01)\n    unless pica_match($9) # Wenn keine BK-Normdaten-Verknüpfung vorhanden\n      unless pica_match($a,\"\\d\\d\\.\\d\\d\")\n        pica_remove(045Q/01)\n      end\n    end\n  end\nend\n# Entferne die Occurrence von allen `028C` Feldern,\n# außer wenn das Feld per `$9` mit einem Normdatensatz verknüpft ist\n\ndo pica_diff()\n  do pica_each(028C/*)\n    unless pica_match($9)\n      pica_occurrence(0)\n    end\n  end\nend\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ändern von PICA-Daten</span>"
+    ]
+  },
+  {
+    "objectID": "ausblick.html",
+    "href": "ausblick.html",
+    "title": "11  Ausblick",
+    "section": "",
+    "text": "11.1 Andere Datenformate\nBei aller Relevanz für Bibliotheken mit PICA-Systemen ist PICA nicht das einzige und nicht das wichtigste bibliothekarische Datenformat. Vor allem für den Austausch zwischen verschiedenen Bibliothekssystemen ist noch immer das über 50 Jahre alte MARC-Format das Mittel der Wahl. Für die Verarbeitung von MARC-Daten gibt es mit Processing MARC 21 with open source tools ein ähnliches Handbuch wie dieses.\nDie Ablösung von PICA und MARC durch modernere Datenformate wird schon seit Jahrzehnten diskutiert. Eine mögliche Alternative ist BIBFRAME auf Basis von RDF. Daneben gibt es viele weitere Formate für bibliographische und andere Arten von Daten. Die Webseite https://format.gbv.de/ gibt einen allgemeinen Überblick fast aller Formate die im Bibliotheksbereich relevant sein könnten.\nHilfreich für die Arbeit mit verschiedenen Datenformaten ist zumindest ein Grundverständnis allgemeiner Datenstrukturierungssprachen wie JSON, XML, RDF und CSV.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ausblick</span>"
+    ]
+  },
+  {
+    "objectID": "ausblick.html#allgemeines-und-weiterführendes-zur-datenverarbeitung",
+    "href": "ausblick.html#allgemeines-und-weiterführendes-zur-datenverarbeitung",
+    "title": "11  Ausblick",
+    "section": "11.2 Allgemeines und Weiterführendes zur Datenverarbeitung",
+    "text": "11.2 Allgemeines und Weiterführendes zur Datenverarbeitung\n\n\n\n\n\n\nDieser Abschnitt muss erst noch geschrieben werden!\n\n\n\n\nWohin mit weiteren Fragen?\nWas und wie gibt es noch zu lernen (Library Carpentry etc.)?\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ausblick</span>"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "12  Über dieses Handbuch",
+    "section": "",
+    "text": "12.1 Technische Details\nUm das Handbuch lokal nach HTML zu übersetzen wird quarto benötigt:\nDer Markdown-Quelltext lässt sich mit markdownlint auf ein einheitliches Format überprüfen:\nZur Erstellung der HTML-Version der Vortragsfolien in slides muss Pandoc installiert sein, dann reicht dort ein Aufruf von make.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Über dieses Handbuch</span>"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#technische-details",
+    "href": "CONTRIBUTING.html#technische-details",
+    "title": "12  Über dieses Handbuch",
+    "section": "",
+    "text": "git clone git@github.com:pro4bib/pica.git && cd pica\nnpm i\nnpm run serve\n\nnpm run lint",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Über dieses Handbuch</span>"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#danksagung",
+    "href": "CONTRIBUTING.html#danksagung",
+    "title": "12  Über dieses Handbuch",
+    "section": "12.2 Danksagung",
+    "text": "12.2 Danksagung\nDie Technische Infrastruktur für die Bereitstellung dieses Handbuchs wurde von Felix Lohmeier abgeschaut, der übrigens auch weitere interessante Einführungen in Themen der Datenverarbeitung für Bibliotheks- und Kultureinrichtungen anbietet. Die Implementierungen zur Verarbeitung von PICA-Daten basieren zu wesentlichen Teilen auf der Arbeit von Carsten Klee und Johann Rolschewski. Weitere Beiträge und hilfreiche Hinweise zu diesem Handbuch stammen von Cornelius Amzar, Nico Wagner, Sabrina Gaab und Anne Schuchardt.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Über dieses Handbuch</span>"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#lizenz",
+    "href": "CONTRIBUTING.html#lizenz",
+    "title": "12  Über dieses Handbuch",
+    "section": "12.3 Lizenz",
+    "text": "12.3 Lizenz\nDieses Werk ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz\n\n\n\nCreative Commons Lizenzvertrag\n\n\n\n\n\n\nBauknecht, Cornelius, und Michael Erndt. 2023. „Handbuch IT in Bibliotheken. Unter Einer CC-BY 3.0 DE-Lizenz Im Internet Unter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17. Mai 2023).“ Bibliothek Forschung Und Praxis 47 (3): 542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. „Das PICA-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“. BIBLIOTHEK Forschung und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. „The PICA Catalogue System“. Proceedings of the IATUL Conferences, Mai. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. „Was sind und was sollen bibliothekarische Datenformate?“ https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. „ETL-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im GBV“. Phdthesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. „Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“. VZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek. Den Haag: NBLC Uitgeberij.\n\n\nTennant, Roy. 2002. „MARC Must Die“. https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. „Verarbeitung von PICA+ Daten mit PICA::Record“. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Über dieses Handbuch</span>"
+    ]
+  },
+  {
+    "objectID": "literatur.html",
+    "href": "literatur.html",
+    "title": "13  Literaturverzeichnis",
+    "section": "",
+    "text": "Bauknecht, Cornelius, and Michael Erndt. 2023. “Handbuch\nIT in Bibliotheken. Unter Einer\nCC-BY 3.0 DE-Lizenz Im Internet\nUnter Https://It-in-Bibliotheken.de (Mit Datum Der Letzten Änderung: 17.\nMai 2023).” Bibliothek Forschung Und Praxis 47 (3):\n542–46. https://doi.org/10.1515/bfp-2023-0063.\n\n\nBecker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette\nRath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, and Hartmut Zillmann.\n1992. “Das PICA-System. Bericht Über Die Im Auftrag\nDes Niedersächsischen Ministeriums Für Wissenschaft Und Kunst\nDurchgeführte Funktionsprüfung (Stand Mitte 1990).”\nBIBLIOTHEK Forschung Und Praxis 16 (3). https://doi.org/10.1515/bfup.1992.16.3.307.\n\n\nCosters, Look. 1979. “The PICA Catalogue\nSystem.” Proceedings of the IATUL\nConferences, May. https://docs.lib.purdue.edu/iatul/1979/papers/26.\n\n\nEversberg, Bernhard. 1999. “Was sind und was sollen\nbibliothekarische Datenformate?” https://doi.org/10.24355/DBBS.084-200511080100-222.\n\n\nKlute, Ursula. 2018. “ETL-Prozesse Für\nBibliothekarische Metadaten: Die Migration Lokaler Katalogisate Im\nGBV.” PhD thesis, Technische Hochschule Wildau. https://doi.org/10.15771/MA_2018_3.\n\n\nMittler, Elmar. 2024. “Reiner Diedrichs‘ Volltreffer. Die\nEinführung von Pica in Niedersachsen Und Darüber Hinaus.”\nVZG Aktuelle Sonderausgabe, 8. https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf.\n\n\nSchneiders, P. 1997. Nederlandse Bibliotheekgeschiedenis: Van\nLibrije Tot Virtuele Bibliotheek. Den Haag: NBLC\nUitgeberij.\n\n\nTennant, Roy. 2002. “MARC Must Die.” https://www.libraryjournal.com/story/marc-must-die.\n\n\nVoß, Jakob. 2009. “Verarbeitung von PICA+ Daten Mit\nPICA::record.” https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf.\n\n\nAls Begleitmaterial gibt es außerdem folgenden Screencast:\n\nPICA-Formate entschlüsseln mit Avram und PicaEditor https://doi.org/10.5446/48737 (2020-09-18, 13:46 Minuten)\n\nDie Online-Hilfe der CBS MARC21 database enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationen gleich sind",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Literaturverzeichnis</span>"
+    ]
+  }
+]
