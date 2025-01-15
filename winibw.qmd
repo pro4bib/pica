@@ -1,0 +1,10 @@
+# WinIBW {#sec-winibw}
+
+::: {.callout-warning}
+Dieses Kapitel muss noch erstellt werden!
+:::
+
+::: {.calout-note}
+[WinIBW-Handbuch](https://wiki.k10plus.de/display/K10PLUS/WinIBW-Handbuch) für den K10plus
+:::
+

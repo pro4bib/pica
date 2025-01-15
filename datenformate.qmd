@@ -1,0 +1,120 @@
+# Datenformate {#sec-datenformate}
+
+Das PICA-Format geht auf mehr als [50 Jahre alte Bestrebungen](hintergrund.qmd#sec-geschichte) zurück, die Inhalte physischer Bibliothekskataloge in kompater Form mit Daten auszudrücken. Das Ergebnis ist eine Gruppe von **Datenformaten**, die im einzelnen in @sec-pica-formate beschrieben werden. Zunächst wird erklärt, was überhaupt ein Datenformat ist und welche Arten von Datenformaten im Zusammenhang mit PICA eine Rolle spielen.
+
+::: {.callout-note}
+Abschnitt [Datenformaten](https://it-in-bibliotheken.de/metadaten.html#datenformate) im Handbuch IT in Bibliotheken.
+:::
+
+## Arten von Datenformaten
+
+Ein Datenformat ist eine Konvention zur Strukturierung digitaler Objekte (Datensätze).
+
+Besteht die Struktur des Datenformat aus eher abstrakten Elemente wie "Feld", "Attribut" und "Spalte" so handelt sich um ein [**Strukturierungsformat**](#strukturierungsformate). In seiner allgemeinen Form gehört dazu auch PICA, weil die Elemente eines PICA-Datensatz keine allgemeine Bedeutung haben (siehe @sec-pica-struktur). 
+
+Für konkrete Anwendungen wird die Bedeutung von Datenelementen mit Hilfe von [**Standards und Profilen**](#standards-und-profile) in einem [**Anwendungsformat**](#anwendungsformate) festgelegt (beispielsweise die Bedeutung einzelner PICA-Felder im K10plus-Katalogisierungsformat, siehe @sec-anwendungsprofile).
+
+Jedes Anwendungsformat basiert auf einem [**Datenmodell**](#datenmodelle), das Idee und Zweck der Daten umfasst. Zur Definition und Auswahl von Datenelementen dienen [**Abfrage- und Schemaformate**](#abfrage-und-schemaformate).
+
+Letzendlich müssen alle Daten in einer [**Kodierung**](#kodierungen) ausgedrückt werden, die digtale Zeichen auf Elemente von Datenformaten abbilden.
+
+Darüber hinaus lassen sich Datenformate nach eher pragmatischen Kriterien einordnen:
+
+* **Proprietäre Formate** und **Offene Formate** (die meisten PICA-Anwendungsformate sind offen)
+* **Internformate** und **Austauschformate** (PICA dient primär als Internformat)
+* **Metadatenformate** und **Dokumentformate** (PICA gehört zu den Metadatenformaten)
+
+## Strukturierungsformate
+
+**(Daten)strukturierungsformate** oder **-sprachen** ermöglichen es Daten in abstrakte Einheiten zu unterteilen und miteinander in Beziehung zu setzen. Dabei lassen sich einige allgemeine Ordnungsprinzipien festmachen, die je nach Strukturierungsformat mehr oder weniger gut unterstützt werden:
+
+| Ordnungsprinzip | Beispiele für Strukturierungsformate |
+| --------------- | ------------------------------------- |
+| Liste | Zeichenkette, Unicode, Bytes |
+| Tabelle | CSV |
+| Felder | PICA, MARC, INI |
+| Hierachie/Dokument | JSON, XML |
+| Graph/Netzwerk | RDF |
+
+: {.table}
+
+Auch allgemeine Serialisierungsformate wie ASN.1 und Typsysteme von Programmiersprachen gehören zu den Strukturierungssprachen: sie beinhalten verschiedene abstrakte Datentypen wie Zeichenkette, Ganzzahl, Array... aus denen konkrete Datenformate konstriert werden können. Auch das PICA-Format ist ein Datenstrukturierungsformat. Konkrete Bedeutungen wie "Vorname" und "Erscheinungsjahr" kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie "Feld" und "Unterfeld"!
+
+## Anwendungsformate
+
+In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von **Anwendungsformaten** beziehen sich eher auf reale Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedene Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem **bibliographische Datenformate** und **Normdatenformate** relevant, deren Inhalte auch als **Metadaten** bezeichnet werden.
+
+Beispiele für Anwendungsformate: die Dokumentformate [TEI] und [Markdown], die bibliographischen Datenformate [BibTeX] und [DataCite] und die Normdatenformate [JSKOS] und [GND-Internformat](http://format.gbv.de/pica/gnd) (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) [Datenmodelle] voraus und sind in Strukturierungsformaten [kodiert](#kodierungen).
+
+::: {.callout-note appearance="simple"}
+[Anwendungsformate](http://format.gbv.de/application) in der GBV-Formatdatenbank
+:::
+
+[Markdown]: http://format.gbv.de/markdown
+[TEI]: http://format.gbv.de/tei
+[BibTeX]: http://format.gbv.de/bibtex
+[DataCite]: http://format.gbv.de/datacite
+[JSKOS]: http://format.gbv.de/jskos
+
+## Standards und Profile {#sec-standards}
+
+Im besten Fall ist ein Datenformat durch einen **Standard** definiert und in verschiedenen Softwareprogrammen umgesetzt. Oft ergeben sich Formate aber auch aus der Praxis ("De-Facto-Standard") oder die Praxis weicht von der Spezifikation ab. Daher ist genau darauf zu achten was bei Bezugnahme auf ein Format gemeint ist:
+
+1. Das Format so wie es in einem bestimmten Standard **spezifiziert** ist
+2. Das Format so wie es formal (d.h. durch eine automatisch nachprüfbare Methode) **definiert** ist
+3. Das Format so wie es in einer bestimmten Software **implementiert** ist
+4. Das Format so wie es von einer bestimmten Gruppe von Menschen **interpretiert** wird
+
+Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, lässt sich in Form von **Anwendungsprofilen** ausdrücken.
+
+Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels **Validierung**, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eines Standards automatisch überprüfen lassen, handelt es sich um einen **formalen Standard**.
+
+::: {.callout-note appearance="simple"} 
+Hinweise wie es *nicht* gemacht werden sollte gibt der Vortrag *[Eine Anleitung für schlechte Standards](https://www.youtube.com/watch?v=o51FOLsh4Ec)*
+:::
+
+## Abfrage- und Schemaformate
+
+Prinzipiell können Daten mit jeder beliebigen Programmiersprache analysiert und strukturiert werden. Konkrete Implementierungen wie Eingabemasken, Prüfroutinen und Konvertierungsskripte legen implizit fest wie Daten einer Anwendung aussehen können. Da Software weniger gut zugänglich ist, sollten Datenformate jedoch primär durch einen Standard spezifiziert werden. Dabei hilft eine besondere Klasse von Anwendungsformaten, deren Elemente sich in ihrer Bedeutung auf andere Datenformate und -Strukturen bezieht. Relevant sind diese Formate
+
+* um sich auf einzelne Elemente und Inhalte von Datensätzen zu beziehen (**Abfrageformate**) und
+* zur Validierung von Datensätzen sowie zur Dokumentation des Formates (**Schemaformate**).
+
+Der Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als **Query-Engine** und solche die zur Validierung ein Schemaformat unterstützen als **Validatoren** bezeichnet.
+
+Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die anwendungsunabhängige Abfragesprache [PICA Path Expression] und die Schemasprache [Avram] erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.
+
+::: {.callout-note appearance="simple"}
+[Schemaformate](http://format.gbv.de/schema) in der GBV-Formatdatenbank
+:::
+
+[PICA Path Expression]: formate.qmd#abfragesprache
+[Avram]: formate.qmd#avram-schemas
+
+## Datenmodelle
+
+Ein grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarten während Daten letzendlich immer nur als Folge von Nullen und Einsen vorliegen. Zur Abbildung abstrakter Vorstellungen auf konkrete Datenformate im Zuge der **Datenmodellierung** dienen **Datenmodelle**. Ein Datenmodell ist gewissermaßen die Vorstufe oder Abstraktion eines Datenformates. Die Bandbreite an Methoden zur Formulierung von Datenmodellen reicht von groben Skizzen auf Papier bis zu komplexen Datenmodellierungssprachen aus denen automatisch Schemas erzeugt werden können. Die Grenze zwischen Datenmodellen und Schemas ist daher unscharf. Als Faustregel kann gelten, dass Datenmodelle eher der Kommunikation mit Menschen und Schemas eher der Kommunikation mit Computern dienen. Grundsätzlich haben alle Datenformate zumindest implizit zugrunde liegende Modelle.
+
+![Ebenen der Datenmodellierung](img/data-modeling-simplified.png){#fig-ebenendaten}
+
+Ein weiteres Hilfsmittel zum Verständnis von Datenformaten sind **Beispiele**. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.
+
+## Kodierungen
+
+Letzendlich müssen alle Daten als Folge von Bits bzw. Bytes ausgedrückt werden. Eine **Kodierung**, **Serialisierung** oder **Syntax** legt fest, wie Datensätze eines Datenformates oder -Modells durch Elemente eines anderen Datenformates ausgedrückt werden können. Meist werden [Anwendungsformate] in [Strukturierungsformaten](#strukturierungsformate) kodiert, die sich wiederum über mehrere Ebenen auf Bytes zurückführen lassen. Direkt in Bytes kodierte Datenformate werden auch **Binärformate** genannt.
+
+Während Computer nur mit Kodierungen arbeiten, interessiert Menschen eigentlich nur was mit Kodierungen ausgedrückt wird. In der Praxis wird deshalb nicht immer genau zwischen einem Datenformat und seiner Kodierung unterschieden. So liegt beispielsweise XML in der Regel in XML-Syntax vor, also wird beides als XML bezeichnet. Bei der Verarbeitung von Daten ist jedoch genau darauf zu achten, auch welcher Kodierungsebene jeweils angesetzt wird.
+
+:::{#fig-picakodierung}
+```{mermaid}
+graph LR
+  PICA+ -- PICA/XML --> XML -- XML-Syntax --> Unicode -- UTF-8 --> Bytes
+```
+
+Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*
+:::
+::: {.callout-note appearance="simple"}
+[Kodierungen](https://format.gbv.de/code) in der GBV-Formatdatenbank
+:::
+
+

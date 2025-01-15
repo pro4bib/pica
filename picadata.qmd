@@ -1,6 +1,6 @@
-# Das Werkzeug picadata {#sec-picadata}
+# picadata {#sec-picadata}
 
-Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](formate.qmd#serialisierungen), einfache Analyse und Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](formate.qmd#avram-schemas).
+Das Kommandozeilenprogramm `picadata` ermöglicht die Konvertierung zwischen verschiedenen [PICA-Serialisierungen](pica-formate.qmd#serialisierungen), einfache Analyse und Auswertung von PICA-Daten sowie die [Validierung gegen Avram-Schemas](pica-formate.qmd#avram-schemas).
 
 ::: {.callout-note appearance="simple"}
 [Dokumentation von picadata auf metacpan](https://metacpan.org/pod/picadata)
@@ -29,7 +29,7 @@ cat example.pica | picadata
 picadata < example.pica
 ~~~
 
-In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f`/`--from` das [Serialisierungsformat](formate.qmd#serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t`/`--to` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
+In der ersten Variante wird die PICA-Syntax anhand der Dateiendung erkannt. Ansonsten kann mit der Option `-f`/`--from` das [Serialisierungsformat](pica-formate.qmd#serialisierungen) festgelegt werden, beispielsweise `-f bin` für [binäres PICA](https://format.gbv.de/pica/binary). Mit der Option `-t`/`--to` kann die Serialisierung der Ausgabe festgelegt werden. Standardmäßig sind Serialisierung für Ein- und Ausgabe gleich.
 
 ~~~bash
 picadata example.pica                        # PICA Plain nach PICA Plain
@@ -58,7 +58,7 @@ Folgende Serialisierungsformate werden unterstützt:
 [PICA/XML]: https://format.gbv.de/pica/xml
 [PPXML]: https://format.gbv.de/pica/ppxml
 
-Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](formate.qmd#änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
+Für PICA Plain und PICA/JSON werden vorhandene [Annotationen](pica-formate.qmd#änderungsformat) standardmäßig mit ausgegeben. Die Option `-A` unterdrückt die Ausgabe von Annotationen. Umgekehrt stellt die Option `-a`/`--annotate` sicher dass alle Felder annotiert sind, indem ggf. ein Leerzeichen als Standard-Annotation ergänzt wird.
 
 In der Regel sind PICA-Felder in einem Datensatz geordnet. Die Option `-o` sortiert Datensätze neu und zwar getrennt für die bibliographische Ebene und innerhalb der einzelnen Lokal- und Exemplardatensätze.
 
@@ -71,7 +71,7 @@ picadata -n 10 example.pica
 picadata -10 example.pica     # Equivalente Abkürzung der Option
 ~~~
 
-Oft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option `-p`/`--path` lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die [Abfragesprache PICA Path Expression](formate.qmd#abfragesprache):
+Oft interessieren nur bestimmte Felder bzw. deren Inhalte. Mit der Option `-p`/`--path` lassen sich Datensätze auf Felder eingrenzen. Zur Auswahl der Felder bzw. Unterfelder dient die [Abfragesprache PICA Path Expression](pica-formate.qmd#abfragesprache):
 
 ~~~bash
 picadata -p '003@' example.pica        # Nur Feld 003@
@@ -137,7 +137,7 @@ picadata fields example.pica -s https://format.k10plus.de/avram.pl?profile=k10pl
 
 Das Zeichen nach der Feldnummer gibt an, ob das entsprechende Feld optional und wiederholbar oder nicht wiederholbar (`*` oder `o`) bzw. notwendig (`+` oder `.`) ist.
 
-Eine ausführlichere Analyse ist mit der Option `-b`/`--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](formate.qmd#avram-schemas) erstellt. Option `-B` reduziert das Schema zur Besseren Lesbarkeit um redundante Bestandteile.
+Eine ausführlichere Analyse ist mit der Option `-b`/`--build` möglich, die aus vorhandenen PICA-Daten ein [Avram-Schema](pica-formate.qmd#avram-schemas) erstellt. Option `-B` reduziert das Schema zur Besseren Lesbarkeit um redundante Bestandteile.
 
 ~~~bash
 picadata -B example.pica
@@ -149,7 +149,7 @@ picadata -B example.pica
 
 ## Validierung
 
-Bei Angabe eines [Avram-Schema](formate.qmd#avram-schemas) per Datei oder URL mit Option `-s`/`--schema` werden Eingabedaten gegen das Schema validiert. Unbekannte Felder und Unterfelder werden dabei ignoriert, außer bei Angabe der zusätzlichen Option `-u`/`--unknown`. Das Ergebnis der Validierung kann auf verschiedene Weise angezeigt werden:
+Bei Angabe eines [Avram-Schema](pica-formate.qmd#avram-schemas) per Datei oder URL mit Option `-s`/`--schema` werden Eingabedaten gegen das Schema validiert. Unbekannte Felder und Unterfelder werden dabei ignoriert, außer bei Angabe der zusätzlichen Option `-u`/`--unknown`. Das Ergebnis der Validierung kann auf verschiedene Weise angezeigt werden:
 
 * Standarmäßig werden nur Fehlermeldungen ausgegeben. Ist der Datensatz korrekt, erfolgt also keine Ausgabe.
 

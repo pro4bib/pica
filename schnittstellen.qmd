@@ -24,6 +24,8 @@ Eine Liste aller unterstützen Formaten wird bei Aufruf der unAPI-URL (<https://
 `normpp`    |[Normalisiertes PICA](https://format.gbv.de/pica/normalized)
 `extpp`     |[Binäres PICA](https://format.gbv.de/pica/binary)
 
+: {.table}
+
 Alle weiteren Formate (`marcxml`, `mods36`...) werden durch Konvertierung aus PICA erzeugt.
 
 ### Beispiel auf der Kommandozeile
@@ -53,6 +55,10 @@ chmod +x kxp
 ~~~
 
 ### Beispiel im Browser
+
+::: {.callout-warning}
+Die Darstellung an dieser Stelle wird gerade überarbeitet!
+:::
 
 In die folgende [CodeMirror-Instanz](darstellung.qmd#codemirror) können PICA-Datenätze per unAPI aus dem K10plus-Katalog geladen werden:
 
@@ -205,7 +211,7 @@ Unter dem PICA-Datensatz wird in der Feldansicht auch die **Indexierung** des Da
 
 ## WinIBW
 
-WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verbreitete Programm zur Verarbeitung von PICA-Daten. Nicht zuletzt werden PICA-Daten bei der Katalogisierung in der Regel mittels WinIBW in PICA-Datenbanken eingetragen.
+WinIBW (siehe @sec-winibw) ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verbreitete Programm zur Verarbeitung von PICA-Daten. Nicht zuletzt werden PICA-Daten bei der Katalogisierung in der Regel mittels WinIBW in PICA-Datenbanken eingetragen.
 
 ::: {.callout-note appearance="simple"}
 [Download von Datensätzen in WinIBW](https://wiki.k10plus.de/pages/viewpage.action?pageId=64225417)
@@ -213,7 +219,7 @@ WinIBW ist zwar nicht frei verfügbar aber das in Bibliotheken am weitesten verb
 
 ## Avram-API
 
-Neben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der **Avram-API** eine Schnittstelle zum Zugriff auf Schema-Informationen ([Avram Schemas](formate.qmd#avram-schemas)). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter `field` bzw. `pica3`) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter `profile`).
+Neben den oben genannten Möglichkeiten zum Zugriff auf PICA-Daten gibt es mit der **Avram-API** eine Schnittstelle zum Zugriff auf Schema-Informationen ([Avram Schemas](pica-formate.qmd#avram-schemas)). Abrufbar sind Informationen zu PICA-Feldern und Unterfeldern ausgehend von Feldnummern in PICA+ und Pica3 (Abfrage-Parameter `field` bzw. `pica3`) oder alle Felder eines Anwendungsprofils (Abfrage-Parameter `profile`).
 
 Die Avram-API für den K10Plus-Katalog steht unter <https://format.k10plus.de/avram.pl> zur Verfügung und ist dort dokumentiert. So lässt sich beispielsweise mit der URL <https://format.k10plus.de/avram.pl?pica3=4000&profile=k10plus> abrufen, wie das Pica3-Feld `4000` im K10Plus-Format definiert ist:
 

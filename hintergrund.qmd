@@ -1,0 +1,32 @@
+# Hintergrund {#sec-grundlagen}
+
+Dieses Kapitel bietet einen kurzen Überblick zur [Geschichte von PICA](#sec-geschichte) und zu [PICA-Datenbanken](#sec-cbs).
+
+## Geschichte {#sec-geschichte}
+
+Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: "Project for Integrated Catalogue Automation"). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer [PDP 11] in Betrieb genommen. Einen historischen Einblick für Deutschland geben der Bericht zum PICA-System [@becker_pica-system_1992], auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden, und für den Einsatz von PICA im GBV die Darstellung von @mittler_reiner_2024. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an [OCLC PICA] bzw. OCLC über.
+
+Das PICA-Format ist an das noch ältere [MARC-Format](http://format.gbv.de/marc) (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.
+
+[PDP 11]: https://de.wikipedia.org/wiki/PDP-11
+[OCLC PICA]: https://de.wikipedia.org/wiki/OCLC_PICA
+
+![Hardware-Infrastruktur des ersten PICA Systems (1979)](img/pica1979.png){#fig-hardwarepica}
+
+## PICA-Datenbanken {#sec-cbs}
+
+::: {.callout-important appearance="simple"}
+Dieser Abschnitt ist noch unvollständig! Es fehlt eine kurze Erläuterung von Zweck und Aufbau des CSB und LBS: Wie hängen sie zusammen? Wo gibt es CBS-Instanzen? Was sind Normdaten, Verknüpfungen und Expansion? Welche anderen Komponenten hängen am CBS (insbesondere PSI)?
+:::
+
+Das PICA-Format ist das interne Datenbankformat der Katalogsysteme **CBS** (Zentrales Bibliothekssystem) und **LBS** (Lokales Bibliotheksystem). Die zentrale Datenhaltung (Katalogisierung) findet im CBS statt, während LBS Module zu Ausleihe, Erwerbung, Zeitschriftenverwaltung und OPAC liefert.
+
+::: {.callout-note}
+Eine umfassende [Einführung zu Bibliotheksmanagementsystemen](https://it-in-bibliotheken.de/bibliotheksmanagementsysteme.htm) gibt es im Handbuch IT in Bibliotheken -@noauthor_handbuch_nodate.
+:::
+
+CBS ist die zentrale Datenbanksoftware für bibliothekarische Metadaten im GBV, insbesondere mit der CBS-Instanz des übergreifenden Verbundkatalog K10Plus. Darüber hinaus wird CBS auch in anderen Bibliotheksverbünden und Ländern eingesetzt, allerdings nicht so umfangreich wie bei der VZG.
+
+Da das CBS eine proprietäre Spezialanwendung ist, gibt es keine offene Dokumentation und Programmbibliotheken wie bei anderen Datenbankmanagementsystemen.
+
+Die Daten in einer CBS-Instanz können in verschiedene **CBS-Datenbanken** unterteilt werden, die jeweils als Teilmenge eines **Fileset** definiert sind (theoretisch sind auch Datenbanken aus mehreren Filesets denkbar aber nicht praktikabel) . Innerhalb eines Fileset ist jeder Datensatz eindeutig durch die Datensatz-ID **PPN** identifiziert.

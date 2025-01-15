@@ -12,7 +12,11 @@ Darüber hinaus gibt es die Web-Komponente [PicaEditor](#picaeditor) und mehrere
 
 **PicaEditor** ist eine Komponente für Webanwendungen mit der PICA-Daten im Browser analysiert und bearbeitet werden können. Die Komponente basiert auf [CodeMirror](darstellung.qmd#codemirror) und dem JavaScript-Framework [Vue3](http://v3.vuejs.org/).
 
-Der zentrale Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](formate.qmd#avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatzes gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
+Der zentrale Teil des Editors dient der Anzeige und Bearbeitung von PICA+ Daten. Syntaxfehler und Fehler bei der Validierung gegen ein [Avram Schema](pica-formate.qmd#avram-schemas) werden dabei hervorgehoben und mit dem Tabular kann schnell zwischen (Unter)feldern des Datensatzes gewechselt werden. Unter dem Bearbeitungsfeld werden (sofern vorhanden) Schema-Informationen zum jeweils ausgewählten Feld angezeigt. Über dem Bearbeitungsfeld stehen die PPN und ein Link in den Katalog, aus dem Datensätze per PPN geladen werden können. Eine Möglichkeit zum Speichern in den Katalog besteht allerdings nicht.
+
+::: {.callout-warning}
+Die Darstellung an dieser Stelle wird gerade überarbeitet!
+:::
 
 <div id="pica-editor" style="text-align:left">
   <pica-editor :databases="databases"
@@ -69,15 +73,14 @@ Bei komplexeren Aufgaben stoßen die vorhandenen Werkzeuge mitunter an ihre Gren
 Die relativ einfache Struktur von PICA ermöglicht die direkte Verarbeitung von PICA-Daten, insbesondere wenn diese in Form von normalisiertem PICA vorliegen. Ohne PICA-Programmbibliothek können sich zwar etwas leichter Fehler einschleichen, dafür muss nichts installiert werden und die Verarbeitung ist unter Umständen sogar schneller. Hier ein Beispiel in Perl, das aus normalisiertem PICA alle Unterfelder `$a` von Felder mit Inhaltserschließung (`044.` und `045.`) ausgibt:
 
 ~~~perl
-while (<>) {                                      # Ein Datensatz pro Zeile
-    for ( split /\x1E/ ) {                        # Schleife über alle Felder 
-        my ( $field, $tmp ) = split ' ', $_, 2;   # Tag und Occurrence
-        my ( undef, @sfs ) = split /\x1F/, $tmp;  # Unterfelder
-
-        next if $field !~ /^04[45]/;              # Verarbeitung des Datensatz
-        for (@sfs) {
-            say $1 if $_ =~ /^a(.+)/;
-        }
+while (<>) {                                  # Ein Datensatz pro Zeile
+  for ( split /\x1E/ ) {                      # Schleife über alle Felder 
+    my ( $field, $tmp ) = split ' ', $_, 2;   # Tag und Occurrence
+    my ( undef, @sfs ) = split /\x1F/, $tmp;  # Unterfelder
+    next if $field !~ /^04[45]/;              # Verarbeitung des Datensatz
+    for (@sfs) {
+      say $1 if $_ =~ /^a(.+)/;
     }
+  }
 }
 ~~~

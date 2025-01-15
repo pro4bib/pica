@@ -1,4 +1,4 @@
-# PICA-Formate {#sec-pica-format}
+# PICA-Formate {#sec-pica-formate}
 
 Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbauende Strukturierungsformate, Kodierungen und Anwendungsprofile. Im Zweifelsfall ist in diesem Handbuch das **PICA+** Format gemeint, auf dem alle anderen PICA-Formate aufbauen.
 
@@ -6,9 +6,9 @@ Beim PICA-Format handelt es sich genaugenommen um eine Reihe aufeinander aufbaue
 
 * Zum Zugriff auf einzelne Elemente von PICA-Datensätzen gibt es die [Abfragesprache PICA Path Expressions](#abfragesprache) und zum Vergleich von Datensätzen ein [Änderungsformat](#änderungsformat).
 
-* Konkrete Anwendungsformate von PICA werden als [Anwendungsprofile](#anwendungsprofile) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
+* Konkrete Anwendungsformate von PICA werden als [Anwendungsprofile](#sec-anwendungsprofile) durch semi-formale Katalogisierungsrichtlinien oder mittels formaler [Avram-Schemas](#avram-schemas) festgelegt.
 
-## Grundsätzlicher Aufbau
+## Grundsätzlicher Aufbau {#sec-pica-struktur}
 
 Das interne Datenformat der CBS- und LBS-Software ist **PICA+** (auch "PicaPlus"). Ein PICA-Datensatz besteht aus einer Liste von **Feldern** (auch "Kategorien"), die jeweils eine Liste von **Unterfeldern** enthalten. Unterfelder werden durch einen alphanumerischen **Unterfeld-Code** identifiziert (`A-Z`, `a-z`, `0-9`) während Feldnummern mindestens aus drei Ziffern und einem Zeichen (`A-Z` oder `@`) bestehen. Die erste Ziffer des Feldes ist 0, 1 oder 2 und gibt die **Ebene** des Feldes an. Zusätzlich können Felder eine numerische **Occurrence** von 00 bis 99 haben. Felder deren erste Ziffer 2 ist haben immer eine Occurrence und als zusätzliche Werte sind 100 bis 999 möglich. Sowohl Felder als auch Unterfelder sind wiederholbar und die Reihenfolge von Unterfeldern und Feldern ist relevant!
 
@@ -46,6 +46,8 @@ Innerhalb einer PICA-Datenbank ist jeder Datensatz durch seine eindeutige PICA-P
 |Lokaldatensatz-ID| --- |ILN|
 |Exemplardatensatz-ID|EPN| --- |Occurrence|
 
+: {.table}
+
 Die Identifizierung eines Exemplardatensatzes ist also zum einen durch seine EPN möglich und zum anderen durch seine Kombination von PPN, ILN und Exemplar-Occurrence.
 
 Das gesamte Datenmodell von PICA+ kann folgendermaßen angegeben werden:
@@ -66,7 +68,7 @@ In PICA-Bibliotheksystemen treten PICA-Formate meist als Paar auf:
 * PICA+ als internes Datenbankformat zur Speicherung und Indexierung
 * Pica3 als diagnostisches Format zur Bearbeitung von Datensätzen bei der Katalogisierung
 
-Pica3 ist im Gegensatz zu PICA+ kein formal standardisiertes Strukturierungsformat sondern Bestandteil der jeweiligen Katalogisierungsregeln. Im Rahmen eines [Anwendungsprofils](#anwendungsprofile) lassen sich beide Formate verlustfrei ineinander umwandeln. Ähnlich wie PICA+ besteht ein Pica3-Datensatz aus Feldern ("Kategorien") und Unterfeldern. Die Feldnummern sind rein numerisch und werden je nach Anwendungsprofil mit drei oder vier Ziffern angegeben. Die Unterfeld-Struktur von Pica3 hängt vom jeweiligen Feld ab. Zur Kennzeichnung von Unterfeldern sind je nach Feld verschiedene Sonderzeichen ("Steuerzeichen") und Zeichenfolgen festgelegt. Häufig kommt es allerdings vor, dass als Sonderzeichen für ein Unterfeld in Pica3 das Dollarzeichen und der entsprechende Unterfeld-Code aus PICA+ verwendet wird, so dass Pica3 und PICA+ (in PICA Plain [Serialisierung](#serialisierungen)) an dieser Stelle übereinstimmen.
+Pica3 ist im Gegensatz zu PICA+ kein formal standardisiertes Strukturierungsformat sondern Bestandteil der jeweiligen Katalogisierungsregeln. Im Rahmen eines [Anwendungsprofils](#sec-anwendungsprofile) lassen sich beide Formate verlustfrei ineinander umwandeln. Ähnlich wie PICA+ besteht ein Pica3-Datensatz aus Feldern ("Kategorien") und Unterfeldern. Die Feldnummern sind rein numerisch und werden je nach Anwendungsprofil mit drei oder vier Ziffern angegeben. Die Unterfeld-Struktur von Pica3 hängt vom jeweiligen Feld ab. Zur Kennzeichnung von Unterfeldern sind je nach Feld verschiedene Sonderzeichen ("Steuerzeichen") und Zeichenfolgen festgelegt. Häufig kommt es allerdings vor, dass als Sonderzeichen für ein Unterfeld in Pica3 das Dollarzeichen und der entsprechende Unterfeld-Code aus PICA+ verwendet wird, so dass Pica3 und PICA+ (in PICA Plain [Serialisierung](#serialisierungen)) an dieser Stelle übereinstimmen.
 
 ### Beispiel {.unnumbered .unlisted}
 
@@ -90,7 +92,9 @@ Hier einige der Unterfelder im Vergleich:
 | `$y` | `$y` | Chronologische Unterteilung |
 | `$z` | `$z` | Geografische Unterteilung |
 
-[Avram]: formate.qmd#avram-schemas
+: {.table}
+
+[Avram]: pica-formate.qmd#avram-schemas
 Bei der formalen Beschreibung von Katalogisierungsregeln mittels [Avram] können Pica3-Feldnummern und Unterfeld-Kennzeichen mit angegeben werden. Hier ein (unvollständiges) Schema mit den Feldern aus dem Beispiel:
 
 ~~~json
@@ -242,7 +246,7 @@ Als Erweiterung der PICA/JSON Serialisierung können Markierungszeichen als letz
 
 Zur Erzeugung von Änderungsdatensätzen siehe auch der Abschnitt zur Bearbeitung von PICA-Daten (@sec-aendern).
 
-## Anwendungsprofile
+## Anwendungsprofile {#sec-anwendungsprofile}
 
 Die Bedeutung einzelner PICA-Felder und Unterfeld-Strukturen ist nicht universell sondern durch die jeweiligen **Katalogisierungsregeln** einer Datenbank festgelegt. Die Katalogisierungsregeln sind Teil eines [Standard](grundlagen.qmd#standards-und-profile) welche Felder mit welcher Bedeutung auftreten können oder sollen. Ein Beispiel für einen solchen Standard ist die [K10plus Format-Dokumentation](https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation) für die K10plus-Datenbank. Die Dokumentation enthält als semi-formalen Teil eine Tabelle aller PICA-Felder und Unterfelder mit Angaben über Reihenfolge, Wiederholbarkeit etc. Die Regeln sind allerdings eher als Empfehlungen zu betrachten, da nicht alle ihre Aspekte bei der Eingabe kontrolliert werden. Innerhalb einer Datenbank kann es auch vorkommen, dass unterschiedliche Datensätze verschiedenen Anwendungsprofilen entsprechen, weil bei Formatänderungen nicht automatisch alle Altdaten angepasst wurden. Für die Verarbeitung von Informationen aus PICA-Anwendungsprofilen eignen sich Avram-Schemas.
 
@@ -263,3 +267,11 @@ Avram ist eine [Schemasprache](grundlagen.qmd#abfrage--und-schemaformate) für f
 ## Zusammenfassung
 
 Das PICA-Format in seiner allgemeinen Form PICA+ ist Datenstrukturierungssprache bestehend aus Feldern und Unterfeldern. Beide sind wiederholbar und die Reihenfolgen ist mitunter relevant. Jeder Datensatz lässt sich darüber hinaus hierarchisch in Teildatensätze dreier Ebenen aufteilen. Je nach Ebene gibt es die Identifikatoren PPN, ILN und EPN. Die Bedeutung der weiteren Felder hängt von den jeweiligen Katalogisierungsregeln ab, die sich in Avram-Schemas als Anwendungsprofile formalisieren lassen. Für die Katalogisierung wird zwischen PICA+ und Pica3 konvertiert. Zur Speicherung und zum Austausch von PICA-Daten gibt es verschiedene Serialisierungen (PICA Plain, PICA/XML, PICA/JSON...) und für den Zugriff auf einzelne Elemente die Abfragesprache PICA Path Expressions. Mit dem PICA-Änderungsformat lassen sich Unterschiede zwischen PICA-Datensätzen angeben.
+
+## Alternativen zu PICA
+
+Bei aller Relevanz für Bibliotheken mit PICA-Systemen ist PICA nicht das einzige und nicht das wichtigste bibliothekarische Datenformat. Vor allem für den Austausch zwischen verschiedenen Bibliothekssystemen ist noch immer das über 50 Jahre alte **[MARC-Format](http://format.gbv.de/marc)** das Mittel der Wahl. Für die Verarbeitung von MARC-Daten gibt es mit [Processing MARC 21 with open source tools](https://jorol.github.io/processing-marc/#/) ein ähnliches Handbuch wie dieses.
+
+Die Ablösung von PICA und MARC durch modernere Datenformate wird schon seit Jahrzehnten diskutiert. Eine mögliche Alternative ist [BIBFRAME](https://www.loc.gov/bibframe/) auf Basis von RDF. Daneben gibt es viele weitere Formate für bibliographische und andere Arten von Daten. Die Webseite <https://format.gbv.de/> gibt einen allgemeinen Überblick fast aller Formate die im Bibliotheksbereich relevant sein könnten.
+
+Hilfreich für die Arbeit mit verschiedenen Datenformaten ist zumindest ein Grundverständnis allgemeiner Datenstrukturierungssprachen wie JSON, XML, RDF und CSV. 

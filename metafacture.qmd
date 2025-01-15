@@ -1,0 +1,11 @@
+# Metafacture {#sec-metafacture}
+
+Die Programmbibliothek **metafacture** wurde ursprünglich von der DNB im Rahmen des Projekt CultureGraph entwickelt und 2019 vom hbz übernommen. Das in der Programmiersprache Java entwickelte Programm besteht wie [Catmandu](#sec-catmandu) aus mehreren Komponenten für Datenprozesse und setzt dazu wie ebenso die Datenverarbeitungssprache **Fix** ein.
+
+::: {.callout-info }
+Weitere Informationen zu Metafacture gibt es auf der Homepage <https://metafacture.org/> sowie in der [Metadaten-Community](https://metadaten.community/c/software-und-tools/metafacture/8).
+:::
+
+::: {.callout-warning}
+Dieses Kapitel mit einer Einführung zum Einsatz von Metafacture für PICA-Daten wartet noch darauf erstellt zu werden!
+:::

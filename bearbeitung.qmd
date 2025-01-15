@@ -16,7 +16,7 @@ indirekt zu Änderungen an PICA-Daten führen können:
 - den **Digitalen Assistent** (DA-3)
 - das Mapping-Werkzeug **[Cocoda](https://coli-conc.gbv.de/cocoda/)**
 
-Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](formate.qmd#änderungsformat) entwickelt.
+Um unabhängig von einzelnen Werkzeugen Änderungen an PICA-Datensätzen auszudrücken, wurde an der VZG das [PICA-Patch-Format](pica-formate.qmd#änderungsformat) entwickelt.
 
 ## Änderungen mit Catmandu
 

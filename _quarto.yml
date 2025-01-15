@@ -12,8 +12,9 @@ book:
     - index.md
     - part: "Theorie"
       chapters:
-        - grundlagen.qmd
-        - formate.qmd
+        - hintergrund.qmd
+        - datenformate.qmd
+        - pica-formate.qmd
     - part: "Praxis"
       chapters:
         - darstellung.qmd
@@ -25,6 +26,9 @@ book:
         - picadata.qmd
         - catmandu.qmd
         - pica-rs.qmd
+        - qa-catalogue.qmd
+        - metafacture.qmd
+        - winibw.qmd
     - literatur.md
   appendices:
     - CONTRIBUTING.md
@@ -60,3 +64,4 @@ format:
     published-title: "Letzte Änderung"
     number-sections: true
     number-depth: 2
+    tbl-cap-location: bottom
