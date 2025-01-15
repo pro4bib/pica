@@ -8,7 +8,7 @@
 
 <meta name="description" content="Verarbeitung von Daten in, aus und zwischen PICA-Formaten">
 
-<title>8&nbsp; Das Werkzeug Catmandu – Einführung in die Verarbeitung von PICA-Daten</title>
+<title>9&nbsp; Catmandu – Einführung in die Verarbeitung von PICA-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./catmandu.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./catmandu.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -186,14 +186,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grundlagen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></span></a>
+  <a href="./hintergrund.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
+  <a href="./datenformate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datenformate</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pica-formate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,25 +216,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./darstellung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./verarbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bearbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./schnittstellen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,19 +251,37 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./picadata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Das Werkzeug picadata</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">picadata</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./catmandu.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pica-rs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qa-catalogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metafacture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Metafacture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./winibw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WinIBW</span></span></a>
   </div>
 </li>
       </ul>
@@ -295,20 +319,20 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="header-section-number">8.1</span> Installation</a></li>
-  <li><a href="#konfiguration" id="toc-konfiguration" class="nav-link" data-scroll-target="#konfiguration"><span class="header-section-number">8.2</span> Konfiguration</a></li>
-  <li><a href="#pica-in-catmandu" id="toc-pica-in-catmandu" class="nav-link" data-scroll-target="#pica-in-catmandu"><span class="header-section-number">8.3</span> PICA in Catmandu</a></li>
-  <li><a href="#fix-skripte" id="toc-fix-skripte" class="nav-link" data-scroll-target="#fix-skripte"><span class="header-section-number">8.4</span> Fix-Skripte</a></li>
-  <li><a href="#schnittstellen" id="toc-schnittstellen" class="nav-link" data-scroll-target="#schnittstellen"><span class="header-section-number">8.5</span> Schnittstellen</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="header-section-number">9.1</span> Installation</a></li>
+  <li><a href="#konfiguration" id="toc-konfiguration" class="nav-link" data-scroll-target="#konfiguration"><span class="header-section-number">9.2</span> Konfiguration</a></li>
+  <li><a href="#pica-in-catmandu" id="toc-pica-in-catmandu" class="nav-link" data-scroll-target="#pica-in-catmandu"><span class="header-section-number">9.3</span> PICA in Catmandu</a></li>
+  <li><a href="#fix-skripte" id="toc-fix-skripte" class="nav-link" data-scroll-target="#fix-skripte"><span class="header-section-number">9.4</span> Fix-Skripte</a></li>
+  <li><a href="#schnittstellen" id="toc-schnittstellen" class="nav-link" data-scroll-target="#schnittstellen"><span class="header-section-number">9.5</span> Schnittstellen</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./catmandu.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./catmandu.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-catmandu" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></span></h1>
+<h1 class="title"><span id="sec-catmandu" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></span></h1>
 </div>
 
 
@@ -325,7 +349,7 @@ div.csl-indent {
 </header>
 
 
-<p><strong>Catmandu</strong> ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf Schnittstellen (<a href="schnittstellen.html" class="quarto-xref"><span>Kapitel 6</span></a>) und der Konvertierung zwischen PICA und anderen Formaten betrifft.</p>
+<p><strong>Catmandu</strong> ist ein digitaler Werkzeugkasten für die Verarbeitung von Metadaten. Im Gegensatz zu ähnlichen ETL-Tools unterstützt Catmandu gängige Datenformate und Schnittstellen von Bibliothekssoftware, darunter auch PICA. Die PICA-Unterstützung in Catmandu basiert auf [picadata] und geht darüber hinaus, vor allem was Möglichkeiten des Zugriffs auf Schnittstellen (<a href="schnittstellen.html" class="quarto-xref"><span>Kapitel 7</span></a>) und der Konvertierung zwischen PICA und anderen Formaten betrifft.</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -336,22 +360,22 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="installation" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">8.1</span> Installation</h2>
+<section id="installation" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">9.1</span> Installation</h2>
 <p>Für Debian-basierte Betriebsysteme kann Catmandu mit Unterstützung von PICA und SRU folgendermaßen installiert werden:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libcatmandu-perl libcatmandu-sru-perl cpanminus</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cpanm Catmandu::PICA</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="konfiguration" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="konfiguration"><span class="header-section-number">8.2</span> Konfiguration</h2>
+<section id="konfiguration" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="konfiguration"><span class="header-section-number">9.2</span> Konfiguration</h2>
 <p>In der Konfigurationsdatei <code>catmandu.yaml</code> lassen sich häufig benötigte Einstellungen angeben, so dass sie nicht bei jedem Aufruf von catmandu mit angegeben werden müssen. Für die Verarbeitung von PICA-Daten, insbesondere aus dem K10plus-Katalog empfiehlt sich <a href="catmandu.yaml" title=":ignore">folgende YAML-Datei</a>, die in den folgenden Beispielen vorausgesetzt wird:</p>
 <p><a href="catmandu.yaml" title=":include :type=code yaml"></a></p>
 <p>Die folgenden beiden Kommandos zur Konvertierung von PICA/XML nach PICA Plain sind damit gleich; die Konfiguration ermöglicht eine kürzere Schreibweise:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">catmandu</span> convert PICA <span class="at">--type</span> XML to PICA <span class="at">--type</span> plain example.pica</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">catmandu</span> convert picaxml to pp example.pica</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="pica-in-catmandu" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="pica-in-catmandu"><span class="header-section-number">8.3</span> PICA in Catmandu</h2>
+<section id="pica-in-catmandu" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="pica-in-catmandu"><span class="header-section-number">9.3</span> PICA in Catmandu</h2>
 <p>Intern werden PICA-Daten in Catmandu als ein Datensätze mit je zwei Feldern verarbeitet:</p>
 <ul>
 <li><code>_id</code> enthält die PPN (falls vorhanden, ansonsten <code>null</code>)</li>
@@ -362,21 +386,21 @@ div.csl-indent {
 <div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="fu">{</span><span class="dt">"record"</span><span class="fu">:</span><span class="ot">[[</span><span class="st">"003@"</span><span class="ot">,</span><span class="st">""</span><span class="ot">,</span><span class="st">"0"</span><span class="ot">,</span><span class="st">"12345X"</span><span class="ot">],[</span><span class="st">"021A"</span><span class="ot">,</span><span class="st">""</span><span class="ot">,</span><span class="st">"a"</span><span class="ot">,</span><span class="st">"Ein Buch"</span><span class="ot">,</span><span class="st">"h"</span><span class="ot">,</span><span class="st">"zum Lesen"</span><span class="ot">],[</span><span class="st">"045B"</span><span class="ot">,</span><span class="st">"02"</span><span class="ot">,</span><span class="st">"a"</span><span class="ot">,</span><span class="st">"Spo 1025"</span><span class="ot">,</span><span class="st">"a"</span><span class="ot">,</span><span class="st">"BID 200"</span><span class="ot">]]</span><span class="fu">,</span><span class="dt">"_id"</span><span class="fu">:</span><span class="st">"12345X"</span><span class="fu">}</span><span class="ot">]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Funktionen zur Verarbeitung von PICA in Catmandu werden erst durch das Paket <a href="https://metacpan.org/release/Catmandu-PICA">Catmandu-PICA</a> bereitgestellt (siehe <a href="#installation">Installation</a>):</p>
 <ul>
-<li>Lesen und Schreiben verschiedener <a href="./formate.html#serialisierungen">PICA-Serialisierungen</a></li>
+<li>Lesen und Schreiben verschiedener <a href="./pica-formate.html#serialisierungen">PICA-Serialisierungen</a></li>
 <li>Auswerten und Verändern der Inhalte von PICA-Datensätzen</li>
 <li>Abruf von PICA-Daten über <a href="./schnittstellen.html#sru">SRU-Schnittstellen</a></li>
-<li>Validierung von PICA-Daten mit <a href="./formate.html#avram-schemas">Avram-Schemas</a></li>
+<li>Validierung von PICA-Daten mit <a href="./pica-formate.html#avram-schemas">Avram-Schemas</a></li>
 </ul>
 </section>
-<section id="fix-skripte" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="fix-skripte"><span class="header-section-number">8.4</span> Fix-Skripte</h2>
+<section id="fix-skripte" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="fix-skripte"><span class="header-section-number">9.4</span> Fix-Skripte</h2>
 <p>Eine Besonderheit von Catmandu sind die so genannten <strong>Fix-Skripe</strong> zur Auswertung und Veränderung von Daten. Hier ein Beispiel zur Konvertierung von PICA in eine CSV-Tabelle:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">catmandu</span> convert pp to CSV <span class="at">--fix</span> <span class="st">'pica_map(021A$ah,titel,join:" ") remove_field(record)'</span> <span class="op">&lt;</span> example.pica</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre class="csv"><code>_id,titel
 12345X,Ein Buch zum Lesen</code></pre>
 <p>Dieses Fix-Skript besteht aus zwei Befehlen (bei längeren Fix-Skripten empfiehlt sich das Auslagern in eine eigene Datei):</p>
 <ul>
-<li><code>pica_map(021A$ah,titel,join:" ")</code> fügt ein neues Feld <code>titel</code> mit dem Inhalt der Unterfelder <code>$a</code> und <code>$h</code> des PICA-Feld <code>021A</code> hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels <a href="./formate.html#abfragesprache">PICA Path Expression</a>.</li>
+<li><code>pica_map(021A$ah,titel,join:" ")</code> fügt ein neues Feld <code>titel</code> mit dem Inhalt der Unterfelder <code>$a</code> und <code>$h</code> des PICA-Feld <code>021A</code> hinzu, wobei mehrere Inhalte durch Leerzeichen verbunden werden. Der Zugriff auf die Unterfelder erfolgt mittels <a href="./pica-formate.html#abfragesprache">PICA Path Expression</a>.</li>
 <li><code>remove_field(record)</code> entfernt den PICA-Datensatz, so dass nur noch <code>_id</code> und <code>titel</code> übrig bleiben.</li>
 </ul>
 <p>Umgekehrt lassen sich mit Catmandu auch PICA-Daten erzeugen oder verändern. Hier ein Beispiel zur Änderung des Unterfelds <code>021A$a</code>:</p>
@@ -384,10 +408,10 @@ div.csl-indent {
 <pre class="pica"><code>003@ $012345X
 021A $aEin gutes Buch$hzum Lesen
 045B/02 $aSpo 1025$aBID 200</code></pre>
-<p>Weitere Beispiele für Fix-Skripte gibt es in <a href="bearbeitung.html" class="quarto-xref"><span>Kapitel 5</span></a>.</p>
+<p>Weitere Beispiele für Fix-Skripte gibt es in <a href="bearbeitung.html" class="quarto-xref"><span>Kapitel 6</span></a>.</p>
 </section>
-<section id="schnittstellen" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="schnittstellen"><span class="header-section-number">8.5</span> Schnittstellen</h2>
+<section id="schnittstellen" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="schnittstellen"><span class="header-section-number">9.5</span> Schnittstellen</h2>
 <p>Seine Stärken spielt Catmandu bei der Unterstützung einer Vielzahl von Schnittstellen und Datenbanksystemen aus um Daten aus verschiedenen Quellen aus- und in andere Systeme einzuspielen. Hier ein kurzes Beispiel mit der <a href="./schnittstellen.html#sru">SRU-Schnittstelle</a> des K10Plus-Katalogs. Folgender Aufruf beantwortet die Frage welche Datensätze mit einer bestimmtender DDC-Sachgruppe der Deutschen Nationalbibliothek aber nicht mit der Basisklassifikation erschlossen sind:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">catmandu</span> convert kxp <span class="at">--query</span> pica.sgd=590 <span class="at">--fix</span> <span class="st">'reject pica_match(045Q) remove_field(record)'</span> to CSV <span class="at">--header</span> 0</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Im einzelnen besteht der Aufruf aus:</p>
@@ -855,13 +879,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./picadata.html" class="pagination-link" aria-label="Das Werkzeug picadata">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Das Werkzeug picadata</span></span>
+      <a href="./picadata.html" class="pagination-link" aria-label="picadata">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">picadata</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pica-rs.html" class="pagination-link" aria-label="Das Werkzeug pica-rs">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./pica-rs.html" class="pagination-link" aria-label="pica-rs">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

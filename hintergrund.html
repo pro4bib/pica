@@ -8,7 +8,7 @@
 
 <meta name="description" content="Verarbeitung von Daten in, aus und zwischen PICA-Formaten">
 
-<title>Literatur – Einführung in die Verarbeitung von PICA-Daten</title>
+<title>1&nbsp; Hintergrund – Einführung in die Verarbeitung von PICA-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,8 +51,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./CONTRIBUTING.html" rel="next">
-<link href="./winibw.html" rel="prev">
+<link href="./datenformate.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./img/gbv-vzg-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -104,7 +104,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./literatur.html">Literatur</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hintergrund.html">Theorie</a></li><li class="breadcrumb-item"><a href="./hintergrund.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -152,7 +152,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hintergrund.html" class="sidebar-item-text sidebar-link">
+  <a href="./hintergrund.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></span></a>
   </div>
 </li>
@@ -254,7 +254,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./literatur.html" class="sidebar-item-text sidebar-link active">
+  <a href="./literatur.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Literatur</span></a>
   </div>
 </li>
@@ -280,15 +280,22 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#sec-geschichte" id="toc-sec-geschichte" class="nav-link active" data-scroll-target="#sec-geschichte"><span class="header-section-number">1.1</span> Geschichte</a></li>
+  <li><a href="#sec-cbs" id="toc-sec-cbs" class="nav-link" data-scroll-target="#sec-cbs"><span class="header-section-number">1.2</span> PICA-Datenbanken</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hintergrund.html">Theorie</a></li><li class="breadcrumb-item"><a href="./hintergrund.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-literatur" class="quarto-section-identifier">Literatur</span></h1>
+<h1 class="title"><span id="sec-grundlagen" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></span></h1>
 </div>
 
 
@@ -305,59 +312,80 @@ div.csl-indent {
 </header>
 
 
-<p>Eine allgemeine Einführung in den Arbeitsbereich IT in Bibliotheken, zu dem der Umgang mit von PICA-Daten gehört, liefert das <a href="https://it-in-bibliotheken.de/">Handbuch IT in Bibliotheken</a>. Für Fragen und Antworten rund um die bibliothekarische Datenverarbeitung ist das Forum <a href="https://metadaten.community/" class="uri">https://metadaten.community/</a> zu empfehlen.</p>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<p>Dieses Kapitel bietet einen kurzen Überblick zur <a href="#sec-geschichte">Geschichte von PICA</a> und zu <a href="#sec-cbs">PICA-Datenbanken</a>.</p>
+<section id="sec-geschichte" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-geschichte"><span class="header-section-number">1.1</span> Geschichte</h2>
+<p>Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: “Project for Integrated Catalogue Automation”). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer <a href="https://de.wikipedia.org/wiki/PDP-11">PDP 11</a> in Betrieb genommen. Einen historischen Einblick für Deutschland geben der Bericht zum PICA-System <span class="citation" data-cites="becker_pica-system_1992">(<a href="literatur.html#ref-becker_pica-system_1992" role="doc-biblioref">Becker u.&nbsp;a. 1992</a>)</span>, auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden, und für den Einsatz von PICA im GBV die Darstellung von <span class="citation" data-cites="mittler_reiner_2024">Mittler (<a href="literatur.html#ref-mittler_reiner_2024" role="doc-biblioref">2024</a>)</span>. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an <a href="https://de.wikipedia.org/wiki/OCLC_PICA">OCLC PICA</a> bzw. OCLC über.</p>
+<p>Das PICA-Format ist an das noch ältere <a href="http://format.gbv.de/marc">MARC-Format</a> (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.</p>
+<div id="fig-hardwarepica" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hardwarepica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pica1979.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hardwarepica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1.1: Hardware-Infrastruktur des ersten PICA Systems (1979)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-cbs" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-cbs"><span class="header-section-number">1.2</span> PICA-Datenbanken</h2>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Dieser Abschnitt ist noch unvollständig! Es fehlt eine kurze Erläuterung von Zweck und Aufbau des CSB und LBS: Wie hängen sie zusammen? Wo gibt es CBS-Instanzen? Was sind Normdaten, Verknüpfungen und Expansion? Welche anderen Komponenten hängen am CBS (insbesondere PSI)?</p>
+</div>
+</div>
+</div>
+<p>Das PICA-Format ist das interne Datenbankformat der Katalogsysteme <strong>CBS</strong> (Zentrales Bibliothekssystem) und <strong>LBS</strong> (Lokales Bibliotheksystem). Die zentrale Datenhaltung (Katalogisierung) findet im CBS statt, während LBS Module zu Ausleihe, Erwerbung, Zeitschriftenverwaltung und OPAC liefert.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Eine umfassende <a href="https://it-in-bibliotheken.de/bibliotheksmanagementsysteme.htm">Einführung zu Bibliotheksmanagementsystemen</a> gibt es im Handbuch IT in Bibliotheken <span class="citation" data-cites="noauthor_handbuch_nodate">(<a href="literatur.html#ref-noauthor_handbuch_nodate" role="doc-biblioref">o.&nbsp;J.</a>)</span>.</p>
+</div>
+</div>
+</div>
+<p>CBS ist die zentrale Datenbanksoftware für bibliothekarische Metadaten im GBV, insbesondere mit der CBS-Instanz des übergreifenden Verbundkatalog K10Plus. Darüber hinaus wird CBS auch in anderen Bibliotheksverbünden und Ländern eingesetzt, allerdings nicht so umfangreich wie bei der VZG.</p>
+<p>Da das CBS eine proprietäre Spezialanwendung ist, gibt es keine offene Dokumentation und Programmbibliotheken wie bei anderen Datenbankmanagementsystemen.</p>
+<p>Die Daten in einer CBS-Instanz können in verschiedene <strong>CBS-Datenbanken</strong> unterteilt werden, die jeweils als Teilmenge eines <strong>Fileset</strong> definiert sind (theoretisch sind auch Datenbanken aus mehreren Filesets denkbar aber nicht praktikabel) . Innerhalb eines Fileset ist jeder Datensatz eindeutig durch die Datensatz-ID <strong>PPN</strong> identifiziert.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-becker_pica-system_1992" class="csl-entry" role="listitem">
-Becker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette
-Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, and Hartmut Zillmann.
-1992. <span>“Das <span>PICA</span>-System. Bericht Über Die Im Auftrag
-Des Niedersächsischen Ministeriums Für Wissenschaft Und Kunst
-Durchgeführte Funktionsprüfung (Stand Mitte 1990).”</span>
-<em><span>BIBLIOTHEK</span> Forschung Und Praxis</em> 16 (3). <a href="https://doi.org/10.1515/bfup.1992.16.3.307">https://doi.org/10.1515/bfup.1992.16.3.307</a>.
+Becker, Hans. J., Reiner Diedrichs, Bernhard Eversberg, Annette Rath-Beckmann, Hans-Joachim Wätjen, Wolfgang Zick, und Hartmut Zillmann. 1992. <span>„Das <span>PICA</span>-System. Bericht über die im Auftrag des Niedersächsischen Ministeriums für Wissenschaft und Kunst durchgeführte Funktionsprüfung (Stand Mitte 1990)“</span>. <em><span>BIBLIOTHEK</span> Forschung und Praxis</em> 16 (3). <a href="https://doi.org/10.1515/bfup.1992.16.3.307">https://doi.org/10.1515/bfup.1992.16.3.307</a>.
 </div>
 <div id="ref-costers_pica_1979" class="csl-entry" role="listitem">
-Costers, Look. 1979. <span>“The <span>PICA</span> Catalogue
-System.”</span> <em>Proceedings of the <span>IATUL</span>
-Conferences</em>, May. <a href="https://docs.lib.purdue.edu/iatul/1979/papers/26">https://docs.lib.purdue.edu/iatul/1979/papers/26</a>.
+Costers, Look. 1979. <span>„The <span>PICA</span> Catalogue System“</span>. <em>Proceedings of the <span>IATUL</span> Conferences</em>, Mai. <a href="https://docs.lib.purdue.edu/iatul/1979/papers/26">https://docs.lib.purdue.edu/iatul/1979/papers/26</a>.
 </div>
 <div id="ref-eversberg_was_1999" class="csl-entry" role="listitem">
-Eversberg, Bernhard. 1999. <span>“Was sind und was sollen
-bibliothekarische Datenformate?”</span> <a href="https://doi.org/10.24355/DBBS.084-200511080100-222">https://doi.org/10.24355/DBBS.084-200511080100-222</a>.
+Eversberg, Bernhard. 1999. <span>„Was sind und was sollen bibliothekarische Datenformate?“</span> <a href="https://doi.org/10.24355/DBBS.084-200511080100-222">https://doi.org/10.24355/DBBS.084-200511080100-222</a>.
 </div>
 <div id="ref-noauthor_handbuch_nodate" class="csl-entry" role="listitem">
-<em>Handbuch <span>IT</span> in Bibliotheken</em>. n.d. <a href="https://it-in-bibliotheken.de/">https://it-in-bibliotheken.de/</a>.
+<em>Handbuch <span>IT</span> in Bibliotheken</em>. o.&nbsp;J. <a href="https://it-in-bibliotheken.de/">https://it-in-bibliotheken.de/</a>.
 </div>
 <div id="ref-klute_etl-prozesse_2018" class="csl-entry" role="listitem">
-Klute, Ursula. 2018. <span>“<span>ETL</span>-Prozesse Für
-Bibliothekarische Metadaten: Die Migration Lokaler Katalogisate Im
-<span>GBV</span>.”</span> PhD thesis, Technische Hochschule Wildau. <a href="https://doi.org/10.15771/MA_2018_3">https://doi.org/10.15771/MA_2018_3</a>.
+Klute, Ursula. 2018. <span>„<span>ETL</span>-Prozesse für bibliothekarische Metadaten: Die Migration lokaler Katalogisate im <span>GBV</span>“</span>. Phdthesis, Technische Hochschule Wildau. <a href="https://doi.org/10.15771/MA_2018_3">https://doi.org/10.15771/MA_2018_3</a>.
 </div>
 <div id="ref-mittler_reiner_2024" class="csl-entry" role="listitem">
-Mittler, Elmar. 2024. <span>“Reiner Diedrichs‘ Volltreffer. Die
-Einführung von Pica in Niedersachsen Und Darüber Hinaus.”</span>
-<em><span>VZG</span> Aktuelle Sonderausgabe</em>, 8. <a href="https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf">https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf</a>.
+Mittler, Elmar. 2024. <span>„Reiner Diedrichs‘ Volltreffer. Die Einführung von Pica in Niedersachsen und darüber hinaus“</span>. <em><span>VZG</span> Aktuelle Sonderausgabe</em>, 8. <a href="https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf">https://www.gbv.de/informationen/Verbundzentrale/Publikationen/broschueren/vzg-aktuell/vzg_aktuell_2024_sonderausgabe.pdf</a>.
 </div>
 <div id="ref-schneiders_nederlandse_1997" class="csl-entry" role="listitem">
-Schneiders, P. 1997. <em>Nederlandse Bibliotheekgeschiedenis: Van
-Librije Tot Virtuele Bibliotheek</em>. Den Haag: <span>NBLC</span>
-Uitgeberij.
+Schneiders, P. 1997. <em>Nederlandse bibliotheekgeschiedenis: van librije tot virtuele bibliotheek</em>. Den Haag: <span>NBLC</span> Uitgeberij.
 </div>
 <div id="ref-tennant_marc_2002" class="csl-entry" role="listitem">
-Tennant, Roy. 2002. <span>“<span>MARC</span> Must Die.”</span> <a href="https://www.libraryjournal.com/story/marc-must-die">https://www.libraryjournal.com/story/marc-must-die</a>.
+Tennant, Roy. 2002. <span>„<span>MARC</span> Must Die“</span>. <a href="https://www.libraryjournal.com/story/marc-must-die">https://www.libraryjournal.com/story/marc-must-die</a>.
 </div>
 <div id="ref-vos_verarbeitung_2009" class="csl-entry" role="listitem">
-Voß, Jakob. 2009. <span>“Verarbeitung von <span>PICA</span>+ Daten Mit
-<span>PICA</span>::record.”</span> <a href="https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf">https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf</a>.
+Voß, Jakob. 2009. <span>„Verarbeitung von <span>PICA</span>+ Daten mit <span>PICA</span>::Record“</span>. <a href="https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf">https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf</a>.
 </div>
 </div>
-<hr>
-<p>Als Begleitmaterial zu diesem Handbuch gibt es außerdem folgenden Screencast:</p>
-<ul>
-<li><em>PICA-Formate entschlüsseln mit Avram und PicaEditor</em> <a href="https://doi.org/10.5446/48737" class="uri">https://doi.org/10.5446/48737</a> (2020-09-18, 13:46 Minuten)</li>
-</ul>
-<p>Die Online-Hilfe der <a href="https://help.oclc.org/Metadata_Services/CBS_MARC_21_database">CBS MARC21 database</a> enthält unter anderem eine Beschreibung der PICA-Felder die für praktisch alle CBS-Installationen gleich sind</p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -781,13 +809,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./winibw.html" class="pagination-link" aria-label="WinIBW">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WinIBW</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Einleitung">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Einleitung</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./CONTRIBUTING.html" class="pagination-link" aria-label="Über dieses Handbuch">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Über dieses Handbuch</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./datenformate.html" class="pagination-link" aria-label="Datenformate">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datenformate</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

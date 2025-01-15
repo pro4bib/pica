@@ -8,7 +8,7 @@
 
 <meta name="description" content="Verarbeitung von Daten in, aus und zwischen PICA-Formaten">
 
-<title>1&nbsp; Grundlagen – Einführung in die Verarbeitung von PICA-Daten</title>
+<title>11&nbsp; QA catalogue – Einführung in die Verarbeitung von PICA-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,8 +51,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./formate.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./metafacture.html" rel="next">
+<link href="./pica-rs.html" rel="prev">
 <link href="./img/gbv-vzg-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -90,9 +90,6 @@ div.csl-indent {
     "search-label": "Suchen"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -107,7 +104,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grundlagen.html">Theorie</a></li><li class="breadcrumb-item"><a href="./grundlagen.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./qa-catalogue.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -155,14 +152,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grundlagen.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></span></a>
+  <a href="./hintergrund.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
+  <a href="./datenformate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datenformate</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pica-formate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
   </div>
 </li>
       </ul>
@@ -179,25 +182,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./darstellung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./verarbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bearbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./schnittstellen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
   </div>
 </li>
       </ul>
@@ -214,19 +217,37 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./picadata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Das Werkzeug picadata</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">picadata</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./catmandu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pica-rs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qa-catalogue.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metafacture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Metafacture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./winibw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WinIBW</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,33 +280,15 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
-   
-  <ul>
-  <li><a href="#historisches" id="toc-historisches" class="nav-link active" data-scroll-target="#historisches"><span class="header-section-number">1.1</span> Historisches</a></li>
-  <li><a href="#pica-datenbanken" id="toc-pica-datenbanken" class="nav-link" data-scroll-target="#pica-datenbanken"><span class="header-section-number">1.2</span> PICA-Datenbanken</a></li>
-  <li><a href="#datenformate" id="toc-datenformate" class="nav-link" data-scroll-target="#datenformate"><span class="header-section-number">1.3</span> Datenformate</a>
-  <ul class="collapse">
-  <li><a href="#strukturierungsformate" id="toc-strukturierungsformate" class="nav-link" data-scroll-target="#strukturierungsformate">Strukturierungsformate</a></li>
-  <li><a href="#anwendungsformate" id="toc-anwendungsformate" class="nav-link" data-scroll-target="#anwendungsformate">Anwendungsformate</a></li>
-  <li><a href="#standards-und-profile" id="toc-standards-und-profile" class="nav-link" data-scroll-target="#standards-und-profile">Standards und Profile</a></li>
-  <li><a href="#abfrage--und-schemaformate" id="toc-abfrage--und-schemaformate" class="nav-link" data-scroll-target="#abfrage--und-schemaformate">Abfrage- und Schemaformate</a></li>
-  <li><a href="#kodierungen" id="toc-kodierungen" class="nav-link" data-scroll-target="#kodierungen">Kodierungen</a></li>
-  <li><a href="#datenmodelle" id="toc-datenmodelle" class="nav-link" data-scroll-target="#datenmodelle">Datenmodelle</a></li>
-  </ul></li>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">1.4</span> Zusammenfassung</a></li>
-  <li><a href="#alternativen-zu-pica" id="toc-alternativen-zu-pica" class="nav-link" data-scroll-target="#alternativen-zu-pica"><span class="header-section-number">1.5</span> Alternativen zu PICA</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grundlagen.html">Theorie</a></li><li class="breadcrumb-item"><a href="./grundlagen.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./qa-catalogue.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-grundlagen" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></span></h1>
+<h1 class="title"><span id="sec-qa-catalogue" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></span></h1>
 </div>
 
 
@@ -302,199 +305,16 @@ div.csl-indent {
 </header>
 
 
-<p>Das <strong>PICA-Format</strong> ist das interne Datenbankformat der Katalogsysteme CBS (Zentrale Bibliothekssystem) und LBS (Lokales Bibliotheksystem). Dieses Kapitel bietet einen kurzen Überblick zur <a href="#historisches">Geschichte von PICA</a> und zu <a href="#pica-datenbanken">PICA-Datenbanken</a> und erläutert allgemeine <a href="#datenformate">Grundlagen zu Datenformaten</a>. Auf konkrete PICA-Formate wird <a href="./formate.html">im nächsten Kapitel</a> eingegangen.</p>
-<section id="historisches" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="historisches"><span class="header-section-number">1.1</span> Historisches</h2>
-<p>Das PICA-Format geht auf eine 1969 begonnene Kooperation der Königlichen Bibliothek Den Haag und niederländischen Universitätsbibliotheken zur gemeinsamen Computergestützten Katalogisierung zurück (PICA: “Project for Integrated Catalogue Automation”). Die erste zentrale Katalogdatenbank (CBS) wurde 1978 auf einer <a href="https://de.wikipedia.org/wiki/PDP-11">PDP 11</a> in Betrieb genommen. Einen historischen Einblick für Deutschland geben der Bericht zum PICA-System <span class="citation" data-cites="becker_pica-system_1992">(<a href="literatur.html#ref-becker_pica-system_1992" role="doc-biblioref">Becker u.&nbsp;a. 1992</a>)</span>, auf dessen Grundlage CBS und LBS in den 1990ern in Deutschland eingeführt wurden, und für den Einsatz von PICA im GBV die Darstellung von <span class="citation" data-cites="mittler_reiner_2024">Mittler (<a href="literatur.html#ref-mittler_reiner_2024" role="doc-biblioref">2024</a>)</span>. In den 2000er Jahren ging die Entwicklung der PICA-Systeme von der PICA-Stiftung an <a href="https://de.wikipedia.org/wiki/OCLC_PICA">OCLC PICA</a> bzw. OCLC über.</p>
-<p>Das PICA-Format ist an das noch ältere <a href="http://format.gbv.de/marc">MARC-Format</a> (1966) angelehnt. Viele Eigenheiten beider Formate lassen sich durch die damaligen Anforderungen erklären: erstens musste sehr auf geringen Speicherbedarf und effiziente Verarbeitung geachtet werden, zweitens wurden die Daten nicht wie heute üblich in einem Datenbankmanagementsystem (DBMS) verwaltet sondern direkt verarbeitet und drittens lag der primäre Einsatzzweck dieser Formate nicht in der Erstellung eines elektronischen Retrievalsystems sondern in der Erstellung von Katalogkarten. Aus diesem Grund gibt es schon seit den den frühen 2000ern Stimmen, bibliothekarische Formate wie MARC und PICA durch modernere Alternativen zu ersetzen. Angesichts des Aufwands, bestehende Bibliothekssysteme anpassen oder ersetzen zu müssen, ist ein baldiges Ende jedoch noch nicht abzusehen.</p>
-<div id="fig-hardwarepica" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hardwarepica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pica1979.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hardwarepica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1.1: Hardware-Infrastruktur des ersten PICA Systems (1979)
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="pica-datenbanken" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="pica-datenbanken"><span class="header-section-number">1.2</span> PICA-Datenbanken</h2>
-<div class="callout callout-style-simple callout-important">
+<div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Hier fehlt noch eine kurze Erläuterung von Zweck und Aufbau des CSB und LBS: warum gibt es sie? Wie hängen sie zusammen? Was sind Normdaten, Verknüpfungen und Expansion? Klarstellung, dass Suchindex nicht direkt auf PICA-Daten gebildet wird….</p>
+<p>Dieses Kapitel mit einer Einführung zum Einsatz von QA catalogue für PICA-Daten wartet noch darauf erstellt zu werden!</p>
 </div>
 </div>
 </div>
-<p>Eine umfassende [Einführung zu Bibliotheksmanagementsystemen] gibt es im Handbuch IT in Bibliotheken <span class="citation" data-cites="noauthor_handbuch_nodate">(<a href="literatur.html#ref-noauthor_handbuch_nodate" role="doc-biblioref">o.&nbsp;J.</a>)</span>.</p>
-</section>
-<section id="datenformate" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="datenformate"><span class="header-section-number">1.3</span> Datenformate</h2>
-<p>Das PICA-Format ist ein Datenformat, doch was ist überhaupt ein Datenformat? Ein Datenformat ist eine Konvention zur Strukturierung digitaler Objekte (Datensätze). So legen beispielsweise CSV-Formate die Struktur einer Tabelle aus Zeilen und Spalten fest. Letzendlich dienen alle Datenformate dazu, Daten in Bestandteile zu zerlegen, denen Bedeutung zugewiesen werden kann. Bei CSV besteht die Bedeutung von einzelnen Datenelementen beispielsweise aus “Zeile”, “Spalte”, “Trennzeichen” und “Zelle”. Datenformat deren Elemente solche eher abstrakten Bedeutungen haben, werden auch <a href="#strukturierungsformate">Strukturierungsformate</a> genannt. Davon zu unterscheiden sind <a href="#anwendungsformate">Anwendungsformate</a>, <a href="#kodierungen">Kodierungen</a> und <a href="#datenmodelle">Datenmodelle</a>. Eine besondere Rolle bei der Festlegung von Datenformaten spielen <a href="#standards-und-profile">Standards und Profile</a> sowie <a href="#abfrage--und-schemaformate">Abfrage- und Schemaformate</a>.</p>
-<section id="strukturierungsformate" class="level3">
-<h3 class="anchored" data-anchor-id="strukturierungsformate">Strukturierungsformate</h3>
-<p><strong>(Daten)strukturierungsformate</strong> oder <strong>-sprachen</strong> ermöglichen es Daten in abstrakte Einheiten zu unterteilen und miteinander in Beziehung zu setzen. Dabei lassen sich einige allgemeine Ordnungsprinzipien festmachen, die je nach Strukturierungsformat mehr oder weniger gut unterstützt werden:</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Ordnungsprinzip</th>
-<th>Beispiele für Strukturierungsformate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Liste</td>
-<td>Zeichenkette, Unicode, Bytes</td>
-</tr>
-<tr class="even">
-<td>Tabelle</td>
-<td>CSV</td>
-</tr>
-<tr class="odd">
-<td>Felder</td>
-<td>PICA, MARC, INI</td>
-</tr>
-<tr class="even">
-<td>Hierachie/Dokument</td>
-<td>JSON, XML</td>
-</tr>
-<tr class="odd">
-<td>Graph/Netzwerk</td>
-<td>RDF</td>
-</tr>
-</tbody>
-</table>
-<p>Auch allgemeine Serialisierungsformate wie ASN.1 und Typsysteme von Programmiersprachen gehören zu den Strukturierungssprachen: sie beinhalten verschiedene abstrakte Datentypen wie Zeichenkette, Ganzzahl, Array… aus denen konkrete Datenformate konstriert werden können. Auch das PICA-Format ist ein Datenstrukturierungsformat. Konkrete Bedeutungen wie “Vorname” und “Erscheinungsjahr” kennt das Format in seiner allgemeinen Form nicht, sondern nur Einheiten wie “Feld” und “Unterfeld”!</p>
-</section>
-<section id="anwendungsformate" class="level3">
-<h3 class="anchored" data-anchor-id="anwendungsformate">Anwendungsformate</h3>
-<p>In der Praxis interessieren uns an Daten weniger abstrakte Strukturen als konkrete Inhalte und Bedeutungen (Semantik). Die Elemente von <strong>Anwendungsformaten</strong> beziehen sich eher auf reale Objekte und Eigenschaften wie zum Beispiel Personen, Namen und Ereignisse. Da Bedeutung immer vom Kontext abhängt gibt es keine universellen Anwendungsformate sondern viele verschiedene Formate für unterschiedliche Anwendungsfälle. Für Bibliotheken sind vor allem <strong>bibliographische Datenformate</strong> und <strong>Normdatenformate</strong> relevant, deren Inhalte auch als <strong>Metadaten</strong> bezeichnet werden.</p>
-<p>Beispiele für Anwendungsformate: die Dokumentformate <a href="http://format.gbv.de/tei">TEI</a> und <a href="http://format.gbv.de/markdown">Markdown</a>, die bibliographischen Datenformate <a href="http://format.gbv.de/bibtex">BibTeX</a> und <a href="http://format.gbv.de/datacite">DataCite</a> und die Normdatenformate <a href="http://format.gbv.de/jskos">JSKOS</a> und <a href="http://format.gbv.de/pica/gnd">GND-Internformat</a> (letzteres ein PICA-Format). Anwendungsformate setzen (oft implizit) <a href="#datenmodelle">Datenmodelle</a> voraus und sind in Strukturierungsformaten <a href="#kodierungen">kodiert</a>.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><a href="http://format.gbv.de/application">Anwendungsformate</a> in der GBV-Formatdatenbank</p>
-</div>
-</div>
-</div>
-</section>
-<section id="standards-und-profile" class="level3">
-<h3 class="anchored" data-anchor-id="standards-und-profile">Standards und Profile</h3>
-<p>Im besten Fall ist ein Datenformat durch einen <strong>Standard</strong> definiert und in verschiedenen Softwareprogrammen umgesetzt. Oft ergeben sich Formate aber auch aus der Praxis (“De-Facto-Standard”) oder die Praxis weicht von der Spezifikation ab. Daher ist genau darauf zu achten was bei Bezugnahme auf ein Format gemeint ist:</p>
-<ol type="1">
-<li>Das Format so wie es in einem bestimmten Standard <strong>spezifiziert</strong> ist</li>
-<li>Das Format so wie es formal (d.h. durch eine automatisch nachprüfbare Methode) <strong>definiert</strong> ist</li>
-<li>Das Format so wie es in einer bestimmten Software <strong>implementiert</strong> ist</li>
-<li>Das Format so wie es von einer bestimmten Gruppe von Menschen <strong>interpretiert</strong> wird</li>
-</ol>
-<p>Im (seltenen) Idealfall stimmen alle diese Festlegungen miteinander überein. Meist weichen die Formate aber auch nur dadurch voneinander ab, dass eine Format-Auslegung etwas weiter gefasst ist als eine andere. Diese häufige Beziehung zwischen Formaten, bei denen ein spezielleres Format Teilmenge eines allgemeineren Formates ist, lässt sich in Form von <strong>Anwendungsprofilen</strong> ausdrücken.</p>
-<p>Ob ein Datensatz einem Format entspricht oder dieses verletzt, lässt sich nur mittels <strong>Validierung</strong>, das heisst durch Vergleich mit einem Standard, feststellen. Wenn sich alle Aspekte eines Standards automatisch überprüfen lassen, handelt es sich um einen <strong>formalen Standard</strong>.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Hinweise wie es <em>nicht</em> gemacht werden sollte gibt der Vortrag <em><a href="https://www.youtube.com/watch?v=o51FOLsh4Ec">Eine Anleitung für schlechte Standards</a></em></p>
-</div>
-</div>
-</div>
-</section>
-<section id="abfrage--und-schemaformate" class="level3">
-<h3 class="anchored" data-anchor-id="abfrage--und-schemaformate">Abfrage- und Schemaformate</h3>
-<p>Prinzipiell können Daten mit jeder beliebigen Programmiersprache analysiert und strukturiert werden. Konkrete Implementierungen wie Eingabemasken, Prüfroutinen und Konvertierungsskripte legen implizit fest wie Daten einer Anwendung aussehen können. Da Software weniger gut zugänglich ist, sollten Datenformate jedoch primär durch einen Standard spezifiziert werden. Dabei hilft eine besondere Klasse von Anwendungsformaten, deren Elemente sich in ihrer Bedeutung auf andere Datenformate und -Strukturen bezieht. Relevant sind diese Formate</p>
-<ul>
-<li>um sich auf einzelne Elemente und Inhalte von Datensätzen zu beziehen (<strong>Abfrageformate</strong>) und</li>
-<li>zur Validierung von Datensätzen sowie zur Dokumentation des Formates (<strong>Schemaformate</strong>).</li>
-</ul>
-<p>Der Vorteil von Abfrage- und Schemaformaten besteht darin, dass mit ihnen Datenformate unabhängig von einzelnen Implementierungen werden. Jedes Programm dass eine bestimmte Abfrage- bzw. Schemasprache unterstützt, kann alle in dieser Sprache definierten Datenformate in gleicher Weise verarbeiten. Programme bzw. Programmbestandteile die ein Abfrageformat unterstützen werden auch als <strong>Query-Engine</strong> und solche die zur Validierung ein Schemaformat unterstützen als <strong>Validatoren</strong> bezeichnet.</p>
-<p>Da das PICA-Format eng mit der PICA-Software CBS und LBS verbunden ist wurden die anwendungsunabhängige Abfragesprache <a href="./formate.html#abfragesprache">PICA Path Expression</a> und die Schemasprache <a href="./formate.html#avram-schemas">Avram</a> erst 2018 entwickelt und nicht direkt von der PICA-Software unterstützt.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><a href="http://format.gbv.de/schema">Schemaformate</a> in der GBV-Formatdatenbank</p>
-</div>
-</div>
-</div>
-</section>
-<section id="kodierungen" class="level3">
-<h3 class="anchored" data-anchor-id="kodierungen">Kodierungen</h3>
-<p>Letzendlich müssen alle Daten als Folge von Bits bzw. Bytes ausgedrückt werden. Eine <strong>Kodierung</strong>, <strong>Serialisierung</strong> oder <strong>Syntax</strong> legt fest, wie Datensätze eines Datenformates oder -Modells durch Elemente eines anderen Datenformates ausgedrückt werden können. Meist werden <a href="#anwendungsformate">Anwendungsformate</a> in <a href="#strukturierungsformate">Strukturierungsformaten</a> kodiert, die sich wiederum über mehrere Ebenen auf Bytes zurückführen lassen. Direkt in Bytes kodierte Datenformate werden auch <strong>Binärformate</strong> genannt.</p>
-<p>Während Computer nur mit Kodierungen arbeiten, interessiert Menschen eigentlich nur was mit Kodierungen ausgedrückt wird. In der Praxis wird deshalb nicht immer genau zwischen einem Datenformat und seiner Kodierung unterschieden. So liegt beispielsweise XML in der Regel in XML-Syntax vor, also wird beides als XML bezeichnet. Bei der Verarbeitung von Daten ist jedoch genau darauf zu achten, auch welcher Kodierungsebene jeweils angesetzt wird.</p>
-<div id="fig-picakodierung" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-picakodierung-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  PICA+ -- PICA/XML --&gt; XML -- XML-Syntax --&gt; Unicode -- UTF-8 --&gt; Bytes
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-picakodierung-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1.2: Beispiel für die Kodierung von PICA+ über mehrere Kodierungsebenen*
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><a href="https://format.gbv.de/code">Kodierungen</a> in der GBV-Formatdatenbank</p>
-</div>
-</div>
-</div>
-</section>
-<section id="datenmodelle" class="level3">
-<h3 class="anchored" data-anchor-id="datenmodelle">Datenmodelle</h3>
-<p>Ein grundsätzliches Problem von Daten ist, dass wir von ihnen Bedeutung erwarten während Daten letzendlich immer nur als Folge von Nullen und Einsen vorliegen. Zur Abbildung abstrakter Vorstellungen auf konkrete Datenformate im Zuge der <strong>Datenmodellierung</strong> dienen <strong>Datenmodelle</strong>. Ein Datenmodell ist gewissermaßen die Vorstufe oder Abstraktion eines Datenformates. Die Bandbreite an Methoden zur Formulierung von Datenmodellen reicht von groben Skizzen auf Papier bis zu komplexen Datenmodellierungssprachen aus denen automatisch Schemas erzeugt werden können. Die Grenze zwischen Datenmodellen und Schemas ist daher unscharf. Als Faustregel kann gelten, dass Datenmodelle eher der Kommunikation mit Menschen und Schemas eher der Kommunikation mit Computern dienen. Grundsätzlich haben alle Datenformate zumindest implizit zugrunde liegende Modelle.</p>
-<div id="fig-ebenendaten" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ebenendaten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-modeling-simplified.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ebenendaten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1.3: Ebenen der Datenmodellierung
-</figcaption>
-</figure>
-</div>
-<p>Ein weiteres Hilfsmittel zum Verständnis von Datenformaten sind <strong>Beispiele</strong>. Anhand von Beispielen können wir durch Verallgemeinerung eine Vorstellung von Datenformaten bekommen. Jeder Versuch diese angenommene Verallgemeinerung explizit zu machen ist ein Datenmodell.</p>
-</section>
-</section>
-<section id="zusammenfassung" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">1.4</span> Zusammenfassung</h2>
-<p>Das PICA-Format geht auf mehr als 50 Jahre alte Bestrebungen zurück, die Inhalte physischer Bibliothekskataloge in kompater Form mit Daten auszudrücken. In seiner allgemeinen Form ist PICA eine <a href="#strukturierungsformate">Datenstrukturierungssprache</a>. Erst konkrete <a href="#anwendungsformate">Anwendungsformate</a> und die ihnen zugrunde liegenden <a href="#datenmodelle">Datenmodelle</a> geben Daten Bedeutung. Formate können auf verschiedene Weisen (Standards, Schemas, Implementierungen, implizite Annahmen) festgelegt werden. Zur Überprüfung ob ein Datensatz einem Format entspricht dient die Validierung, idealerweise mit einem Schema.</p>
-<p>Darüber hinaus lassen sich Datenformate nach unterschiedlichen Kriterien unterteilen:</p>
-<ul>
-<li><strong>Proprietäre Formate</strong> und <strong>Offene Formate</strong> (die meisten PICA-Anwendungsformate sind offen)</li>
-<li><strong>Internformate</strong> und <strong>Austauschformate</strong> (PICA dient primär als Internformat)</li>
-<li><strong>Metadatenformate</strong> und <strong>Dokumentformate</strong> (PICA gehört zu den Metadatenformaten)</li>
-</ul>
-</section>
-<section id="alternativen-zu-pica" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="alternativen-zu-pica"><span class="header-section-number">1.5</span> Alternativen zu PICA</h2>
-<p>Bei aller Relevanz für Bibliotheken mit PICA-Systemen ist PICA nicht das einzige und nicht das wichtigste bibliothekarische Datenformat. Vor allem für den Austausch zwischen verschiedenen Bibliothekssystemen ist noch immer das über 50 Jahre alte <strong><a href="http://format.gbv.de/marc">MARC-Format</a></strong> das Mittel der Wahl. Für die Verarbeitung von MARC-Daten gibt es mit <a href="https://jorol.github.io/processing-marc/#/">Processing MARC 21 with open source tools</a> ein ähnliches Handbuch wie dieses.</p>
-<p>Die Ablösung von PICA und MARC durch modernere Datenformate wird schon seit Jahrzehnten diskutiert. Eine mögliche Alternative ist <a href="https://www.loc.gov/bibframe/">BIBFRAME</a> auf Basis von RDF. Daneben gibt es viele weitere Formate für bibliographische und andere Arten von Daten. Die Webseite <a href="https://format.gbv.de/" class="uri">https://format.gbv.de/</a> gibt einen allgemeinen Überblick fast aller Formate die im Bibliotheksbereich relevant sein könnten.</p>
-<p>Hilfreich für die Arbeit mit verschiedenen Datenformaten ist zumindest ein Grundverständnis allgemeiner Datenstrukturierungssprachen wie JSON, XML, RDF und CSV.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -526,7 +346,6 @@ Tennant, Roy. 2002. <span>„<span>MARC</span> Must Die“</span>. <a href="http
 Voß, Jakob. 2009. <span>„Verarbeitung von <span>PICA</span>+ Daten mit <span>PICA</span>::Record“</span>. <a href="https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf">https://www.gbv.de/informationen/Verbundzentrale/Publikationen/2009/pdf/pdf_3940.pdf</a>.
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -950,13 +769,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Einleitung">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Einleitung</span>
+      <a href="./pica-rs.html" class="pagination-link" aria-label="pica-rs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./formate.html" class="pagination-link" aria-label="PICA-Formate">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./metafacture.html" class="pagination-link" aria-label="Metafacture">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Metafacture</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

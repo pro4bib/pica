@@ -8,7 +8,7 @@
 
 <meta name="description" content="Verarbeitung von Daten in, aus und zwischen PICA-Formaten">
 
-<title>9&nbsp; Das Werkzeug pica-rs – Einführung in die Verarbeitung von PICA-Daten</title>
+<title>10&nbsp; pica-rs – Einführung in die Verarbeitung von PICA-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./literatur.html" rel="next">
+<link href="./qa-catalogue.html" rel="next">
 <link href="./catmandu.html" rel="prev">
 <link href="./img/gbv-vzg-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -104,7 +104,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./pica-rs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./pica-rs.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -152,14 +152,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grundlagen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grundlagen</span></span></a>
+  <a href="./hintergrund.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hintergrund</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
+  <a href="./datenformate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datenformate</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pica-formate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PICA-Formate</span></span></a>
   </div>
 </li>
       </ul>
@@ -176,25 +182,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./darstellung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anzeigen von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./verarbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verarbeiten von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bearbeitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ändern von PICA-Daten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./schnittstellen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Schnittstellen</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,19 +217,37 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./picadata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Das Werkzeug picadata</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">picadata</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./catmandu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pica-rs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qa-catalogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metafacture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Metafacture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./winibw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WinIBW</span></span></a>
   </div>
 </li>
       </ul>
@@ -261,17 +285,17 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="header-section-number">9.1</span> Installation</a></li>
-  <li><a href="#bedienung" id="toc-bedienung" class="nav-link" data-scroll-target="#bedienung"><span class="header-section-number">9.2</span> Bedienung</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="header-section-number">10.1</span> Installation</a></li>
+  <li><a href="#bedienung" id="toc-bedienung" class="nav-link" data-scroll-target="#bedienung"><span class="header-section-number">10.2</span> Bedienung</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./pica-rs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./picadata.html">Werkzeuge</a></li><li class="breadcrumb-item"><a href="./pica-rs.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-pica-rs" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Das Werkzeug pica-rs</span></span></h1>
+<h1 class="title"><span id="sec-pica-rs" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">pica-rs</span></span></h1>
 </div>
 
 
@@ -288,7 +312,7 @@ div.csl-indent {
 </header>
 
 
-<p>pica-rs ist wie picadata (<a href="picadata.html" class="quarto-xref"><span>Kapitel 7</span></a>) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.</p>
+<p>pica-rs ist wie picadata (<a href="picadata.html" class="quarto-xref"><span>Kapitel 8</span></a>) ein Kommandozeilenwerkzeug zur Auswertung von PICA-Daten.</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -299,12 +323,12 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="installation" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">9.1</span> Installation</h2>
+<section id="installation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">10.1</span> Installation</h2>
 <p>Am einfachsten die Installation einer Release-Version des Programms von der Seite <a href="https://github.com/deutsche-nationalbibliothek/pica-rs/releases" class="uri">https://github.com/deutsche-nationalbibliothek/pica-rs/releases</a>. Unter “Assets” werden dort Pakete für verschiedene Betriebsysteme bereitgestellt. Alternativ kann die letzte Entwicklungsversion aus dem git-Repository installiert werden, wie in der Dokumentation von pica-rs beschrieben.</p>
 </section>
-<section id="bedienung" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="bedienung"><span class="header-section-number">9.2</span> Bedienung</h2>
+<section id="bedienung" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="bedienung"><span class="header-section-number">10.2</span> Bedienung</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -778,13 +802,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./catmandu.html" class="pagination-link" aria-label="Das Werkzeug Catmandu">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Werkzeug Catmandu</span></span>
+      <a href="./catmandu.html" class="pagination-link" aria-label="Catmandu">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Catmandu</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./literatur.html" class="pagination-link" aria-label="Literatur">
-        <span class="nav-page-text">Literatur</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./qa-catalogue.html" class="pagination-link" aria-label="QA catalogue">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QA catalogue</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
