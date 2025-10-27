@@ -8,6 +8,8 @@ metadata-files:
 
 book:
   repo-url: https://github.com/pro4bib/pica/
+  repo-actions:
+    - source
   chapters:
     - index.md
     - part: "Theorie"
